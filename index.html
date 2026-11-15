@@ -254,6 +254,7 @@ mark.miss{background:var(--bad-soft);color:var(--stamp);border-radius:4px;paddin
 <meta name="apple-mobile-web-app-title" content="중국어365">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#F1ECE4">
+<style>.ticket{background-image:none!important;background:var(--paper)!important}.ticket::before,.ticket::after{display:none!important}</style>
 </head>
 <body>
 <main class="wrap" id="app"></main>
@@ -1799,41 +1800,25 @@ function snowSVG(n,size){const r=Math.min(48,18+Math.sqrt(n)*2.6),s=size||110;
 let tab='home';
 function viewHome(){
   const today=todayNum(),grad=S.day>TOTAL,D=Math.min(S.day,TOTAL),doneToday=S.last===today,P=plan(D),sc=SC[P.w];
-  const learnedN=sc.L.filter((l,i)=>has(`l:${P.w}-${i}`)).length,allN=Object.keys(S.items).length,sol=solid();
-  const route=SC.map((x,i)=>`<div class="st ${S.sc[i]?'done':''} ${i===P.w&&!grad?'now':''} ${LANG.partOf(i)}" title="${esc(x.t)}">${i+1}</div>`).join('');
+  const learnedN=sc.L.filter((l,i)=>has(`l:${P.w}-${i}`)).length;
   const prog=H.progress(),unitTxt=P.units.length?P.units.map(id=>H.chip(UMAP[id])).join(' '):'없음';
   let main;
-  if(grad)main=`<div class="ticket"><h2>365일 완주. ${esc(LANG.ranks[LANG.ranks.length-1][1])}!</h2><p class="ctx">복습과 눈덩이 굴리기로 감을 유지해요.</p><button class="btn" data-act="review">복습하기</button></div>`;
-  else if(doneToday)main=`<div class="ticket"><h2>오늘 분량 완료</h2><p class="ctx">내일은 DAY ${D} · ${DNAME[P.type]}${P.type==='weekend'?' · 기념품 받는 날':''}</p>
-    <button class="btn ghost" data-act="review">가볍게 복습 더 하기</button><button class="linkbtn" data-act="ahead">기다리지 않고 DAY ${D} 바로 하기</button></div>`;
-  else{const what=P.type==='new'?`${P.p*2+1}–${P.p*2+2}번째 줄 듣고 익히기 (${learnedN}/8)`:P.type==='final'?'바꿔 말하기 + 실전 롤플레이':P.type==='grad'?'졸업 롤플레이 2장면':P.type==='mix'?'지난 장면 1개 통째로':'쉬어 가는 날 · 큰 눈덩이';
-    main=`<div class="ticket"><div class="eyebrow">${P.w+1}주차 · ${esc(LANG.partName(P.w))} · ${DNAME[P.type]}</div><h2>${esc(sc.t)}</h2><p class="ctx">${esc(sc.ctx)}</p>
-      <ul class="plan"><li><span>복습</span><span>${P.rev}개</span></li><li><span>${esc(LANG.unitName)}</span><span class="kchips">${unitTxt}</span></li>
-      <li><span>대화</span><span>${what}</span></li><li><span>눈덩이</span><span>${P.roll}개 굴리기</span></li></ul>
-      <button class="btn" data-act="start">DAY ${D} 시작 · 10~15분</button></div>`}
-  const souv=S.souv.length?S.souv.map(i=>`<span class="souv">${esc(souvName(i))}</span>`).join(''):'<span class="ctx" style="margin:0">7일째(주말)를 마치면 하나씩 생겨요.</span>';
-  const me=S.me?SC.flatMap((x,s)=>x.L.map((l,i)=>({l,s,i}))).filter(o=>o.l.me&&o.l.sp==='a'&&(o.s===0||has(`l:${o.s}-${o.i}`))).map(o=>LN(`l:${o.s}-${o.i}`)):[];
-  return `<header class="top"><div><div class="eyebrow">${esc(LANG.name)} 365 · ${esc(rank())}</div><div class="dayno">DAY ${D}<small>/365</small></div>
-    <div class="station">${grad?'완주':(P.w+1)+'주차 '+(P.type==='grad'?'':(P.p+1)+'일째')}</div></div>
-    <div class="stamp" aria-label="연속 ${curStreak()}일"><div><b>${curStreak()}</b><span>일 연속</span></div></div></header>
+  if(grad)main=`<div class="ticket"><h2>365일 완주</h2><p class="ctx">복습으로 감을 유지해요.</p><button class="btn" data-act="review">복습하기</button></div>`;
+  else if(doneToday)main=`<div class="ticket"><h2>오늘 공부 완료</h2><p class="ctx">내일은 DAY ${D} · ${DNAME[P.type]}</p>
+    <button class="btn ghost" data-act="review">복습 더 하기</button><button class="linkbtn" data-act="ahead">DAY ${D} 바로 하기</button></div>`;
+  else{const what=P.type==='new'?`${P.p*2+1}–${P.p*2+2}번째 줄 (${learnedN}/8)`:P.type==='final'?'바꿔 말하기 + 롤플레이':P.type==='grad'?'졸업 롤플레이':P.type==='mix'?'지난 장면 복습':'가벼운 복습';
+    main=`<div class="ticket"><div class="eyebrow">${P.w+1}주차 · ${DNAME[P.type]}</div><h2>${esc(sc.t)}</h2><p class="ctx">${esc(sc.ctx)}</p>
+      <ul class="plan"><li><span>복습</span><span>${P.rev+P.roll}개</span></li><li><span>${esc(LANG.unitName)}</span><span class="kchips">${unitTxt}</span></li>
+      <li><span>대화</span><span>${what}</span></li></ul>
+      <button class="btn" data-act="start">시작하기 · 10~15분</button></div>`}
+  return `<header class="top"><div><div class="eyebrow">${esc(LANG.name)}</div><div class="dayno">DAY ${D}<small>/365</small></div></div></header>
     ${main}
-    <section class="snow"><div>${snowSVG(sol)}</div><div><h3>내 눈덩이</h3><p><b>${sol}</b>개 단단해짐 <span class="muted">· ${allN}개 굴리는 중</span></p><p class="muted">세 번 이상 제때 떠올린 표현이 눈덩이에 단단히 붙어요.</p></div></section>
-    ${me.length?`<section class="sec"><h3>나의 이야기 · ${me.length}문장 <button class="linkbtn" data-act="onb" style="float:right;padding:0">내 정보 수정</button></h3><p style="margin:0 0 8px">장면을 지날 때마다 내 이야기가 쌓여요. 1년 뒤엔 이것만으로 몇 분간 나를 소개할 수 있어요.</p><div class="chat">${me.slice(0,4).map(l=>bub(l)).join('')}</div>${me.length>4?`<details><summary>${me.length-4}문장 더 보기</summary><div class="chat" style="margin-top:10px">${me.slice(4).map(l=>bub(l)).join('')}</div></details>`:''}${hasTTS?'<button class="linkbtn" data-act="mesay">전부 이어 듣기</button>':''}</section>`:''}
     <section class="sec"><h3>${esc(prog.label)}</h3><div class="bar"><i style="width:${prog.pc}%"></i></div><p>${prog.text}</p></section>
-    <section class="sec"><h3>소소한 보상</h3><div class="perks"><div><b>${S.tick}</b><span>휴가권</span></div><div><b>${Object.keys(S.sc).length}</b><span>도장</span></div><div><b>${S.souv.length}</b><span>기념품</span></div><div><b>${S.best||0}</b><span>최장 연속</span></div></div>
-      <p>7일 연속마다 휴가권 1장(최대 2장). 하루 빠져도 연속 기록을 지켜 줘요.</p><div class="souvs">${souv}</div></section>
-    <section class="sec"><h3>52주 노선</h3><div class="route">${route}</div><div class="legend">${LANG.legend}</div></section>
-    <details><summary>공부법 · 하루 흐름</summary><div class="setting" style="font-size:14px">${LANG.howto}
-      <div><b>듣기 먼저</b> 새 대화는 글자를 가린 채 먼저 듣고, 뜻을 짐작한 다음 공개해요.</div>
-      <div><b>떠올려 말하기</b> 복습은 고르기보다 한국어를 보고 직접 말해 보는 게 중심이에요. 정답을 확인하고 '다시·애매·알았음'을 매기면 그에 맞춰 다음 복습 날짜가 정해져요.</div>
-      <div><b>눈덩이 굴리기</b> 매일 지난 장면 표현을 섞어서 떠올려요. 연속으로 맞히면 눈덩이가 커져요.</div>
-      <div><b>대사를 누르면</b> 낱말 뜻, 해설, 느린 발음, 즐겨찾기가 나와요.</div>
-      <div><b>하루 분량</b> 하루 약 ${CAP}개 안쪽으로 고정돼요. 밀린 복습은 다음 날로 넘어가요.</div></div></details>
     <details><summary>설정 · 백업</summary><div class="setting">
       <div class="toggle"><span>느린 발음</span><button class="sw" id="slow" aria-pressed="${S.slow}" aria-label="느린 발음"></button></div>
       <button class="btn ghost" data-act="onb">내 정보 수정</button>
       ${S.day<=84?`<div class="toggle"><span>여행회화 먼저 하기 (13주차 전까지 변경 가능)</span><button class="sw" id="ordB" aria-pressed="${S.order==='B'}" aria-label="여행회화 먼저"></button></div>`:''}
-      <div>진도는 이 앱(브라우저)에만 저장돼요. 가끔 백업 코드를 복사해 메모앱에 두세요.</div>
+      <div>진도는 이 앱에만 저장돼요. 가끔 백업 코드를 복사해 메모앱에 두세요.</div>
       <button class="btn ghost" data-act="export">백업 코드 복사</button><textarea id="bk" placeholder="백업 코드를 여기에 붙여넣기"></textarea>
       <button class="btn ghost" data-act="import">붙여넣은 코드로 복원</button><button class="btn ghost" data-act="reset1" id="r1">처음부터 다시</button>
       <div id="r2" hidden><p style="margin:0 0 8px">모든 진도가 지워져요. 정말 지울까요?</p><div class="row2"><button class="btn" data-act="reset2" style="background:var(--stamp)">지우기</button><button class="btn ghost" data-act="reset0">취소</button></div></div>
@@ -1843,7 +1828,7 @@ function viewPhr(){
   const total=SC.reduce((a,x,s)=>a+x.L.filter((l,i)=>has(`l:${s}-${i}`)).length,0);
   let h=`<header><div class="eyebrow">대화집 · 대사를 누르면 해설</div><h2 style="margin:4px 0 0;font-size:22px">쌓인 대사 ${total}/${SC.length*8}</h2></header>`;
   SC.forEach((x,s)=>{const ls=x.L.map((l,i)=>LN(`l:${s}-${i}`)).filter(l=>has(l.id)),vs=x.V.map((v,i)=>LN(`v:${s}-${i}`)).filter(l=>has(l.id));if(!ls.length)return;
-    h+=`<section class="scene"><h3>${s+1}. ${esc(x.t)}<span>${S.sc[s]?'도장 완료':''}</span></h3><p class="ctx">${esc(x.ctx)}</p><div class="chat">${ls.map(l=>bub(l)).join('')}</div>`;
+    h+=`<section class="scene"><h3>${s+1}. ${esc(x.t)}</h3><p class="ctx">${esc(x.ctx)}</p><div class="chat">${ls.map(l=>bub(l)).join('')}</div>`;
     if(hasTTS)h+=`<button class="linkbtn" data-all="${s}">이 대화 이어 듣기</button>`;
     if(vs.length)h+=`<div class="vlist"><span class="lbl">바꿔 말하기</span>${vs.map(l=>bub(l)).join('')}</div>`;h+='</section>'});
   return h+'<p class="locked">다음 장면은 진도에 맞춰 열려요.</p>'}
@@ -1896,7 +1881,7 @@ function saveOnb(){
   if(reload){location.reload();return}applyMe();$('#onb').hidden=true;render()}
 
 /* ---- 세션 ---- */
-let sess=null;const PH_NAMES=['복습',null,'새 대화','롤플레이','눈덩이','리플레이','내 이야기'];
+let sess=null;const PH_NAMES=['복습',null,'새 대화','롤플레이','섞어 복습','리플레이','내 이야기'];
 function rollPool(excl){const all=Object.keys(S.items).filter(id=>(id[0]==='l'||id[0]==='v')&&!excl.has(id)&&LN(id).sp==='a');
   const weak=all.filter(id=>S.items[id].b<3),old=all.filter(id=>S.items[id].b>=3);
   return shuffle(weak).slice(0,Math.ceil(all.length)).concat(shuffle(old))}
@@ -2035,9 +2020,9 @@ function answer(st,ok){
   foot(`<div class="fb ${ok?'ok':'no'}"><strong>${ok?'정답!':'괜찮아요, 이 단계 끝에서 한 번 더 나와요'}</strong>${d}</div><button class="btn" id="go">계속</button>`);$('#go').onclick=next;$('#go').focus({preventScroll:true})}
 function rollStep(st){
   const sb=$('#sb');
-  if(st.k>=st.ids.length){sb.innerHTML=`<div class="rolldone">${snowSVG(st.best*6+solid(),150)}<h2>눈덩이 굴리기 끝</h2><p class="ctx">최고 연속 <b>${st.best}</b>개 · 지난 장면 ${new Set(st.ids.map(id=>LN(id).s)).size}곳에서 굴렸어요.</p></div>`;contBtn('계속');return}
+  if(st.k>=st.ids.length){sb.innerHTML=`<div class="rolldone"><h2>섞어 복습 끝</h2></div>`;contBtn('계속');return}
   const l=LN(st.ids[st.k]);
-  const head=`<div class="rollhd"><span class="tag">눈덩이 굴리기 ${st.k+1}/${st.ids.length} · ${esc(SC[l.s].t)}</span><span class="combo ${st.combo>=3?'hot':''}">연속 ${st.combo}</span></div><div class="rollball">${snowSVG(st.combo*6+solid(),Math.min(120,60+st.combo*10))}</div>`;
+  const head=`<div class="rollhd"><span class="tag">섞어 복습 ${st.k+1}/${st.ids.length} · ${esc(SC[l.s].t)}</span></div>`;
   recallUI(l,head,g=>{sess.total++;if(g>0)sess.right++;grade3(l.id,g);save();if(g===2){st.combo++;st.best=Math.max(st.best,st.combo)}else if(g===0)st.combo=0;st.k++;rollStep(st)})}
 function playStep(st){
   const sb=$('#sb'),sc=SC[st.s];
@@ -2066,10 +2051,8 @@ function finish(){
     if(S.last!==t){const gap=S.last==null?99:t-1-S.last;if(gap<=0)S.streak++;else if(gap<=S.tick){S.tick-=gap;S.streak++}else S.streak=1;S.last=t;S.best=Math.max(S.best||0,S.streak);if(S.streak%7===0&&S.tick<2){S.tick++;newTick=true}}}
   save();$('#sp').style.width='100%';$('#ph').innerHTML='';
   const sceneDone=dayDone&&P.type==='final',isGrad=dayDone&&P.type==='grad';
-  $('#sb').innerHTML=`<div class="sbody done" style="padding:0"><div class="stamp pop"><div><b>${isGrad?'365':sceneDone?LANG.stampChar:dayDone?'DAY '+sess.D:sess.mode==='fav'?'★':'복습'}</b><span>${isGrad?'완주':sceneDone?esc(SC[P.w].t):dayDone?'통과':'완료'}</span></div></div>
-    <h2 style="margin:8px 0 0">${isGrad?'365일 완주!':sceneDone?`${P.w+1}주차 「${esc(SC[P.w].t)}」 도장 획득`:gift!=null?'이번 주 기념품 도착':dayDone?'눈덩이가 한 바퀴 더 굴렀어요':'복습 끝'}</h2>
-    ${gift!=null?`<div class="gift">${esc(souvName(gift))}</div>`:''}${newTick?'<p class="ctx" style="margin:0">7일 연속! 휴가권 1장을 받았어요.</p>':''}
-    <div class="stats"><div><b>${sess.total?Math.round(sess.right/sess.total*100):100}%</b><span>정답률</span></div><div><b>${curStreak()}</b><span>연속 일수</span></div><div><b>${solid()}</b><span>단단한 표현</span></div></div></div>`;
+  $('#sb').innerHTML=`<div class="sbody done" style="padding:0"><h2 style="margin:8px 0 0">${isGrad?'365일 완주':dayDone?'DAY '+sess.D+' 완료':'복습 완료'}</h2>
+    <div class="stats"><div><b>${sess.total?Math.round(sess.right/sess.total*100):100}%</b><span>정답률</span></div><div><b>${Object.keys(S.items).length}</b><span>익힌 표현</span></div></div></div>`;
   contBtn('홈으로',close)}
 
 document.addEventListener('click',e=>{
