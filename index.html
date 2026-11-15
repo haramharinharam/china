@@ -1,0 +1,2098 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}[hidden]{display:none!important}</style>
+<title>스며드는 중국어 365</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: 폰 한 줄 앱. 옅은 비단색 표 위에 배운 한자만 청록 먹빛으로 번진다 */
+:root{--bg:#F1ECE4;--paper:#FCFAF6;--ink:#1F1A17;--muted:#6E645B;--line:#DCD2C4;--accent:#0F6B5E;--accent-soft:#D7ECE7;--stamp:#B8322A;--ok:#1D8455;--ok-soft:#DCF0E4;--bad-soft:#F7DFDB;--snow:#FFFFFF;--f-kana:'Noto Serif SC','Songti SC','STSong','PingFang SC','Microsoft YaHei',serif;--f-disp:'Dela Gothic One','IBM Plex Sans KR',sans-serif;--f-body:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151210;--paper:#1E1A17;--ink:#EFE8E0;--muted:#A79B90;--line:#3A322C;--accent:#5FCDB8;--accent-soft:#163A33;--stamp:#FF7B6F;--ok:#52C590;--ok-soft:#15372A;--bad-soft:#3E1F1C;--snow:#DCE4EC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151210;--paper:#1E1A17;--ink:#EFE8E0;--muted:#A79B90;--line:#3A322C;--accent:#5FCDB8;--accent-soft:#163A33;--stamp:#FF7B6F;--ok:#52C590;--ok-soft:#15372A;--bad-soft:#3E1F1C;--snow:#DCE4EC;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:520px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 110px;display:flex;flex-direction:column;gap:18px}
+
+.jp{font-family:var(--f-kana)}
+.jp .ck{white-space:nowrap}
+.jp b{font-weight:600;color:var(--accent)}
+.jp b.hl{background:var(--accent-soft);border-radius:4px;padding:0 2px}
+.jp i{font-style:normal;font-family:var(--f-body);color:var(--muted);font-size:.92em}
+.jp .gap{display:inline-block;width:.4em}
+
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.dayno{font-family:var(--f-disp);font-size:52px;line-height:1}
+.dayno small{font-size:18px;color:var(--muted);margin-left:4px}
+.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.station{font-weight:700;margin-top:6px}
+.stamp{width:78px;height:78px;border:2.5px solid var(--stamp);border-radius:50%;color:var(--stamp);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);flex-shrink:0}
+.stamp b{font-family:var(--f-disp);font-size:24px;line-height:1;display:block}
+.stamp span{font-size:10px;letter-spacing:.06em}
+
+.ticket{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;
+  background-image:repeating-linear-gradient(135deg,transparent 0 9px,color-mix(in srgb,var(--line) 35%,transparent) 9px 10px)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.ticket::before{left:-10px;clip-path:inset(0 0 0 50%)}
+.ticket::after{right:-10px;clip-path:inset(0 50% 0 0)}
+.ticket h2{margin:0 0 4px;font-size:17px}
+.ctx{margin:0 0 12px;color:var(--muted);font-size:13px}
+.plan{display:grid;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.plan li{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:7px}
+.plan li span:first-child{color:var(--muted);font-size:13px;flex-shrink:0}
+.plan li span:last-child{text-align:right}
+.plan .kchips{font-family:var(--f-kana);font-size:21px;color:var(--accent);font-weight:600;letter-spacing:.12em}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:15px;font-weight:700;font-size:16px;background:var(--ink);color:var(--paper)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink);font-weight:500;font-size:14px;padding:11px}
+.btn:disabled{opacity:.4;cursor:default}
+.row2{display:flex;gap:8px;margin-top:8px}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;padding:6px 0}
+
+.sec h3{margin:0 0 8px;font-size:13px;color:var(--muted);font-weight:500}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:6px}
+.sec p{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.sample{font-size:21px;margin-top:6px}
+.route{display:grid;grid-template-columns:repeat(13,1fr);gap:4px}
+.st{aspect-ratio:1;max-width:100%;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center;font-size:10.5px;color:var(--muted);background:var(--paper);font-variant-numeric:tabular-nums}
+.st.now{border:2px solid var(--accent);color:var(--accent);font-weight:700}
+.st.done{background:var(--stamp);border-color:var(--stamp);color:var(--paper);font-weight:700}
+
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+summary{cursor:pointer;font-weight:500}
+.setting{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:12px/1.4 monospace;padding:8px}
+.toggle{display:flex;justify-content:space-between;align-items:center}
+.sw{width:46px;height:26px;border-radius:13px;border:0;background:var(--line);position:relative}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--paper);transition:left .15s}
+.sw[aria-pressed="true"]{background:var(--accent)}
+.sw[aria-pressed="true"]::after{left:23px}
+.msg{font-size:13px;color:var(--ok);min-height:1em}
+
+.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);display:flex;justify-content:center;
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);z-index:20}
+.tabs button{flex:1;max-width:173px;background:none;border:0;padding:12px 4px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabs button b{font-family:var(--f-kana);font-size:20px;font-weight:600}
+.tabs button[aria-current="true"]{color:var(--accent)}
+
+.ktable{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.kc{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 2px;text-align:center;min-width:0}
+.kc b{display:block;font-family:var(--f-kana);font-size:24px;font-weight:600;color:var(--accent);line-height:1.2}
+.kc span{font-size:11px;color:var(--muted)}
+.kc.off b{color:var(--line)}
+.kc.empty{visibility:hidden}
+.seg{display:flex;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{flex:1;border:0;background:none;padding:8px;border-radius:8px;font-family:var(--f-kana);font-size:16px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* 대화 말풍선 */
+.chat{display:flex;flex-direction:column;gap:10px}
+.bub{max-width:88%;padding:9px 12px;border-radius:14px;border:1px solid var(--line);background:var(--paper);min-width:0}
+.bub.me{align-self:flex-end;background:var(--accent-soft);border-color:transparent;border-bottom-right-radius:4px}
+.bub.you{align-self:flex-start;border-bottom-left-radius:4px}
+.bub .who{font-size:11px;color:var(--muted);display:block}
+.bub .bt{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.bub .jp{font-size:19px;line-height:1.5}
+.bub p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.bub.ask{background:transparent;border:2px dashed var(--accent)}
+.bub.ask .intent{font-weight:700;font-size:14px}
+.bub.new{box-shadow:0 0 0 2px var(--accent)}
+.play{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);flex-shrink:0;display:grid;place-items:center}
+.play.s{width:30px;height:30px}
+.play svg{width:13px;height:13px;fill:var(--accent)}
+.scene h3{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:15px;margin:10px 0 4px}
+.scene h3 span{color:var(--muted);font-weight:400;font-size:12px}
+.scene .ctx{margin:0 0 8px}
+.vlist{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.vlist .lbl{font-size:12px;color:var(--muted)}
+.locked{color:var(--muted);font-size:13px;padding:4px 2px}
+
+/* 학습 화면 */
+#sess[hidden]{display:none}
+#sess{position:fixed;inset:0;background:var(--bg);z-index:50;display:flex;flex-direction:column;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.shead,.sbody,.sfoot{width:100%;max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.shead{display:flex;align-items:center;gap:12px;padding-block:14px 6px}
+.x{background:none;border:0;font-size:24px;line-height:1;color:var(--muted);padding:4px}
+.prog{flex:1;height:8px;background:var(--line);border-radius:5px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--ok);transition:width .25s}
+.phase{max-width:560px;width:100%;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+.phase span{padding:2px 8px;border-radius:20px;border:1px solid var(--line)}
+.phase span.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sbody{flex:1;overflow-y:auto;padding-block:12px 16px;display:flex;flex-direction:column;gap:14px}
+.sfoot{padding-block:10px 16px}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:3px 8px;align-self:flex-start}
+.bigk{font-family:var(--f-kana);font-weight:600;font-size:110px;line-height:1.1;text-align:center;color:var(--accent)}
+.bigr{text-align:center;font-size:28px;font-weight:700}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:-6px}
+.exbox{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.exbox .jp{font-size:21px}
+.exbox small{color:var(--muted)}
+.qprompt{font-size:14px;color:var(--muted);margin:0}
+.qbig{font-size:26px;line-height:1.5;text-align:center;padding:10px 0}
+.qbig.kana{font-family:var(--f-kana);font-size:84px;font-weight:600;color:var(--accent);padding:0}
+.opts{display:grid;gap:10px}
+.opts.k4{grid-template-columns:1fr 1fr}
+.opt{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;text-align:left;font-size:16px;min-width:0}
+.opts.k4 .opt{text-align:center;font-size:24px;font-weight:700}
+.opt .jp{font-size:20px}
+.opt.kf{font-family:var(--f-kana);font-size:40px;color:var(--accent);font-weight:600}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--stamp);background:var(--bad-soft)}
+.opt:disabled{cursor:default}
+.slot{min-height:58px;border-bottom:2px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;padding:8px 0;align-items:center}
+.tiles{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-top:6px}
+.tile{background:var(--paper);border:1.5px solid var(--line);border-bottom-width:3px;border-radius:10px;padding:7px 11px}
+.tile .jp{font-size:19px}
+.tile.used{visibility:hidden}
+.listen{display:flex;justify-content:center;padding:6px 0}
+.listen .play{width:80px;height:80px;border-width:2px}
+.listen .play svg{width:28px;height:28px}
+.fb{border-radius:14px 14px 0 0;padding:12px 16px 4px;display:flex;flex-direction:column;gap:3px}
+.fb.ok{background:var(--ok-soft)} .fb.no{background:var(--bad-soft)}
+.fb strong{font-size:16px}
+.fb.ok strong{color:var(--ok)} .fb.no strong{color:var(--stamp)}
+.fb .jp{font-size:19px}
+.fb p{margin:0;font-size:13.5px}
+.read{color:var(--muted);font-size:13px}
+.done{align-items:center;text-align:center;justify-content:center}
+.done .stamp{width:150px;height:150px;border-width:4px}
+.done .stamp b{font-size:30px}
+.done .stamp span{font-size:13px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stats div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:90px}
+.stats b{display:block;font-family:var(--f-disp);font-size:22px}
+.stats span{font-size:12px;color:var(--muted)}
+.pop{animation:pop .35s ease-out}
+@keyframes pop{0%{transform:scale(.6) rotate(-20deg);opacity:0}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.perks div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center}
+.perks b{display:block;font-family:var(--f-disp);font-size:20px}
+.perks span{font-size:11.5px;color:var(--muted)}
+.souvs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.souv{font-size:12px;border:1px dashed var(--stamp);color:var(--stamp);border-radius:20px;padding:3px 10px}
+.gift{border:2px dashed var(--stamp);color:var(--stamp);border-radius:14px;padding:12px 18px;font-weight:700;font-size:17px}
+.dim{display:contents}.dim .bub{opacity:.55}
+.qbig.ko{font-size:20px;font-weight:700;padding:4px 0}
+.play.big{align-self:center;width:56px;height:56px}
+.wlist{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.wl{display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:left;min-width:0}
+.wl b{font-family:var(--f-kana);font-size:19px;color:var(--accent);font-weight:600}
+.wl span{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.wl.off{opacity:.5}
+.py{font-family:var(--f-body);color:var(--muted);font-size:13px}
+.en{font-family:var(--f-kana);font-size:1em;line-height:1.45}
+.en mark{background:var(--accent-soft);color:inherit;border-radius:4px;padding:0 2px}
+#sess[hidden]{display:none}
+.tabs button{max-width:130px}
+.blur{filter:blur(6px);user-select:none}
+.bub[data-id]{cursor:pointer}
+.bub .fs{color:var(--stamp)}
+.gl{display:flex;flex-wrap:wrap;gap:6px 4px;padding:2px 0 4px}
+.gc{display:flex;flex-direction:column;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 7px;min-width:0;max-width:100%}
+.gt{font-size:17px}.gt .jp,.gt .en{font-size:17px}
+.gg{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.3;overflow-wrap:anywhere}
+.note2{background:var(--accent-soft);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.note2 p{margin:0;font-size:13.5px;line-height:1.5}
+.mean{text-align:center;font-weight:700;margin:-6px 0 0}
+.ans{display:flex;flex-direction:column;gap:6px}
+.gq{margin:0 0 6px;font-size:13px;color:var(--muted);text-align:center}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g3 .btn{padding:11px 4px;font-size:15px;display:flex;flex-direction:column;align-items:center;gap:1px}
+.g3 small{font-size:11px;font-weight:400;opacity:.8}
+.gr0{background:var(--stamp)!important;color:var(--paper)!important}
+.gr1{background:var(--line)!important;color:var(--ink)!important}
+.gr2{background:var(--ok)!important;color:var(--paper)!important}
+#sheet,#onb{position:fixed;inset:0;z-index:80;background:color-mix(in srgb,var(--ink) 45%,transparent);display:flex;align-items:flex-end;justify-content:center}
+#sheet[hidden],#onb[hidden]{display:none}
+.shc{background:var(--bg);width:100%;max-width:560px;max-height:88%;overflow-y:auto;border-radius:18px 18px 0 0;padding-top:14px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:12px}
+.shc .grab{align-self:center;width:40px;height:4px;border-radius:2px;background:var(--line)}
+.star{display:flex;align-items:center;justify-content:center;gap:6px}
+.star svg{width:18px;height:18px}
+.btn.star{background:transparent;border:1.5px solid var(--stamp);color:var(--stamp)}
+.btn.star.on{background:var(--stamp);color:var(--paper)}
+.linkbtn.star{align-self:center;color:var(--stamp);text-decoration:none;display:flex}
+#onb .shc{max-height:94%}
+#onb label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+#onb input,#onb select{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px}
+#onb small{font-size:12px}
+#onb fieldset{border:1px solid var(--line);border-radius:10px;padding:8px 12px;display:flex;flex-direction:column;gap:6px}
+#onb legend{font-size:13px;color:var(--muted);padding:0 4px}
+#onb .rd{flex-direction:row;align-items:center;gap:8px;color:var(--ink);font-size:14px}
+.snow{display:flex;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.snow h3{margin:0 0 2px;font-size:13px;color:var(--muted);font-weight:500}
+.snow p{margin:0;font-size:14px}.muted{color:var(--muted);font-size:12.5px}
+.snow>div:last-child{min-width:0}
+.rollhd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.combo{font-family:var(--f-disp);font-size:15px;color:var(--muted)}
+.combo.hot{color:var(--stamp)}
+.rollball{display:flex;justify-content:center;transition:transform .2s}
+.rolldone{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.tin{width:100%;font:inherit;font-size:17px;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}
+mark.miss{background:var(--bad-soft);color:var(--stamp);border-radius:4px;padding:0 2px}
+.phase .cnt{margin-left:auto;border:0;font-variant-numeric:tabular-nums}
+.st.p-b{box-shadow:inset 0 -3px 0 var(--accent)}.st.p-g{box-shadow:inset 0 -3px 0 var(--ok)}.st.p-t{box-shadow:inset 0 -3px 0 var(--muted)}.st.p-o{box-shadow:inset 0 -3px 0 var(--stamp)}.st.p-f{box-shadow:inset 0 -3px 0 var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:11.5px;color:var(--muted)}
+.lg{display:flex;align-items:center;gap:4px}.lg::before{content:"";width:12px;height:3px;border-radius:2px;background:var(--muted)}
+.lg.p-b::before{background:var(--accent)}.lg.p-g::before{background:var(--ok)}.lg.p-o::before{background:var(--stamp)}.lg.p-f::before{background:var(--ink)}
+
+.mytag{font-size:10.5px;background:var(--stamp);color:var(--paper);border-radius:6px;padding:1px 6px;margin-left:2px}
+.askf{display:flex;flex-direction:column;gap:12px}
+.askf label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:500}
+.askf select,.askf input,#onb details select,#onb details input{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px}
+</style>
+</head>
+<body>
+<main class="wrap" id="app"></main>
+<nav class="tabs" aria-label="메뉴">
+  <button data-tab="home" aria-current="true"><b>今</b>오늘</button>
+  <button data-tab="phr"><b>話</b>대화집</button>
+  <button data-tab="fav"><b>★</b>즐겨찾기</button>
+  <button data-tab="unit"><b>字</b>한자</button>
+</nav>
+<section id="sess" hidden aria-live="polite">
+  <div class="shead"><button class="x" id="sx" aria-label="그만하기">×</button><div class="prog"><i id="sp"></i></div></div>
+  <div class="phase" id="ph"></div><div class="sbody" id="sb"></div><div class="sfoot" id="sf"></div>
+</section>
+<div id="sheet" hidden><div class="shc" role="dialog" aria-label="해설"><div class="grab"></div><div id="shb" style="display:flex;flex-direction:column;gap:12px"></div><button class="linkbtn" data-close="1">닫기</button></div></div>
+<div id="onb" hidden><div class="shc" role="dialog" aria-label="내 정보" id="onbb"></div></div>
+<script>
+const ZH_OLD=[
+{t:'첫 인사',who:'민박 주인',ctx:'상하이 민박 도착. 주인이 문을 열어 준다.',L:[
+ ['b','你好','nǐ hǎo','안녕하세요'],['a','你好 很 高兴 认识 你','nǐ hǎo hěn gāo xìng rèn shi nǐ','안녕하세요, 만나서 반가워요'],
+ ['b','你 叫 什么 名字','nǐ jiào shén me míng zi','이름이 뭐예요?'],['a','我 姓 金','wǒ xìng jīn','성은 김이에요'],
+ ['b','你 是 韩国人 吗','nǐ shì hán guó rén ma','한국 사람이에요?'],['a','是 我 从 韩国 来','shì wǒ cóng hán guó lái','네, 한국에서 왔어요'],
+ ['b','欢迎 欢迎','huān yíng huān yíng','환영해요'],['a','谢谢 请 多 关照','xiè xie qǐng duō guān zhào','고마워요, 잘 부탁해요']],
+ V:[['我 姓 朴','wǒ xìng piáo','성은 박이에요 (내 성으로 바꾸기)',3],['我 从 釜山 来','wǒ cóng fǔ shān lái','부산에서 왔어요',5],['我 姓 李','wǒ xìng lǐ','성은 이예요',3]]},
+{t:'입국 심사',who:'심사관',ctx:'상하이 푸둥 공항 입국 심사대. 내 차례가 왔다.',L:[
+ ['b','请 出示 护照','qǐng chū shì hù zhào','여권 보여 주세요'],['a','好的 给 你','hǎo de gěi nǐ','네, 여기요'],
+ ['b','来 中国 做 什么','lái zhōng guó zuò shén me','중국에 뭐 하러 왔어요?'],['a','旅游','lǚ yóu','여행이요'],
+ ['b','待 几 天','dāi jǐ tiān','며칠 있어요?'],['a','三 天','sān tiān','3일이요'],
+ ['b','住 在 哪里','zhù zài nǎ lǐ','어디서 묵어요?'],['a','住 在 上海 的 酒店','zhù zài shàng hǎi de jiǔ diàn','상하이에 있는 호텔에 묵어요']],
+ V:[['出差','chū chāi','출장이요',3],['五 天','wǔ tiān','5일이요',5],['一个 星期','yí ge xīng qī','일주일이요',5]]},
+{t:'계산대',who:'점원',ctx:'편의점 계산대에 물건을 올려놓았다.',L:[
+ ['a','这个 多少 钱','zhè ge duō shao qián','이거 얼마예요?'],['b','十五 块','shí wǔ kuài','15위안이에요'],
+ ['b','要 袋子 吗','yào dài zi ma','봉투 필요해요?'],['a','不 要 谢谢','bú yào xiè xie','아니요, 괜찮아요'],
+ ['a','可以 用 支付宝 吗','kě yǐ yòng zhī fù bǎo ma','알리페이 돼요?'],['b','可以 扫 这里','kě yǐ sǎo zhè lǐ','돼요, 여기 스캔하세요'],
+ ['b','要 小票 吗','yào xiǎo piào ma','영수증 필요해요?'],['a','不 用 了','bú yòng le','괜찮아요 (필요 없어요)']],
+ V:[['一共 多少 钱','yí gòng duō shao qián','전부 얼마예요?',0],['我 付 现金','wǒ fù xiàn jīn','현금으로 낼게요',4],['要 一个 袋子','yào yí ge dài zi','봉투 하나 주세요',3]]},
+{t:'길 묻기',who:'행인',ctx:'지도 앱이 먹통. 지나가는 사람에게 말을 건다.',L:[
+ ['a','请问 地铁站 在 哪儿','qǐng wèn dì tiě zhàn zài nǎ r','실례지만, 지하철역이 어디예요?'],['b','一直 往 前 走','yì zhí wǎng qián zǒu','쭉 앞으로 가세요'],
+ ['a','一直 走 吗','yì zhí zǒu ma','쭉 가요? (확인)'],['b','对 然后 右 转','duì rán hòu yòu zhuǎn','네, 그다음 오른쪽으로 도세요'],
+ ['a','远 不 远','yuǎn bu yuǎn','멀어요?'],['b','不 远 走路 五 分钟','bù yuǎn zǒu lù wǔ fēn zhōng','안 멀어요, 걸어서 5분이에요'],
+ ['a','谢谢 你','xiè xie nǐ','고마워요'],['b','不 客气','bú kè qi','천만에요']],
+ V:[['请问 洗手间 在 哪儿','qǐng wèn xǐ shǒu jiān zài nǎ r','실례지만, 화장실이 어디예요?',0],['请问 便利店 在 哪儿','qǐng wèn biàn lì diàn zài nǎ r','실례지만, 편의점이 어디예요?',0],['左 转 吗','zuǒ zhuǎn ma','왼쪽으로 돌아요?',2]]},
+{t:'지하철·택시',who:'역무원·기사',ctx:'지하철로 와이탄에 가고, 그다음 택시를 탄다.',L:[
+ ['a','去 外滩 坐 几 号 线','qù wài tān zuò jǐ hào xiàn','와이탄 가려면 몇 호선 타요?'],['b','坐 二 号 线','zuò èr hào xiàn','2호선 타세요'],
+ ['a','这 是 去 外滩 的 吗','zhè shì qù wài tān de ma','이거 와이탄 가는 거예요?'],['b','不 是 在 对面','bú shì zài duì miàn','아니요, 건너편이에요'],
+ ['b','去 哪儿','qù nǎ r','어디 가세요? (택시)'],['a','去 这个 酒店','qù zhè ge jiǔ diàn','이 호텔로 가 주세요 (지도 보여 주며)'],
+ ['a','在 这儿 停 一下','zài zhè r tíng yí xià','여기서 세워 주세요'],['b','好的 一共 三十 块','hǎo de yí gòng sān shí kuài','네, 전부 30위안이에요']],
+ V:[['去 机场','qù jī chǎng','공항으로 가 주세요',5],['下 一 站 是 哪里','xià yí zhàn shì nǎ lǐ','다음 역은 어디예요?',2],['可以 开 快 一点 吗','kě yǐ kāi kuài yì diǎn ma','좀 빨리 가 주실 수 있어요?',6]]},
+{t:'호텔 체크인',who:'호텔 직원',ctx:'호텔 프런트. 캐리어를 끌고 들어왔다.',L:[
+ ['a','你好 我 要 办 入住','nǐ hǎo wǒ yào bàn rù zhù','안녕하세요, 체크인할게요'],['b','请问 您 贵姓','qǐng wèn nín guì xìng','성함이 어떻게 되세요?'],
+ ['a','我 姓 金 网上 订 的','wǒ xìng jīn wǎng shàng dìng de','김이에요, 인터넷으로 예약했어요'],['b','好的 请 给 我 护照','hǎo de qǐng gěi wǒ hù zhào','네, 여권 주세요'],
+ ['a','早餐 几 点 开始','zǎo cān jǐ diǎn kāi shǐ','조식은 몇 시에 시작해요?'],['b','早上 七 点','zǎo shang qī diǎn','아침 7시요'],
+ ['a','可以 寄存 行李 吗','kě yǐ jì cún xíng li ma','짐 맡길 수 있어요?'],['b','可以 放 这儿 吧','kě yǐ fàng zhè r ba','돼요, 여기 두세요']],
+ V:[['几 点 退房','jǐ diǎn tuì fáng','체크아웃은 몇 시예요?',4],['我 要 退房','wǒ yào tuì fáng','체크아웃할게요',0],['我 来 拿 行李','wǒ lái ná xíng li','짐 찾으러 왔어요',6]]},
+{t:'식당 입장',who:'종업원',ctx:'만두집 앞. 안에 손님이 꽉 차 있다.',L:[
+ ['b','欢迎 光临 几 位','huān yíng guāng lín jǐ wèi','어서 오세요, 몇 분이세요?'],['a','两 个 人','liǎng ge rén','두 명이에요'],
+ ['b','现在 没有 位子','xiàn zài méi yǒu wèi zi','지금 자리가 없어요'],['a','要 等 多 久','yào děng duō jiǔ','얼마나 기다려야 해요?'],
+ ['b','大概 十 分钟','dà gài shí fēn zhōng','10분 정도요'],['a','好 我们 等','hǎo wǒ men děng','네, 기다릴게요'],
+ ['b','这边 请','zhè biān qǐng','이쪽으로 오세요'],['a','谢谢','xiè xie','고마워요']],
+ V:[['一 个 人','yí ge rén','한 명이에요',1],['三 个 人','sān ge rén','세 명이에요',1],['那 我们 下次 再 来','nà wǒ men xià cì zài lái','그럼 다음에 올게요',5]]},
+{t:'주문',who:'종업원',ctx:'자리에 앉았다. 메뉴판이 없다.',L:[
+ ['a','服务员 菜单','fú wù yuán cài dān','저기요, 메뉴판이요'],['b','给 您','gěi nín','여기 있어요'],
+ ['a','有 什么 推荐 的','yǒu shén me tuī jiàn de','추천 메뉴 있어요?'],['b','这个 小笼包 很 好吃','zhè ge xiǎo lóng bāo hěn hǎo chī','이 샤오룽바오 맛있어요'],
+ ['a','那 来 两 份','nà lái liǎng fèn','그럼 2인분 주세요'],['b','喝 什么','hē shén me','뭐 마실래요?'],
+ ['a','一 瓶 啤酒','yì píng pí jiǔ','맥주 한 병이요'],['b','好的 马上 来','hǎo de mǎ shàng lái','네, 금방 나와요']],
+ V:[['来 一 份','lái yí fèn','1인분 주세요',4],['不 要 太 辣','bú yào tài là','너무 맵지 않게요',2],['不 要 香菜','bú yào xiāng cài','고수 빼 주세요',2]]},
+{t:'식사·계산',who:'종업원',ctx:'음식이 나왔다. 먹고 계산까지.',L:[
+ ['b','菜 齐 了 慢 用','cài qí le màn yòng','음식 다 나왔어요, 맛있게 드세요'],['a','谢谢 很 香','xiè xie hěn xiāng','고마워요, 냄새 좋네요'],
+ ['a','服务员 再 来 一 杯 水','fú wù yuán zài lái yì bēi shuǐ','저기요, 물 한 잔 더 주세요'],['b','好的 马上','hǎo de mǎ shàng','네, 바로요'],
+ ['a','买单','mǎi dān','계산할게요'],['b','一共 一百 二十 块','yí gòng yì bǎi èr shí kuài','전부 120위안이에요'],
+ ['a','很 好吃 谢谢','hěn hǎo chī xiè xie','정말 맛있었어요, 고마워요'],['b','欢迎 下次 再 来','huān yíng xià cì zài lái','다음에 또 오세요']],
+ V:[['可以 分开 付 吗','kě yǐ fēn kāi fù ma','따로 계산돼요?',4],['可以 打包 吗','kě yǐ dǎ bāo ma','포장돼요?',2],['再 来 一 瓶 啤酒','zài lái yì píng pí jiǔ','맥주 한 병 더 주세요',2]]},
+{t:'밀크티 가게',who:'점원',ctx:'밀크티 가게. 줄을 서서 내 차례.',L:[
+ ['b','您好 要 点 什么','nín hǎo yào diǎn shén me','안녕하세요, 뭘 주문하시겠어요?'],['a','一 杯 珍珠 奶茶','yì bēi zhēn zhū nǎi chá','버블티 한 잔이요'],
+ ['b','要 大杯 还是 中杯','yào dà bēi hái shi zhōng bēi','큰 거요, 중간 거요?'],['a','中杯','zhōng bēi','중간 거요'],
+ ['b','甜度 呢','tián dù ne','당도는요?'],['a','少 糖','shǎo táng','덜 달게요'],
+ ['a','有 无线网 吗','yǒu wú xiàn wǎng ma','와이파이 있어요?'],['b','有 密码 在 这儿','yǒu mì mǎ zài zhè r','있어요, 비밀번호는 여기요']],
+ V:[['一 杯 美式 咖啡','yì bēi měi shì kā fēi','아메리카노 한 잔이요',1],['不 要 冰','bú yào bīng','얼음 빼 주세요',5],['大杯','dà bēi','큰 거요',3]]},
+{t:'편의점',who:'점원',ctx:'밤에 들른 편의점. 도시락을 골랐다.',L:[
+ ['b','要 加热 吗','yào jiā rè ma','데워 드릴까요?'],['a','好 麻烦 你 了','hǎo má fan nǐ le','네, 부탁해요'],
+ ['b','要 筷子 吗','yào kuài zi ma','젓가락 필요해요?'],['a','要 一 双','yào yì shuāng','한 벌 주세요'],
+ ['a','有 充电宝 吗','yǒu chōng diàn bǎo ma','보조배터리 있어요?'],['b','有 在 那边','yǒu zài nà biān','있어요, 저쪽에요'],
+ ['a','可以 用 微信 付 吗','kě yǐ yòng wēi xìn fù ma','위챗페이 돼요?'],['b','可以','kě yǐ','돼요']],
+ V:[['不 用 加热','bú yòng jiā rè','안 데워도 돼요',1],['有 雨伞 吗','yǒu yǔ sǎn ma','우산 있어요?',4],['要 两 双','yào liǎng shuāng','두 벌 주세요',3]]},
+{t:'쇼핑',who:'점원',ctx:'옷가게. 점원이 다가온다.',L:[
+ ['b','想 买 什么','xiǎng mǎi shén me','뭐 사려고요?'],['a','我 随便 看看','wǒ suí biàn kàn kan','그냥 둘러보는 중이에요'],
+ ['a','这个 有 别的 颜色 吗','zhè ge yǒu bié de yán sè ma','이거 다른 색 있어요?'],['b','有 白色 和 黑色','yǒu bái sè hé hēi sè','흰색이랑 검은색 있어요'],
+ ['a','可以 试试 吗','kě yǐ shì shi ma','입어 봐도 돼요?'],['b','可以 试衣间 在 那边','kě yǐ shì yī jiān zài nà biān','돼요, 탈의실은 저쪽이에요'],
+ ['a','太 贵 了 便宜 一点 吧','tài guì le pián yi yì diǎn ba','너무 비싸요, 좀 깎아 주세요'],['b','那 给 你 打 九 折','nà gěi nǐ dǎ jiǔ zhé','그럼 10% 할인해 드릴게요']],
+ V:[['有 大 一点 的 吗','yǒu dà yì diǎn de ma','좀 더 큰 거 있어요?',2],['我 要 这个','wǒ yào zhè ge','이걸로 할게요',4],['可以 退税 吗','kě yǐ tuì shuì ma','택스 리펀드 돼요?',6]]},
+{t:'관광지',who:'매표소·관광객',ctx:'예원 정원 매표소에서 시작.',L:[
+ ['a','门票 多少 钱','mén piào duō shao qián','입장료 얼마예요?'],['b','成人 四十 块','chéng rén sì shí kuài','성인 40위안이요'],
+ ['a','几 点 关门','jǐ diǎn guān mén','몇 시에 닫아요?'],['b','下午 五 点','xià wǔ wǔ diǎn','오후 5시요'],
+ ['a','这里 可以 拍照 吗','zhè lǐ kě yǐ pāi zhào ma','여기서 사진 찍어도 돼요?'],['b','这里 不 行','zhè lǐ bù xíng','여기는 안 돼요'],
+ ['a','能 帮 我 拍 张 照 吗','néng bāng wǒ pāi zhāng zhào ma','사진 한 장 찍어 줄 수 있어요?'],['b','没 问题 一 二 三','méi wèn tí yī èr sān','그럼요, 하나 둘 셋']],
+ V:[['两 张 成人 票','liǎng zhāng chéng rén piào','성인 두 장이요',0],['再 拍 一 张','zài pāi yì zhāng','한 장 더요',6],['真 漂亮','zhēn piào liang','정말 예쁘다',4]]},
+{t:'말이 안 통할 때',who:'점원',ctx:'점원이 빠르게 뭔가를 권한다. 하나도 못 알아들었다.',L:[
+ ['b','您 需要 办 会员卡 吗','nín xū yào bàn huì yuán kǎ ma','회원카드 만드시겠어요?'],['a','对不起 我 不 会 说 中文','duì bu qǐ wǒ bú huì shuō zhōng wén','죄송해요, 중국어를 잘 못해요'],
+ ['b','会 说 英语 吗','huì shuō yīng yǔ ma','영어 할 줄 알아요?'],['a','会 一点儿','huì yì diǎn r','조금 해요'],
+ ['a','请 再 说 一 遍','qǐng zài shuō yí biàn','한 번 더 말해 주세요'],['b','会员卡','huì yuán kǎ','회원카드요'],
+ ['a','请 说 慢 一点','qǐng shuō màn yì diǎn','천천히 말해 주세요'],['b','好的 好的','hǎo de hǎo de','네, 네']],
+ V:[['请 写 一下','qǐng xiě yí xià','좀 써 주세요',6],['我 听 不 懂','wǒ tīng bu dǒng','못 알아듣겠어요',1],['请 等 一下','qǐng děng yí xià','잠깐만요',4]]},
+{t:'분실',who:'역무원·경찰',ctx:'지하철에서 내렸는데 지갑이 없다.',L:[
+ ['a','你好 我 的 钱包 丢 了','nǐ hǎo wǒ de qián bāo diū le','저기요, 지갑을 잃어버렸어요'],['b','在 哪儿 丢 的','zài nǎ r diū de','어디서 잃어버렸어요?'],
+ ['a','可能 在 地铁 上','kě néng zài dì tiě shang','아마 지하철 안이에요'],['b','你 去 派出所 吧','nǐ qù pài chū suǒ ba','파출소에 가 보세요'],
+ ['a','派出所 在 哪儿','pài chū suǒ zài nǎ r','파출소가 어디예요?'],['b','就 在 车站 旁边','jiù zài chē zhàn páng biān','바로 역 옆이에요'],
+ ['a','我 想 联系 韩国 领事馆','wǒ xiǎng lián xì hán guó lǐng shì guǎn','한국 영사관에 연락하고 싶어요'],['b','我 帮 你 查 电话','wǒ bāng nǐ chá diàn huà','전화번호 찾아 드릴게요']],
+ V:[['我 的 护照 丢 了','wǒ de hù zhào diū le','여권을 잃어버렸어요',0],['我 的 手机 丢 了','wǒ de shǒu jī diū le','휴대폰을 잃어버렸어요',0],['帮帮 我','bāng bang wǒ','도와주세요',0]]},
+{t:'약국',who:'약사',ctx:'아침부터 머리가 지끈. 약국에 들어갔다.',L:[
+ ['b','哪里 不 舒服','nǎ lǐ bù shū fu','어디가 불편하세요?'],['a','我 头 疼','wǒ tóu téng','머리가 아파요'],
+ ['b','什么 时候 开始 的','shén me shí hou kāi shǐ de','언제부터예요?'],['a','从 昨天 开始','cóng zuó tiān kāi shǐ','어제부터요'],
+ ['b','有 过敏 吗','yǒu guò mǐn ma','알레르기 있어요?'],['a','没有','méi yǒu','없어요'],
+ ['b','这个 药 一 天 三 次','zhè ge yào yì tiān sān cì','이 약은 하루 세 번이에요'],['a','饭 后 吃 吗','fàn hòu chī ma','식후에 먹어요?']],
+ V:[['我 肚子 疼','wǒ dù zi téng','배가 아파요',1],['我 发烧 了','wǒ fā shāo le','열이 나요',1],['从 今天 早上 开始','cóng jīn tiān zǎo shang kāi shǐ','오늘 아침부터요',3]]},
+{t:'숙소 문제',who:'프런트 직원',ctx:'방에 들어왔는데 뭔가 고장 났다. 프런트에 전화.',L:[
+ ['a','你好 空调 坏 了','nǐ hǎo kōng tiáo huài le','저기요, 에어컨이 고장 났어요'],['b','马上 派 人 过去','mǎ shàng pài rén guò qu','바로 사람 보낼게요'],
+ ['a','能 再 给 我 一 条 毛巾 吗','néng zài gěi wǒ yì tiáo máo jīn ma','수건 하나 더 줄 수 있어요?'],['b','好的 送 到 房间','hǎo de sòng dào fáng jiān','네, 방으로 갖다 드릴게요'],
+ ['a','我 的 房卡 忘 在 房间 了','wǒ de fáng kǎ wàng zài fáng jiān le','카드키를 방에 두고 나왔어요'],['b','房间 号 是 多少','fáng jiān hào shì duō shao','방 번호가 몇이에요?'],
+ ['a','三 零 二','sān líng èr','302호요'],['b','请 稍 等','qǐng shāo děng','잠시만 기다려 주세요']],
+ V:[['没有 热水','méi yǒu rè shuǐ','뜨거운 물이 안 나와요',0],['电视 坏 了','diàn shì huài le','TV가 고장 났어요',0],['可以 多 住 一 天 吗','kě yǐ duō zhù yì tiān ma','하루 더 묵을 수 있어요?',2]]},
+{t:'현지인과 수다',who:'옆자리 손님',ctx:'훠궈집 합석. 옆 사람이 말을 걸어온다.',L:[
+ ['b','你 是 哪 国 人','nǐ shì nǎ guó rén','어느 나라 사람이에요?'],['a','我 是 韩国人 从 釜山 来','wǒ shì hán guó rén cóng fǔ shān lái','한국 사람이에요, 부산에서 왔어요'],
+ ['b','第一 次 来 中国 吗','dì yī cì lái zhōng guó ma','중국은 처음이에요?'],['a','不 是 第二 次','bú shì dì èr cì','아니요, 두 번째예요'],
+ ['b','你 的 中文 很 好','nǐ de zhōng wén hěn hǎo','중국어 잘하시네요'],['a','哪里 哪里 还 差 得 远','nǎ lǐ nǎ lǐ hái chà de yuǎn','아니에요, 아직 멀었어요'],
+ ['a','有 什么 好玩 的 地方','yǒu shén me hǎo wán de dì fang','놀 만한 곳 있어요?'],['b','去 豫园 看看 吧','qù yù yuán kàn kan ba','예원에 가 보세요']],
+ V:[['是 第一 次','shì dì yī cì','네, 처음이에요',3],['我 一定 去','wǒ yí dìng qù','꼭 가 볼게요',6],['有 什么 好吃 的','yǒu shén me hǎo chī de','맛있는 거 뭐 있어요?',6]]},
+{t:'작별',who:'민박 주인',ctx:'떠나는 날 아침. 첫날 만난 주인과 인사.',L:[
+ ['a','这 几 天 谢谢 你','zhè jǐ tiān xiè xie nǐ','며칠 동안 고마웠어요'],['b','别 客气','bié kè qi','별말씀을요'],
+ ['b','玩 得 开心 吗','wán de kāi xīn ma','재밌게 놀았어요?'],['a','非常 开心','fēi cháng kāi xīn','정말 즐거웠어요'],
+ ['a','我 还 会 再 来 的','wǒ hái huì zài lái de','또 올게요'],['b','欢迎 你 再 来','huān yíng nǐ zài lái','꼭 또 와요'],
+ ['b','一路 平安','yí lù píng ān','조심히 가세요'],['a','保重','bǎo zhòng','잘 지내세요']],
+ V:[['给 你 添 麻烦 了','gěi nǐ tiān má fan le','폐를 끼쳤네요',0],['下次 见','xià cì jiàn','다음에 봐요',4],['你 帮 了 我 很 多','nǐ bāng le wǒ hěn duō','많이 도와주셨어요',0]]},
+{t:'출국',who:'항공사 직원',ctx:'공항 가는 길부터 체크인 카운터까지.',L:[
+ ['a','去 机场 怎么 走','qù jī chǎng zěn me zǒu','공항 어떻게 가요?'],['b','坐 地铁 二 号 线','zuò dì tiě èr hào xiàn','지하철 2호선 타세요'],
+ ['b','有 托运 的 行李 吗','yǒu tuō yùn de xíng li ma','부칠 짐 있어요?'],['a','有 一 个','yǒu yí ge','하나 있어요'],
+ ['b','要 靠窗 还是 靠 过道','yào kào chuāng hái shi kào guò dào','창가요, 통로요?'],['a','靠窗 吧','kào chuāng ba','창가로요'],
+ ['a','免税店 在 哪儿','miǎn shuì diàn zài nǎ r','면세점 어디예요?'],['b','在 二 楼','zài èr lóu','2층에 있어요']],
+ V:[['靠 过道 吧','kào guò dào ba','통로로요',5],['没有 行李','méi yǒu xíng li','부칠 짐 없어요',3],['登机口 在 哪儿','dēng jī kǒu zài nǎ r','탑승구 어디예요?',6]]}
+];
+
+const ZH_NEW=[
+{t:'고속철 표',who:'매표 창구',ctx:'상하이 훙차오역. 항저우 가는 고속철 표를 산다.',L:[
+ ['a','去 杭州 一 张 票','qù háng zhōu yì zhāng piào','항저우 가는 표 한 장이요'],['b','要 几 点 的','yào jǐ diǎn de','몇 시 걸로요?'],
+ ['a','最 早 的 那 班','zuì zǎo de nà bān','제일 빠른 거요'],['b','九 点 半 的 二等座','jiǔ diǎn bàn de èr děng zuò','9시 반 2등석이요'],
+ ['a','有 靠窗 的 吗','yǒu kào chuāng de ma','창가 자리 있어요?'],['b','有 请 出示 护照','yǒu qǐng chū shì hù zhào','있어요, 여권 보여 주세요'],
+ ['a','在 哪个 检票口','zài nǎ ge jiǎn piào kǒu','몇 번 개찰구예요?'],['b','十二 号 检票口','shí èr hào jiǎn piào kǒu','12번 개찰구요']],
+ V:[['要 往返 票','yào wǎng fǎn piào','왕복표로 주세요',0],['一等座 多少 钱','yī děng zuò duō shao qián','1등석은 얼마예요?',2]]},
+{t:'훠궈집',who:'종업원',ctx:'충칭식 훠궈집. 맵기 단계가 걱정이다.',L:[
+ ['b','要 什么 锅底','yào shén me guō dǐ','육수는 뭘로 할래요?'],['a','鸳鸯 锅','yuān yang guō','반반 냄비요'],
+ ['b','辣 的 要 几 级','là de yào jǐ jí','매운 쪽은 몇 단계요?'],['a','微 辣 就 行','wēi là jiù xíng','약간 맵게면 돼요'],
+ ['a','这个 是 什么 肉','zhè ge shì shén me ròu','이건 무슨 고기예요?'],['b','是 牛肉 很 嫩','shì niú ròu hěn nèn','소고기예요, 엄청 부드러워요'],
+ ['a','再 来 一 份 羊肉','zài lái yí fèn yáng ròu','양고기 1인분 더 주세요'],['b','好的 酱料 在 那边','hǎo de jiàng liào zài nà biān','네, 소스는 저쪽에 있어요']],
+ V:[['不 要 辣 的','bú yào là de','안 매운 걸로요',3],['加 点 汤','jiā diǎn tāng','육수 좀 더 주세요',6]]},
+{t:'디디 택시',who:'디디 기사',ctx:'앱으로 차를 불렀다. 기사에게서 전화가 온다.',L:[
+ ['b','喂 你 在 哪儿','wèi nǐ zài nǎ r','여보세요, 어디 계세요?'],['a','我 在 酒店 门口','wǒ zài jiǔ diàn mén kǒu','호텔 입구에 있어요'],
+ ['b','我 马上 到','wǒ mǎ shàng dào','금방 도착해요'],['a','我 穿 白色 的 衣服','wǒ chuān bái sè de yī fu','흰 옷 입고 있어요'],
+ ['b','车牌 尾号 是 八 八','chē pái wěi hào shì bā bā','차 번호 끝자리가 88이에요'],['a','好的 我 看到 了','hǎo de wǒ kàn dào le','네, 보여요'],
+ ['a','到 了 可以 直接 下车 吗','dào le kě yǐ zhí jiē xià chē ma','도착하면 바로 내려도 돼요?'],['b','可以 手机 上 自动 付款','kě yǐ shǒu jī shang zì dòng fù kuǎn','네, 휴대폰으로 자동 결제돼요']],
+ V:[['我 在 地铁站 出口','wǒ zài dì tiě zhàn chū kǒu','지하철역 출구에 있어요',1],['请 等 我 两 分钟','qǐng děng wǒ liǎng fēn zhōng','2분만 기다려 주세요',3]]},
+{t:'비 오는 날',who:'호텔 직원',ctx:'아침부터 비. 오늘 계획을 바꿔야 한다.',L:[
+ ['a','今天 一直 下雨 吗','jīn tiān yì zhí xià yǔ ma','오늘 계속 비 와요?'],['b','听说 下午 会 停','tīng shuō xià wǔ huì tíng','오후에 그친대요'],
+ ['a','下雨天 去 哪儿 好','xià yǔ tiān qù nǎ r hǎo','비 오는 날엔 어디 가면 좋아요?'],['b','可以 去 博物馆','kě yǐ qù bó wù guǎn','박물관 가도 좋아요'],
+ ['a','怎么 去','zěn me qù','어떻게 가요?'],['b','坐 地铁 十 分钟','zuò dì tiě shí fēn zhōng','지하철로 10분이에요'],
+ ['a','可以 借 一 把 伞 吗','kě yǐ jiè yì bǎ sǎn ma','우산 하나 빌릴 수 있어요?'],['b','可以 用 完 还 回来 就 行','kě yǐ yòng wán huán huí lai jiù xíng','돼요, 쓰고 돌려주시면 돼요']],
+ V:[['明天 天气 好 吗','míng tiān tiān qì hǎo ma','내일 날씨 좋아요?',0],['近 一点 的 地方 好','jìn yì diǎn de dì fang hǎo','가까운 곳이 좋아요',4]]},
+{t:'야시장',who:'노점 주인',ctx:'야시장. 길거리 음식이 가득하다.',L:[
+ ['a','这个 怎么 卖','zhè ge zěn me mài','이거 어떻게 팔아요?'],['b','十 块 一 串','shí kuài yí chuàn','한 꼬치에 10위안이요'],
+ ['a','来 两 串','lái liǎng chuàn','두 꼬치 주세요'],['b','要 辣椒 吗','yào là jiāo ma','고춧가루 뿌려요?'],
+ ['a','少 放 一点','shǎo fàng yì diǎn','조금만 넣어 주세요'],['b','好嘞 稍 等','hǎo lei shāo děng','네~ 잠깐만요'],
+ ['a','可以 扫码 吗','kě yǐ sǎo mǎ ma','QR 결제돼요?'],['b','可以 扫 这个','kě yǐ sǎo zhè ge','돼요, 이거 스캔하세요']],
+ V:[['来 三 串','lái sān chuàn','세 꼬치 주세요',2],['不 要 辣椒','bú yào là jiāo','고춧가루 빼 주세요',4]]},
+{t:'위챗 친구',who:'현지 대학생',ctx:'카페 옆자리 대학생과 말이 통했다.',L:[
+ ['b','你 是 从 哪儿 来 的','nǐ shì cóng nǎ r lái de','어디서 왔어요?'],['a','釜山 韩国 的 港口 城市','fǔ shān hán guó de gǎng kǒu chéng shì','부산이요, 한국의 항구 도시예요'],
+ ['b','你 有 微信 吗','nǐ yǒu wēi xìn ma','위챗 있어요?'],['a','有 我们 加 一下 吧','yǒu wǒ men jiā yí xià ba','있어요, 친구 추가해요'],
+ ['a','我 扫 你 吧','wǒ sǎo nǐ ba','제가 스캔할게요'],['b','好 加 上 了','hǎo jiā shàng le','네, 추가됐어요'],
+ ['a','来 韩国 的话 联系 我','lái hán guó de huà lián xì wǒ','한국 오면 연락 주세요'],['b','一定','yí dìng','꼭요']],
+ V:[['你 用 小红书 吗','nǐ yòng xiǎo hóng shū ma','샤오훙수 써요?',3],['来 釜山 我 带 你 玩','lái fǔ shān wǒ dài nǐ wán','부산 오면 구경시켜 줄게요',6]]},
+{t:'발 마사지',who:'직원',ctx:'여행 중 지친 다리를 위해 발 마사지 가게에 갔다.',L:[
+ ['b','您 做 什么 项目','nín zuò shén me xiàng mù','어떤 코스 하시겠어요?'],['a','足疗 一 个 小时','zú liáo yí ge xiǎo shí','발 마사지 한 시간이요'],
+ ['b','力度 怎么样','lì dù zěn me yàng','세기는 어때요?'],['a','轻 一点','qīng yì diǎn','좀 약하게요'],
+ ['a','这里 有点儿 疼','zhè lǐ yǒu diǎn r téng','여기가 좀 아파요'],['b','这里 是 肩膀 的 穴位','zhè lǐ shì jiān bǎng de xué wèi','여기는 어깨 혈자리예요'],
+ ['a','好 舒服 啊','hǎo shū fu a','너무 시원해요'],['b','要 不 要 加 钟','yào bu yào jiā zhōng','시간 연장하시겠어요?']],
+ V:[['重 一点','zhòng yì diǎn','좀 세게요',3],['九十 分钟','jiǔ shí fēn zhōng','90분이요',1]]},
+{t:'식당 예약 전화',who:'식당 직원',ctx:'저녁 식당에 예약 전화를 건다.',L:[
+ ['b','你好 这里 是 老 上海 饭店','nǐ hǎo zhè lǐ shì lǎo shàng hǎi fàn diàn','안녕하세요, 라오상하이 식당입니다'],['a','今天 晚上 能 订 位 吗','jīn tiān wǎn shang néng dìng wèi ma','오늘 저녁 예약돼요?'],
+ ['b','几 位','jǐ wèi','몇 분이세요?'],['a','两 位 七 点','liǎng wèi qī diǎn','두 명, 7시요'],
+ ['b','怎么 称呼 您','zěn me chēng hu nín','성함이 어떻게 되세요?'],['a','姓 金 金子 的 金','xìng jīn jīn zi de jīn','김이요, 金 자예요'],
+ ['a','可能 会 晚 一点 到','kě néng huì wǎn yì diǎn dào','조금 늦을 수도 있어요'],['b','我们 保留 十五 分钟','wǒ men bǎo liú shí wǔ fēn zhōng','15분까지 자리 잡아 둘게요']],
+ V:[['明天 晚上 可以 吗','míng tiān wǎn shang kě yǐ ma','내일 저녁 돼요?',1],['我 想 取消 预订','wǒ xiǎng qǔ xiāo yù dìng','예약 취소하고 싶어요',1]]},
+{t:'택시 수다',who:'택시 기사',ctx:'긴 택시 이동. 기사님이 말을 건다.',L:[
+ ['b','来 旅游 的 吧','lái lǚ yóu de ba','여행 왔죠?'],['a','对 昨天 刚 到','duì zuó tiān gāng dào','네, 어제 막 왔어요'],
+ ['b','觉得 上海 怎么样','jué de shàng hǎi zěn me yàng','상하이 어때요?'],['a','很 漂亮 吃 的 也 好吃','hěn piào liang chī de yě hǎo chī','예쁘고 음식도 맛있어요'],
+ ['b','去 了 哪些 地方','qù le nǎ xiē dì fang','어디어디 갔어요?'],['a','外滩 最 好看','wài tān zuì hǎo kàn','와이탄이 제일 멋있었어요'],
+ ['a','师傅 有 什么 推荐','shī fu yǒu shén me tuī jiàn','기사님 추천할 거 있어요?'],['b','晚上 去 黄浦江 坐 船','wǎn shang qù huáng pǔ jiāng zuò chuán','밤에 황푸강 유람선 타 보세요']],
+ V:[['人 很 热情','rén hěn rè qíng','사람들이 친절해요',3],['都 很 好','dōu hěn hǎo','다 좋았어요',5]]},
+{t:'선물 포장',who:'점원',ctx:'귀국 전 기념품 가게.',L:[
+ ['a','有 什么 适合 送 人 的','yǒu shén me shì hé sòng rén de','선물하기 좋은 거 있어요?'],['b','这个 茶叶 很 受欢迎','zhè ge chá yè hěn shòu huān yíng','이 찻잎이 인기 많아요'],
+ ['a','可以 分开 包装 吗','kě yǐ fēn kāi bāo zhuāng ma','따로 포장돼요?'],['b','可以 要 几 个 袋子','kě yǐ yào jǐ ge dài zi','돼요, 봉투 몇 개 필요해요?'],
+ ['a','给 我 五 个','gěi wǒ wǔ ge','다섯 개 주세요'],['b','是 送 朋友 的 吗','shì sòng péng you de ma','친구 선물이에요?'],
+ ['a','送 同事 的','sòng tóng shì de','동료 선물이에요'],['b','那 我 帮 你 包 好看 点','nà wǒ bāng nǐ bāo hǎo kàn diǎn','그럼 예쁘게 싸 드릴게요']],
+ V:[['可以 便宜 点 吗','kě yǐ pián yi diǎn ma','좀 싸게 돼요?',4],['送 家人 的','sòng jiā rén de','가족 선물이에요',6]]},
+{t:'환전',who:'은행 직원',ctx:'은행 창구에서 돈을 바꾼다.',L:[
+ ['a','你好 我 想 换 钱','nǐ hǎo wǒ xiǎng huàn qián','안녕하세요, 환전하고 싶어요'],['b','换 什么 币','huàn shén me bì','어떤 돈으로 바꾸세요?'],
+ ['a','韩元 换 人民币','hán yuán huàn rén mín bì','원화를 인민폐로요'],['b','请 填 一下 这 张 表','qǐng tián yí xià zhè zhāng biǎo','이 서류 좀 작성해 주세요'],
+ ['a','今天 汇率 是 多少','jīn tiān huì lǜ shì duō shao','오늘 환율이 얼마예요?'],['b','在 屏幕 上','zài píng mù shang','화면에 나와 있어요'],
+ ['a','要 手续费 吗','yào shǒu xù fèi ma','수수료 있어요?'],['b','不 用','bú yòng','없어요']],
+ V:[['美元 换 人民币','měi yuán huàn rén mín bì','달러를 인민폐로요',2],['可以 给 我 零钱 吗','kě yǐ gěi wǒ líng qián ma','잔돈으로 줄 수 있어요?',6]]},
+{t:'아침 공원',who:'공원 어르신',ctx:'아침 공원. 태극권 하던 어르신이 말을 건다.',L:[
+ ['b','年轻人 一起 来 吧','nián qīng rén yì qǐ lái ba','젊은이, 같이 해요'],['a','我 不 会 啊','wǒ bú huì a','저 못해요'],
+ ['b','很 简单 跟 着 我','hěn jiǎn dān gēn zhe wǒ','쉬워요, 나 따라 해요'],['a','好 我 试试','hǎo wǒ shì shi','네, 해 볼게요'],
+ ['b','你 做 得 不错','nǐ zuò de bú cuò','잘하네요'],['a','谢谢 您 每天 都 来 吗','xiè xie nín měi tiān dōu lái ma','고마워요, 매일 오세요?'],
+ ['b','对 早上 六 点','duì zǎo shang liù diǎn','그래요, 아침 6시에'],['a','明天 我 也 来','míng tiān wǒ yě lái','내일 저도 올게요']],
+ V:[['太 难 了','tài nán le','너무 어려워요',3],['明天 见','míng tiān jiàn','내일 봬요',7]]},
+{t:'길 잃은 관광객',who:'중국인 관광객',ctx:'부산역 앞. 지도를 든 관광객이 두리번거린다.',L:[
+ ['a','你好 需要 帮忙 吗','nǐ hǎo xū yào bāng máng ma','안녕하세요, 도움 필요해요?'],['b','啊 你 会 说 中文','a nǐ huì shuō zhōng wén','아, 중국어 하세요?'],
+ ['a','会 一点 点','huì yì diǎn diǎn','아주 조금요'],['b','我 想 去 札嘎其 市场','wǒ xiǎng qù zhā gā qí shì chǎng','자갈치 시장 가고 싶어요'],
+ ['a','坐 地铁 两 站','zuò dì tiě liǎng zhàn','지하철로 두 정거장이에요'],['b','坐 几 号 线','zuò jǐ hào xiàn','몇 호선이요?'],
+ ['a','一 号 线 从 那个 入口 进','yī hào xiàn cóng nà ge rù kǒu jìn','1호선이요, 저 입구로 들어가요'],['b','太 感谢 了','tài gǎn xiè le','정말 고마워요']],
+ V:[['走路 十 分钟','zǒu lù shí fēn zhōng','걸어서 10분이에요',4],['我 带 你 去 吧','wǒ dài nǐ qù ba','같이 가 줄게요',6]]},
+{t:'지하철 알려주기',who:'중국인 관광객',ctx:'부산 지하철 발매기 앞. 관광객이 헤매고 있다.',L:[
+ ['b','我 不 知道 怎么 买 票','wǒ bù zhī dào zěn me mǎi piào','표를 어떻게 사는지 모르겠어요'],['a','这里 可以 换 成 中文','zhè lǐ kě yǐ huàn chéng zhōng wén','여기서 중국어로 바꿀 수 있어요'],
+ ['b','真的 太 好 了','zhēn de tài hǎo le','진짜네, 다행이다'],['a','先 选 目的地','xiān xuǎn mù dì dì','먼저 목적지를 고르세요'],
+ ['b','要 放 多少 钱','yào fàng duō shao qián','돈 얼마 넣어야 해요?'],['a','一千 四百 韩元','yì qiān sì bǎi hán yuán','1,400원이요'],
+ ['a','用 交通卡 更 便宜','yòng jiāo tōng kǎ gèng pián yi','교통카드 쓰면 더 싸요'],['b','原来 如此','yuán lái rú cǐ','그렇구나']],
+ V:[['便利店 可以 买 交通卡','biàn lì diàn kě yǐ mǎi jiāo tōng kǎ','편의점에서 교통카드 살 수 있어요',6],['在 这里 刷卡','zài zhè lǐ shuā kǎ','여기에 카드 찍으세요',3]]},
+{t:'맛집 추천',who:'중국인 관광객',ctx:'해운대 근처. 관광객이 밥집을 묻는다.',L:[
+ ['b','附近 有 什么 好吃 的','fù jìn yǒu shén me hǎo chī de','근처에 맛있는 거 있어요?'],['a','你 想 吃 什么','nǐ xiǎng chī shén me','뭐 먹고 싶어요?'],
+ ['b','想 吃 有 韩国 特色 的','xiǎng chī yǒu hán guó tè sè de','한국 특색 있는 거요'],['a','那 推荐 猪肉 汤饭','nà tuī jiàn zhū ròu tāng fàn','그럼 돼지국밥 추천해요'],
+ ['b','辣 不 辣','là bu là','매워요?'],['a','不 辣 放心','bú là fàng xīn','안 매워요, 걱정 마요'],
+ ['a','拐角 那 家 很 有名','guǎi jiǎo nà jiā hěn yǒu míng','모퉁이 그 집이 유명해요'],['b','我 去 试试','wǒ qù shì shi','가 볼게요']],
+ V:[['小麦 冷面 也 很 好吃','xiǎo mài lěng miàn yě hěn hǎo chī','밀면도 맛있어요',3],['有点儿 辣','yǒu diǎn r là','좀 매워요',5]]},
+{t:'사진 찍어 주기',who:'중국인 관광객',ctx:'감천문화마을. 관광객이 셀카에 애쓰고 있다.',L:[
+ ['a','我 帮 你 拍 吧','wǒ bāng nǐ pāi ba','제가 찍어 드릴게요'],['b','真的 吗 麻烦 你 了','zhēn de ma má fan nǐ le','정말요? 부탁해요'],
+ ['a','竖 着 拍 还是 横 着 拍','shù zhe pāi hái shi héng zhe pāi','세로로 찍을까요, 가로로 찍을까요?'],['b','竖 着 吧','shù zhe ba','세로로요'],
+ ['a','来 一 二 三 茄子','lái yī èr sān qié zi','자, 하나 둘 셋, 치즈'],['b','谢谢 拍 得 真 好','xiè xie pāi de zhēn hǎo','고마워요, 잘 찍었네요'],
+ ['a','我 再 拍 一 张','wǒ zài pāi yì zhāng','한 장 더 찍을게요'],['b','你 人 真 好','nǐ rén zhēn hǎo','정말 친절하시네요']],
+ V:[['横 着 拍 吧','héng zhe pāi ba','가로로 찍을게요',2],['把 后面 的 海 也 拍 进去','bǎ hòu miàn de hǎi yě pāi jìn qu','뒤에 바다도 넣을게요',6]]},
+{t:'자기소개 심화',who:'중국인 여행자',ctx:'게스트하우스 라운지. 같은 방 여행자와 인사.',L:[
+ ['b','你 做 什么 工作','nǐ zuò shén me gōng zuò','무슨 일 해요?'],['a','我 是 公务员','wǒ shì gōng wù yuán','공무원이에요'],
+ ['b','在 哪儿 上班','zài nǎ r shàng bān','어디서 일해요?'],['a','在 釜山 市政府','zài fǔ shān shì zhèng fǔ','부산시청이요'],
+ ['b','你 的 爱好 是 什么','nǐ de ài hào shì shén me','취미가 뭐예요?'],['a','旅行 和 学习','lǚ xíng hé xué xí','여행이랑 공부요'],
+ ['a','我 最近 在 学 中文','wǒ zuì jìn zài xué zhōng wén','요즘 중국어 배우고 있어요'],['b','说 得 很 好 啊','shuō de hěn hǎo a','잘하는데요']],
+ V:[['我 是 上班族','wǒ shì shàng bān zú','회사원이에요',1],['我 喜欢 看 电影','wǒ xǐ huan kàn diàn yǐng','영화 보는 걸 좋아해요',5]]},
+{t:'한국 음식 설명',who:'중국인 관광객',ctx:'포장마차에서 중국인 관광객과 합석.',L:[
+ ['b','这 是 什么','zhè shì shén me','이건 뭐예요?'],['a','这 是 炒年糕','zhè shì chǎo nián gāo','이건 떡볶이예요'],
+ ['b','辣 吗','là ma','매워요?'],['a','有点儿 辣 但是 甜甜 的','yǒu diǎn r là dàn shì tián tián de','좀 맵지만 달달해요'],
+ ['b','跟 什么 一起 吃','gēn shén me yì qǐ chī','뭐랑 같이 먹어요?'],['a','跟 炸 的 东西 一起 吃','gēn zhá de dōng xi yì qǐ chī','튀김이랑 같이 먹어요'],
+ ['a','味道 怎么样','wèi dao zěn me yàng','맛이 어때요?'],['b','好吃 辣 但是 停 不 下来','hǎo chī là dàn shì tíng bu xià lai','맛있어요, 맵지만 못 멈추겠어요']],
+ V:[['鱼饼 也 尝尝','yú bǐng yě cháng chang','어묵도 먹어 봐요',6],['这 是 血肠','zhè shì xuè cháng','이건 순대예요',1]]},
+{t:'부산 명소 추천',who:'중국인 관광객',ctx:'광안리 해변. 관광객이 다음 일정을 고민한다.',L:[
+ ['b','明天 去 哪儿 好','míng tiān qù nǎ r hǎo','내일 어디 가면 좋아요?'],['a','推荐 海东 龙宫寺','tuī jiàn hǎi dōng lóng gōng sì','해동용궁사 추천해요'],
+ ['b','是 什么样 的 地方','shì shén me yàng de dì fang','어떤 곳이에요?'],['a','是 海边 的 寺庙','shì hǎi biān de sì miào','바닷가 절이에요'],
+ ['b','远 吗','yuǎn ma','멀어요?'],['a','坐 公交 一 个 小时 左右','zuò gōng jiāo yí ge xiǎo shí zuǒ yòu','버스로 한 시간쯤이요'],
+ ['a','晚上 来 这里 看 无人机 表演','wǎn shang lái zhè lǐ kàn wú rén jī biǎo yǎn','밤엔 여기서 드론쇼 보세요'],['b','太 期待 了','tài qī dài le','너무 기대돼요']],
+ V:[['甘川 文化村 也 很 漂亮','gān chuān wén huà cūn yě hěn piào liang','감천문화마을도 예뻐요',1],['打车 三十 分钟','dǎ chē sān shí fēn zhōng','택시로 30분이에요',5]]},
+{t:'날씨 이야기',who:'중국인 관광객',ctx:'버스 정류장. 옆 사람과 날씨 이야기.',L:[
+ ['b','今天 好 热 啊','jīn tiān hǎo rè a','오늘 진짜 덥네요'],['a','是 啊 釜山 的 夏天 很 闷','shì a fǔ shān de xià tiān hěn mēn','그러게요, 부산 여름은 후텁지근해요'],
+ ['b','跟 上海 差不多','gēn shàng hǎi chà bu duō','상하이랑 비슷하네요'],['a','你 待 到 什么 时候','nǐ dāi dào shén me shí hou','언제까지 있어요?'],
+ ['b','待 到 后天','dāi dào hòu tiān','모레까지요'],['a','听说 明天 会 下雨','tīng shuō míng tiān huì xià yǔ','내일 비 온대요'],
+ ['a','记得 带 伞','jì de dài sǎn','우산 챙기세요'],['b','谢谢 提醒','xiè xie tí xǐng','알려줘서 고마워요']],
+ V:[['冬天 风 很 大','dōng tiān fēng hěn dà','겨울엔 바람이 세요',1],['明天 是 晴天','míng tiān shì qíng tiān','내일은 맑대요',5]]},
+{t:'취미 이야기',who:'중국인 친구',ctx:'언어교환 모임. 취미 이야기로 시작.',L:[
+ ['b','周末 你 一般 做 什么','zhōu mò nǐ yì bān zuò shén me','주말엔 보통 뭐 해요?'],['a','常常 在 咖啡厅 学习','cháng cháng zài kā fēi tīng xué xí','자주 카페에서 공부해요'],
+ ['b','学 什么','xué shén me','뭘 공부해요?'],['a','数据 分析 和 中文','shù jù fēn xī hé zhōng wén','데이터 분석이랑 중국어요'],
+ ['b','真 厉害','zhēn lì hai','대단하다'],['a','你 喜欢 做 什么','nǐ xǐ huan zuò shén me','그쪽은 뭐 좋아해요?'],
+ ['b','我 喜欢 露营','wǒ xǐ huan lù yíng','캠핑 좋아해요'],['a','不错 我 也 想 试试','bú cuò wǒ yě xiǎng shì shi','좋네요, 저도 해 보고 싶어요']],
+ V:[['我 常常 爬山','wǒ cháng cháng pá shān','자주 등산해요',1],['下次 一起 去 吧','xià cì yì qǐ qù ba','다음에 같이 가요',7]]},
+{t:'중국 여행 경험',who:'중국인 친구',ctx:'언어교환 모임. 내 중국 여행 이야기.',L:[
+ ['b','你 去 过 中国 吗','nǐ qù guo zhōng guó ma','중국 가 봤어요?'],['a','去 过 去年 去 了 上海','qù guo qù nián qù le shàng hǎi','가 봤어요, 작년에 상하이 갔어요'],
+ ['b','做 了 什么','zuò le shén me','뭐 했어요?'],['a','吃 了 很多 小笼包','chī le hěn duō xiǎo lóng bāo','샤오룽바오 많이 먹었어요'],
+ ['b','感觉 怎么样','gǎn jué zěn me yàng','어땠어요?'],['a','特别 开心','tè bié kāi xīn','엄청 즐거웠어요'],
+ ['a','下次 想 去 成都','xià cì xiǎng qù chéng dū','다음엔 청두에 가고 싶어요'],['b','一定 要 去 看 熊猫','yí dìng yào qù kàn xióng māo','판다 꼭 보러 가요']],
+ V:[['坐 了 黄浦江 的 船','zuò le huáng pǔ jiāng de chuán','황푸강 유람선 탔어요',3],['下次 想 去 北京','xià cì xiǎng qù běi jīng','다음엔 베이징 가고 싶어요',6]]},
+{t:'연락처 교환',who:'중국인 친구',ctx:'모임이 끝나 갈 무렵.',L:[
+ ['b','下次 还 想 见 你','xià cì hái xiǎng jiàn nǐ','다음에 또 보고 싶어요'],['a','下 周 你 也 来 吗','xià zhōu nǐ yě lái ma','다음 주에도 와요?'],
+ ['b','来','lái','와요'],['a','那 我们 加 个 微信 吧','nà wǒ men jiā ge wēi xìn ba','그럼 위챗 추가해요'],
+ ['b','我 打开 二维码','wǒ dǎ kāi èr wéi mǎ','QR 코드 열게요'],['a','扫 好 了','sǎo hǎo le','스캔했어요'],
+ ['a','晚点 给 你 发 消息','wǎn diǎn gěi nǐ fā xiāo xi','이따 메시지 보낼게요'],['b','等 你 消息','děng nǐ xiāo xi','연락 기다릴게요']],
+ V:[['下次 一起 吃饭 吧','xià cì yì qǐ chī fàn ba','다음에 같이 밥 먹어요',3],['晚上 联系 你','wǎn shang lián xì nǐ','저녁에 연락할게요',6]]},
+{t:'공항 배웅',who:'중국인 친구',ctx:'김해공항. 친구가 중국으로 돌아간다.',L:[
+ ['b','谢谢 你 来 送 我','xiè xie nǐ lái sòng wǒ','배웅 와 줘서 고마워요'],['a','路上 小心','lù shang xiǎo xīn','조심히 가요'],
+ ['b','釜山 真的 很 好玩','fǔ shān zhēn de hěn hǎo wán','부산 정말 재밌었어요'],['a','欢迎 再 来','huān yíng zài lái','또 와요'],
+ ['b','下次 我 带 你 玩','xià cì wǒ dài nǐ wán','다음엔 제가 구경시켜 줄게요'],['a','我 很 期待','wǒ hěn qī dài','정말 기대돼요'],
+ ['a','到 了 告诉 我','dào le gào su wǒ','도착하면 알려 줘요'],['b','好 一定','hǎo yí dìng','응, 꼭']],
+ V:[['中国 见','zhōng guó jiàn','중국에서 봐요',3],['保重 身体','bǎo zhòng shēn tǐ','건강 챙겨요',1]]},
+{t:'가족 이야기',who:'중국인 친구',ctx:'카페에서 휴대폰 사진을 보여 주며.',L:[
+ ['b','这 是 你 家人 吗','zhè shì nǐ jiā rén ma','가족이에요?'],['a','对 我 爸爸 妈妈 和 弟弟','duì wǒ bà ba mā ma hé dì di','네, 아빠, 엄마, 남동생이에요'],
+ ['b','你 家 有 几 口 人','nǐ jiā yǒu jǐ kǒu rén','가족이 몇 명이에요?'],['a','四 口 人','sì kǒu rén','네 식구요'],
+ ['b','你 弟弟 做 什么','nǐ dì di zuò shén me','남동생은 뭐 해요?'],['a','他 是 大学生','tā shì dà xué shēng','대학생이에요'],
+ ['a','你 有 兄弟 姐妹 吗','nǐ yǒu xiōng dì jiě mèi ma','형제자매 있어요?'],['b','我 有 一 个 姐姐','wǒ yǒu yí ge jiě jie','언니 한 명 있어요']],
+ V:[['我 是 独生子','wǒ shì dú shēng zǐ','외동이에요',3],['我 有 一 个 妹妹','wǒ yǒu yí ge mèi mei','여동생이 한 명 있어요',1]]},
+{t:'주말 이야기',who:'중국인 동료',ctx:'월요일 아침 화상 회의 전 잡담.',L:[
+ ['b','周末 做 了 什么','zhōu mò zuò le shén me','주말에 뭐 했어요?'],['a','和 朋友 去 了 海边','hé péng you qù le hǎi biān','친구랑 바다 갔어요'],
+ ['b','不错 天气 怎么样','bú cuò tiān qì zěn me yàng','좋네요, 날씨는 어땠어요?'],['a','有点儿 冷','yǒu diǎn r lěng','좀 추웠어요'],
+ ['b','我 在 家 睡 了 一 天','wǒ zài jiā shuì le yì tiān','저는 집에서 하루 종일 잤어요'],['a','那 也 挺 好','nà yě tǐng hǎo','그것도 좋네요'],
+ ['a','这 周 也 加油','zhè zhōu yě jiā yóu','이번 주도 힘내요'],['b','加油','jiā yóu','힘내요']],
+ V:[['看 了 一 部 电影','kàn le yí bù diàn yǐng','영화 한 편 봤어요',1],['特别 热','tè bié rè','엄청 더웠어요',3]]},
+{t:'좋아하는 것',who:'중국인 친구',ctx:'저녁을 먹으며 취향 이야기.',L:[
+ ['b','你 喜欢 吃 什么','nǐ xǐ huan chī shén me','뭐 먹는 거 좋아해요?'],['a','我 最 喜欢 饺子','wǒ zuì xǐ huan jiǎo zi','만두를 제일 좋아해요'],
+ ['b','有 不 吃 的 吗','yǒu bù chī de ma','안 먹는 거 있어요?'],['a','香菜 有点儿 受 不 了','xiāng cài yǒu diǎn r shòu bu liǎo','고수는 좀 못 먹겠어요'],
+ ['b','很多 韩国人 都 这样','hěn duō hán guó rén dōu zhè yàng','한국 사람들 다 그렇더라고요'],['a','你 喜欢 什么 电影','nǐ xǐ huan shén me diàn yǐng','어떤 영화 좋아해요?'],
+ ['b','我 喜欢 韩国 电影','wǒ xǐ huan hán guó diàn yǐng','한국 영화 좋아해요'],['a','真的 吗 我们 一起 看 吧','zhēn de ma wǒ men yì qǐ kàn ba','정말요? 같이 봐요']],
+ V:[['我 喜欢 吃 辣 的','wǒ xǐ huan chī là de','매운 거 좋아해요',1],['我 什么 都 吃','wǒ shén me dōu chī','전 뭐든 먹어요',3]]},
+{t:'내년 계획',who:'중국인 친구',ctx:'연말이 다가온다. 내년 계획 이야기.',L:[
+ ['b','明年 有 什么 打算','míng nián yǒu shén me dǎ suàn','내년에 무슨 계획 있어요?'],['a','我 打算 考 汉语 水平 考试','wǒ dǎ suàn kǎo hàn yǔ shuǐ píng kǎo shì','HSK 시험 볼 생각이에요'],
+ ['b','厉害 考 几 级','lì hai kǎo jǐ jí','대단하다, 몇 급이요?'],['a','三 级','sān jí','3급이요'],
+ ['b','加油 你 一定 行','jiā yóu nǐ yí dìng xíng','힘내요, 꼭 될 거예요'],['a','还 想 去 中国 跑 马拉松','hái xiǎng qù zhōng guó pǎo mǎ lā sōng','중국에서 마라톤도 뛰고 싶어요'],
+ ['b','我 支持 你','wǒ zhī chí nǐ','응원할게요'],['a','谢谢 你 的 鼓励','xiè xie nǐ de gǔ lì','응원 고마워요']],
+ V:[['我 打算 去 旅行','wǒ dǎ suàn qù lǚ xíng','여행 갈 생각이에요',1],['我 打算 搬家','wǒ dǎ suàn bān jiā','이사할 생각이에요',1]]},
+{t:'수고했어요',who:'중국인 동료',ctx:'함께한 프로젝트가 끝났다.',L:[
+ ['a','辛苦 了','xīn kǔ le','수고했어요'],['b','你 也 辛苦 了','nǐ yě xīn kǔ le','당신도 수고했어요'],
+ ['a','真的 帮 了 我 大忙','zhēn de bāng le wǒ dà máng','정말 큰 도움이 됐어요'],['b','哪里 都 是 你 的 功劳','nǎ lǐ dōu shì nǐ de gōng láo','아니에요, 다 당신 덕이에요'],
+ ['a','你 的 资料 特别 清楚','nǐ de zī liào tè bié qīng chu','자료가 정말 깔끔했어요'],['b','听 你 这么 说 很 开心','tīng nǐ zhè me shuō hěn kāi xīn','그렇게 말해 주니 기뻐요'],
+ ['a','希望 以后 还 能 合作','xī wàng yǐ hòu hái néng hé zuò','앞으로도 같이 일하고 싶어요'],['b','一定','yí dìng','꼭요']],
+ V:[['这 段 时间 谢谢 你','zhè duàn shí jiān xiè xie nǐ','그동안 고마웠어요',2],['以后 也 请 多 关照','yǐ hòu yě qǐng duō guān zhào','앞으로도 잘 부탁해요',6]]},
+{t:'제안과 거절',who:'중국인 친구',ctx:'친구가 이번 주말 약속을 제안한다.',L:[
+ ['b','周六 一起 去 逛街 吧','zhōu liù yì qǐ qù guàng jiē ba','토요일에 같이 쇼핑 가요'],['a','不好意思 周六 不 太 方便','bù hǎo yì si zhōu liù bú tài fāng biàn','미안해요, 토요일은 좀 어려워요'],
+ ['b','怎么 了','zěn me le','왜요?'],['a','我 要 加班','wǒ yào jiā bān','야근해야 해요'],
+ ['b','那 周日 呢','nà zhōu rì ne','그럼 일요일은요?'],['a','周日 可以','zhōu rì kě yǐ','일요일은 돼요'],
+ ['a','能 帮 我 一 个 忙 吗','néng bāng wǒ yí ge máng ma','부탁 하나 해도 돼요?'],['b','你 说','nǐ shuō','말해 봐요']],
+ V:[['好 啊 一起 去','hǎo a yì qǐ qù','좋아요, 같이 가요',1],['下午 可以','xià wǔ kě yǐ','오후는 돼요',5]]},
+{t:'약속 잡기',who:'중국인 친구',ctx:'메시지로 만날 시간과 장소를 정한다.',L:[
+ ['a','几 点 见','jǐ diǎn jiàn','몇 시에 볼까요?'],['b','十二 点 怎么样','shí èr diǎn zěn me yàng','12시 어때요?'],
+ ['a','可以 在 哪儿 见','kě yǐ zài nǎ r jiàn','좋아요, 어디서 봐요?'],['b','西面 站 一 号 出口','xī miàn zhàn yī hào chū kǒu','서면역 1번 출구요'],
+ ['a','好的','hǎo de','알겠어요'],['b','迟到 的话 给 我 发 消息','chí dào de huà gěi wǒ fā xiāo xi','늦으면 메시지 줘요'],
+ ['a','好 明天 见','hǎo míng tiān jiàn','네, 내일 봐요'],['b','明天 见','míng tiān jiàn','내일 봐요']],
+ V:[['一 点 怎么样','yì diǎn zěn me yàng','1시 어때요?',2],['我 会 晚 一点','wǒ huì wǎn yì diǎn','조금 늦을 거예요',4]]},
+{t:'1년 축하 모임',who:'언어교환 친구들',ctx:'1년 동안 만난 친구들과 마지막 모임.',L:[
+ ['b','今天 正好 一 年 了','jīn tiān zhèng hǎo yì nián le','오늘로 딱 1년이네요'],['a','时间 过 得 真 快','shí jiān guò de zhēn kuài','시간 진짜 빠르네요'],
+ ['b','你 的 中文 进步 很 大','nǐ de zhōng wén jìn bù hěn dà','중국어 정말 많이 늘었어요'],['a','都 是 你们 的 功劳','dōu shì nǐ men de gōng láo','다 여러분 덕분이에요'],
+ ['b','下 一 个 目标 是 什么','xià yí ge mù biāo shì shén me','다음 목표는 뭐예요?'],['a','在 中国 交 很多 朋友','zài zhōng guó jiāo hěn duō péng you','중국에서 친구 많이 사귀는 거요'],
+ ['a','来 干杯','lái gān bēi','자, 건배해요'],['b','干杯','gān bēi','건배']],
+ V:[['以后 也 多 多 关照','yǐ hòu yě duō duō guān zhào','앞으로도 잘 부탁해요',3],['我 想 说 得 更 好','wǒ xiǎng shuō de gèng hǎo','더 잘하고 싶어요',5]]}
+];
+const ZH_PAT=[['是','~이다','我 是 韩国人','wǒ shì hán guó rén','저는 한국인이에요'],['不 / 没','안 / 안 했다','我 没 去','wǒ méi qù','저 안 갔어요'],['吗','~요? (질문)','你 好 吗','nǐ hǎo ma','잘 지내요?'],
+['呢','~는요?','你 呢','nǐ ne','당신은요?'],['想','~하고 싶다','我 想 喝 咖啡','wǒ xiǎng hē kā fēi','커피 마시고 싶어요'],['要','~할 거다 / 원하다','我 要 这个','wǒ yào zhè ge','이걸로 할게요'],
+['会','(배워서) 할 줄 안다','我 会 说 一点 中文','wǒ huì shuō yì diǎn zhōng wén','중국어 조금 할 줄 알아요'],['能','(상황상) 할 수 있다','你 能 帮 我 吗','nǐ néng bāng wǒ ma','도와줄 수 있어요?'],['可以','~해도 된다','可以 拍照 吗','kě yǐ pāi zhào ma','사진 찍어도 돼요?'],
+['在 + 장소','~에 있다 / ~에서','我 在 釜山','wǒ zài fǔ shān','저는 부산에 있어요'],['在 + 동사','~하는 중','我 在 吃饭','wǒ zài chī fàn','밥 먹는 중이에요'],['了','~했다 (완료)','我 吃 了','wǒ chī le','먹었어요'],
+['过','~해 본 적 있다','我 去 过 北京','wǒ qù guo běi jīng','베이징 가 봤어요'],['比','~보다','地铁 比 公交 快','dì tiě bǐ gōng jiāo kuài','지하철이 버스보다 빨라요'],['最','제일','我 最 喜欢 这个','wǒ zuì xǐ huan zhè ge','이게 제일 좋아요'],
+['太 … 了','너무 ~하다','太 贵 了','tài guì le','너무 비싸요'],['有点儿','좀 ~하다 (불만)','有点儿 辣','yǒu diǎn r là','좀 매워요'],['一下','좀 ~해 보다','等 一下','děng yí xià','잠깐 기다려요'],
+['一起','같이','一起 去 吧','yì qǐ qù ba','같이 가요'],['因为 … 所以','~때문에 그래서','因为 下雨 所以 不 去','yīn wèi xià yǔ suǒ yǐ bú qù','비 와서 안 가요'],['但是','하지만','好吃 但是 很 贵','hǎo chī dàn shì hěn guì','맛있지만 비싸요'],
+['如果 … 就','만약 ~하면','如果 下雨 就 在 家','rú guǒ xià yǔ jiù zài jiā','비 오면 집에 있을게요'],['还是','아니면 (질문)','咖啡 还是 茶','kā fēi hái shi chá','커피요, 차요?'],['先 … 再','먼저 ~하고 나서','先 吃饭 再 走','xiān chī fàn zài zǒu','먼저 밥 먹고 가요'],
+['已经','이미','我 已经 到 了','wǒ yǐ jīng dào le','이미 도착했어요'],['还 没','아직 안','我 还 没 吃','wǒ hái méi chī','아직 안 먹었어요'],['打算','~할 계획이다','我 打算 明年 去','wǒ dǎ suàn míng nián qù','내년에 갈 계획이에요'],
+['觉得','~라고 생각하다','我 觉得 很 好','wǒ jué de hěn hǎo','좋다고 생각해요'],['喜欢','좋아하다','我 喜欢 旅行','wǒ xǐ huan lǚ xíng','여행 좋아해요'],['…的话','~라면','有 时间 的话','yǒu shí jiān de huà','시간 있으면']];
+
+const ZH_GL_RAW=`你好|안녕하세요 (你 너 + 好 좋다)
+很|매우 (습관적으로 붙임)
+高兴|기쁘다 (高興 고흥)
+认识|알게 되다 (認識 인식)
+你|너, 당신
+叫|~라고 부르다
+什么|무엇
+名字|이름 (名字 명자)
+我|나, 저
+姓|성이 ~이다 (姓 성)
+金|김 (金 금/김)
+是|~이다 (是 시)
+韩国人|한국인 (韓國人)
+吗|~요? (질문 끝)
+从|~에서 (從 종)
+韩国|한국 (韓國)
+来|오다 (來 래)
+欢迎|환영하다 (歡迎 환영)
+谢谢|고맙다 (謝 사례 사)
+请|~해 주세요 (請 청)
+多|많이 (多 다)
+关照|돌봐 주다 (關照 관조)
+朴|박 (성)
+釜山|부산 (釜山)
+李|이 (성)
+出示|제시하다 (出示 출시)
+护照|여권 (護照 호조)
+好的|좋아요, 네
+给|주다, ~에게 (給 급)
+中国|중국 (中國)
+做|하다
+旅游|여행 (旅遊 여유)
+待|머물다 (待 대)
+几|몇 (幾 기)
+天|날, 일 (天 천)
+三|3
+住|묵다, 살다 (住 주)
+在|~에 있다, ~에서 (在 재)
+哪里|어디
+上海|상하이 (上海 상해)
+的|~의 (조사)
+酒店|호텔 (酒店 주점이 아님!)
+出差|출장 (出差)
+五|5
+一个|한 개
+星期|주, 요일 (星期 성기)
+这个|이것
+多少|얼마 (多少 다소)
+钱|돈 (錢 전)
+十五|15
+块|위안 (돈 세는 말)
+要|원하다, 필요하다 (要 요)
+袋子|봉투 (袋 대)
+不|아니다 (不 불)
+可以|~해도 된다 (可以 가이)
+用|쓰다 (用 용)
+支付宝|알리페이 (支付寶 지불보)
+扫|스캔하다 (掃 소)
+这里|여기
+小票|영수증 (小票 소표)
+了|~했다 (완료)
+一共|전부 합해서 (一共 일공)
+付|지불하다 (付 부)
+现金|현금 (現金)
+请问|실례지만 (請問 청문)
+地铁站|지하철역 (地鐵站 지철참)
+哪儿|어디
+一直|쭉, 계속 (一直 일직)
+往|~쪽으로 (往 왕)
+前|앞 (前 전)
+走|걷다, 가다 (走 주)
+对|맞다 (對 대)
+然后|그다음 (然後 연후)
+右|오른쪽 (右 우)
+转|돌다 (轉 전)
+远|멀다 (遠 원)
+走路|걷다 (走路 주로)
+分钟|분 (分鐘 분종)
+客气|사양하다 (客氣 객기) → 不客气 천만에요
+洗手间|화장실 (洗手間 세수간)
+便利店|편의점 (便利店)
+左|왼쪽 (左 좌)
+去|가다 (去 거)
+外滩|와이탄 (外灘 외탄)
+坐|타다, 앉다 (坐 좌)
+号|번, 호 (號 호)
+线|선, 노선 (線 선)
+二|2
+这|이
+对面|맞은편 (對面 대면)
+这儿|여기
+停|세우다 (停 정)
+一下|좀, 잠깐 (一下 일하)
+三十|30
+机场|공항 (機場 기장)
+下|다음, 내리다 (下 하)
+一|1, 하나
+站|역, 정거장 (站 참)
+开|운전하다, 열다 (開 개)
+快|빠르다 (快 쾌)
+一点|조금 (一點 일점)
+办|처리하다 (辦 판)
+入住|체크인 (入住 입주)
+您|당신 (높임)
+贵姓|성함 (貴姓 귀성)
+网上|인터넷으로 (網上 망상)
+订|예약하다 (訂 정)
+早餐|조식 (早餐 조찬)
+点|시 (點 점)
+开始|시작하다 (開始 개시)
+早上|아침 (早上 조상)
+七|7
+寄存|맡기다 (寄存 기존)
+行李|짐 (行李 행리)
+放|두다 (放 방)
+吧|~하자, ~하세요 (권유)
+退房|체크아웃 (退房 퇴방)
+拿|가지다, 찾다
+光临|왕림 (光臨 광림) → 어서 오세요
+位|분 (사람 높임, 位 위)
+两|둘 (兩 량)
+个|개 (個 개)
+人|사람 (人 인)
+现在|지금 (現在 현재)
+没有|없다 (沒有 몰유)
+位子|자리 (位子 위자)
+等|기다리다 (等 등)
+久|오래 (久 구)
+大概|대략 (大概 대개)
+十|10
+好|좋다 (好 호)
+我们|우리
+这边|이쪽 (這邊 저변)
+那|그럼, 그
+下次|다음번 (下次 하차)
+再|다시 (再 재)
+服务员|종업원 (服務員 복무원)
+菜单|메뉴판 (菜單 채단)
+有|있다 (有 유)
+推荐|추천 (推薦 추천)
+小笼包|샤오룽바오 (小籠包)
+好吃|맛있다
+份|인분 (份 분)
+喝|마시다
+瓶|병 (瓶 병)
+啤酒|맥주 (啤酒 비주)
+马上|곧, 바로 (馬上 마상)
+太|너무 (太 태)
+辣|맵다 (辣 랄)
+香菜|고수 (香菜 향채)
+菜|요리 (菜 채)
+齐|다 갖춰지다 (齊 제)
+慢|천천히 (慢 만)
+香|향기롭다 (香 향)
+杯|잔 (杯 배)
+水|물 (水 수)
+买单|계산하다 (買單 매단)
+一百|100
+二十|20
+分开|나누다 (分開 분개)
+打包|포장하다 (打包 타포)
+您好|안녕하세요 (높임)
+珍珠|진주, 펄 (珍珠)
+奶茶|밀크티 (奶茶 내차)
+大杯|큰 잔
+还是|아니면 (還是 환시)
+中杯|중간 잔
+甜度|당도 (甜度 첨도)
+呢|~는요?
+少|적게 (少 소)
+糖|설탕 (糖 당)
+无线网|와이파이 (無線網 무선망)
+密码|비밀번호 (密碼 밀마)
+美式|아메리칸 (美式 미식)
+咖啡|커피
+冰|얼음 (冰 빙)
+加热|데우다 (加熱 가열)
+麻烦|번거롭게 하다 (麻煩 마번)
+筷子|젓가락
+双|쌍, 벌 (雙 쌍)
+充电宝|보조배터리 (充電寶 충전보)
+那边|저쪽
+微信|위챗 (微信 미신)
+雨伞|우산 (雨傘 우산)
+想|~하고 싶다 (想 상)
+买|사다 (買 매)
+随便|편한 대로, 그냥 (隨便 수편)
+看看|좀 보다 (看 간)
+别的|다른
+颜色|색깔 (顔色 안색)
+白色|흰색 (白色 백색)
+和|~와 (和 화)
+黑色|검은색 (黑色 흑색)
+试试|해 보다 (試 시)
+试衣间|탈의실 (試衣間 시의간)
+贵|비싸다 (貴 귀)
+便宜|싸다 (便宜 편의!)
+打|(할인을) 하다 (打 타)
+九|9
+折|할인 (折 절) → 打九折 = 10% 할인
+大|크다 (大 대)
+退税|세금 환급 (退稅 퇴세)
+门票|입장권 (門票 문표)
+成人|성인 (成人)
+四十|40
+关门|문을 닫다 (關門 관문)
+下午|오후 (下午 하오)
+拍照|사진 찍다 (拍照 박조)
+行|되다, 좋다 (行 행)
+能|~할 수 있다 (能 능)
+帮|돕다 (幫 방)
+拍|찍다 (拍 박)
+张|장 (張 장)
+照|사진 (照 조)
+没|없다, 안 했다 (沒 몰)
+问题|문제 (問題)
+票|표 (票 표)
+真|정말 (眞 진)
+漂亮|예쁘다
+需要|필요하다 (需要 수요)
+会员卡|회원카드 (會員卡)
+对不起|미안해요 (對不起 대불기)
+会|할 줄 안다 (會 회)
+说|말하다 (說 설)
+中文|중국어 (中文)
+英语|영어 (英語)
+一点儿|조금
+遍|번 (遍 편)
+写|쓰다 (寫 사)
+听|듣다 (聽 청)
+懂|이해하다
+钱包|지갑 (錢包 전포)
+丢|잃어버리다
+可能|아마 (可能 가능)
+地铁|지하철 (地鐵 지철)
+上|위, ~에서
+派出所|파출소 (派出所)
+就|바로 (就 취)
+车站|역 (車站 거참)
+旁边|옆 (旁邊 방변)
+联系|연락하다 (聯繫 연계)
+领事馆|영사관 (領事館)
+查|조사하다 (査 사)
+电话|전화 (電話)
+手机|휴대폰 (手機 수기)
+帮帮|좀 도와
+舒服|편하다, 시원하다
+头|머리 (頭 두)
+疼|아프다 (疼 동)
+时候|때 (時候 시후)
+昨天|어제 (昨天 작천)
+过敏|알레르기 (過敏 과민)
+药|약 (藥 약)
+次|번 (次 차)
+饭|밥 (飯 반)
+后|후 (後 후)
+吃|먹다
+肚子|배
+发烧|열나다 (發燒 발소)
+今天|오늘 (今天 금천)
+空调|에어컨 (空調 공조)
+坏|고장 나다 (壞 괴)
+派|보내다 (派 파)
+过去|건너가다 (過去 과거)
+条|장 (긴 물건, 條 조)
+毛巾|수건 (毛巾 모건)
+送|보내다, 선물하다 (送 송)
+到|~까지, 도착 (到 도)
+房间|방 (房間 방간)
+房卡|카드키
+忘|잊다 (忘 망)
+零|0 (零 영)
+稍|잠시 (稍 초)
+热水|뜨거운 물 (熱水 열수)
+电视|TV (電視 전시)
+哪|어느
+国|나라 (國 국)
+第一|첫 번째 (第一 제일)
+第二|두 번째 (第二 제이)
+还|아직, 또 (還 환)
+差|모자라다 (差 차)
+得|(정도 연결)
+好玩|재미있다
+地方|곳 (地方 지방)
+豫园|예원 (豫園)
+一定|꼭 (一定 일정)
+别|~하지 마
+玩|놀다
+开心|즐겁다 (開心 개심)
+非常|매우 (非常 비상)
+一路|가는 길 (一路 일로)
+平安|평안 (平安)
+保重|몸조심 (保重 보중)
+添|더하다 (添 첨)
+见|보다, 만나다 (見 견)
+怎么|어떻게
+托运|짐 부치기 (託運 탁운)
+靠窗|창가 쪽 (靠窓 고창)
+靠|기대다, ~쪽 (靠 고)
+过道|통로 (過道 과도)
+免税店|면세점 (免稅店)
+楼|층 (樓 루)
+登机口|탑승구 (登機口 등기구)
+杭州|항저우 (杭州 항주)
+最|가장 (最 최)
+早|이르다 (早 조)
+班|편 (班 반)
+半|반 (半 반)
+二等座|2등석 (二等座)
+哪个|어느 것
+检票口|개찰구 (檢票口 검표구)
+十二|12
+往返|왕복 (往返 왕반)
+一等座|1등석
+锅底|육수 (鍋底 과저)
+鸳鸯|원앙 → 반반 냄비 (鴛鴦)
+锅|냄비 (鍋 과)
+级|단계 (級 급)
+微|약간 (微 미)
+肉|고기 (肉 육)
+牛肉|소고기 (牛肉 우육)
+嫩|부드럽다
+羊肉|양고기 (羊肉 양육)
+酱料|소스 (醬料 장료)
+加|더하다 (加 가)
+汤|국물 (湯 탕)
+喂|여보세요
+门口|입구 (門口 문구)
+穿|입다 (穿 천)
+衣服|옷 (衣服 의복)
+车牌|번호판 (車牌 거패)
+尾号|끝번호 (尾號 미호)
+八|8
+看到|보이다 (看到 간도)
+直接|바로 (直接 직접)
+下车|내리다 (下車 하차)
+自动|자동 (自動)
+付款|결제 (付款 부관)
+出口|출구 (出口)
+下雨|비가 오다 (下雨 하우)
+听说|듣자니 ~래요 (聽說 청설)
+下雨天|비 오는 날
+博物馆|박물관 (博物館)
+借|빌리다 (借 차)
+把|자루 (우산 세는 말)
+伞|우산 (傘 산)
+完|다 하다 (完 완)
+回来|돌아오다 (回來 회래)
+明天|내일 (明天 명천)
+天气|날씨 (天氣 천기)
+近|가깝다 (近 근)
+卖|팔다 (賣 매)
+串|꼬치 (串 천)
+辣椒|고추 (辣椒 랄초)
+好嘞|네~ (가게 말투)
+扫码|QR 스캔 (掃碼 소마)
+港口|항구 (港口)
+城市|도시 (城市 성시)
+的话|~라면 (的話)
+小红书|샤오훙수 (중국 SNS)
+带|데리고 가다 (帶 대)
+项目|항목, 코스 (項目)
+足疗|발 마사지 (足療 족료)
+小时|시간 (小時 소시)
+力度|세기 (力度 역도)
+怎么样|어때요
+轻|가볍다 (輕 경)
+有点儿|좀 (불만)
+肩膀|어깨
+穴位|혈자리 (穴位 혈위)
+啊|~네요, 아
+钟|시간 (鐘 종)
+重|세다, 무겁다 (重 중)
+九十|90
+老|오래된 (老 로)
+饭店|식당 (飯店 반점)
+晚上|저녁 (晩上 만상)
+称呼|부르다 (稱呼 칭호)
+金子|금 (金子 금자)
+晚|늦다 (晩 만)
+保留|남겨 두다 (保留 보류)
+取消|취소 (取消 취소)
+预订|예약 (預訂 예정)
+刚|막, 방금 (剛 강)
+觉得|~라고 느끼다 (覺得 각득)
+也|~도 (也 야)
+哪些|어떤 것들
+好看|보기 좋다
+师傅|기사님 (師傅 사부)
+黄浦江|황푸강 (黃浦江)
+船|배 (船 선)
+热情|친절하다 (熱情 열정)
+都|모두 (都 도)
+适合|적합하다 (適合 적합)
+茶叶|찻잎 (茶葉 차엽)
+受欢迎|인기 있다 (受歡迎)
+包装|포장 (包裝)
+朋友|친구 (朋友 붕우)
+同事|동료 (同事 동사)
+包|싸다 (包 포)
+家人|가족 (家人 가인)
+换|바꾸다 (換 환)
+币|화폐 (幣 폐)
+韩元|원화 (韓元)
+人民币|인민폐 (人民幣)
+填|기입하다 (塡 전)
+表|표, 서식 (表 표)
+汇率|환율 (匯率 회율)
+屏幕|화면 (屛幕 병막)
+手续费|수수료 (手續費)
+美元|달러 (美元 미원)
+零钱|잔돈 (零錢 영전)
+年轻人|젊은이 (年輕人)
+一起|같이 (一起 일기)
+简单|간단하다 (簡單 간단)
+跟|~와, 따라가다
+着|~한 채로
+不错|괜찮다, 좋다 (不錯 불착)
+每天|매일 (每天 매천)
+六|6
+难|어렵다 (難 난)
+帮忙|돕다 (幫忙 방망)
+札嘎其|자갈치
+市场|시장 (市場)
+那个|그것, 저것
+入口|입구 (入口)
+进|들어가다 (進 진)
+感谢|감사 (感謝)
+知道|알다 (知道 지도)
+成|~로 되다 (成 성)
+真的|정말
+先|먼저 (先 선)
+选|고르다 (選 선)
+目的地|목적지 (目的地)
+一千|1000
+四百|400
+交通卡|교통카드 (交通卡)
+更|더 (更 갱)
+原来|원래, 알고 보니 (原來 원래)
+如此|이와 같다 (如此 여차)
+刷卡|카드를 찍다 (刷卡 쇄잡)
+附近|근처 (附近 부근)
+特色|특색 (特色)
+猪肉|돼지고기 (豬肉 저육)
+汤饭|국밥 (湯飯 탕반)
+放心|안심하다 (放心 방심!)
+拐角|모퉁이
+家|집, 가게 세는 말 (家 가)
+有名|유명하다 (有名 유명)
+小麦|밀 (小麥 소맥)
+冷面|냉면 (冷麵)
+竖|세로 (竪 수)
+横|가로 (橫 횡)
+茄子|가지 → 사진 찍을 때 "치즈"
+后面|뒤 (後面 후면)
+海|바다 (海 해)
+进去|들어가다 (進去)
+工作|일 (工作 공작)
+公务员|공무원 (公務員)
+上班|출근하다, 일하다 (上班 상반)
+市政府|시청 (市政府 시정부)
+爱好|취미 (愛好 애호)
+旅行|여행 (旅行)
+学习|공부 (學習 학습)
+最近|요즘 (最近 최근)
+学|배우다 (學 학)
+上班族|직장인 (上班族)
+喜欢|좋아하다 (喜歡 희환)
+看|보다 (看 간)
+电影|영화 (電影 전영)
+炒年糕|떡볶이 (炒年糕 초년고)
+但是|하지만 (但是 단시)
+甜甜|달달하다 (甜 첨)
+炸|튀기다 (炸 작)
+东西|물건, 것 (東西 동서)
+味道|맛 (味道 미도)
+下来|멈추다 (停不下来)
+鱼饼|어묵 (魚餠 어병)
+尝尝|맛보다 (嘗 상)
+血肠|순대 (血腸 혈장)
+海东|해동
+龙宫寺|용궁사 (龍宮寺)
+什么样|어떤
+海边|바닷가 (海邊 해변)
+寺庙|절 (寺廟 사묘)
+公交|버스 (公交 공교)
+左右|쯤 (左右 좌우)
+无人机|드론 (無人機 무인기)
+表演|공연 (表演 표연)
+期待|기대 (期待)
+甘川|감천
+文化村|문화마을 (文化村)
+打车|택시 타다 (打車 타거)
+热|덥다 (熱 열)
+夏天|여름 (夏天 하천)
+闷|답답하다, 후텁지근 (悶 민)
+差不多|비슷하다 (差不多 차부다)
+后天|모레 (後天 후천)
+记得|기억하다 (記得 기득)
+提醒|일깨우다 (提醒 제성)
+冬天|겨울 (冬天 동천)
+风|바람 (風 풍)
+晴天|맑은 날 (晴天 청천)
+周末|주말 (週末)
+一般|보통 (一般 일반)
+常常|자주 (常常 상상)
+咖啡厅|카페 (咖啡廳)
+数据|데이터 (數據 수거)
+分析|분석 (分析)
+厉害|대단하다 (厲害 려해)
+露营|캠핑 (露營 노영)
+爬山|등산 (爬山 파산)
+过|~한 적 있다 (過 과)
+去年|작년 (去年 거년)
+很多|아주 많이
+感觉|느낌 (感覺 감각)
+特别|특히 (特別 특별)
+成都|청두 (成都 성도)
+熊猫|판다 (熊貓 웅묘)
+北京|베이징 (北京 북경)
+周|주 (週 주)
+打开|열다 (打開 타개)
+二维码|QR 코드 (二維碼 이유마)
+晚点|이따가 (晩點)
+发|보내다 (發 발)
+消息|메시지 (消息 소식)
+吃饭|밥 먹다 (吃飯)
+路上|가는 길 (路上 노상)
+小心|조심하다 (小心 소심!)
+告诉|알려 주다 (告訴 고소)
+身体|몸 (身體 신체)
+爸爸|아빠
+妈妈|엄마
+弟弟|남동생 (弟 제)
+口|식구 세는 말 (口 구)
+四|4
+他|그
+大学生|대학생 (大學生)
+兄弟|형제 (兄弟)
+姐妹|자매 (姐妹)
+姐姐|언니, 누나 (姐 저)
+独生子|외동 (獨生子 독생자)
+妹妹|여동생 (妹 매)
+冷|춥다 (冷 랭)
+睡|자다 (睡 수)
+挺|꽤
+加油|힘내 (加油 가유)
+部|편 (영화 세는 말, 部 부)
+饺子|만두, 교자 (餃子 교자)
+受|견디다 (受 수) → 受不了 못 견디겠다
+这样|이렇다
+明年|내년 (明年 명년)
+打算|계획하다 (打算 타산)
+考|시험 보다 (考 고)
+汉语|중국어 (漢語 한어)
+水平|수준 (水平 수평)
+考试|시험 (考試 고시)
+跑|달리다
+马拉松|마라톤
+支持|응원, 지지 (支持)
+鼓励|격려 (鼓勵 고려)
+搬家|이사하다 (搬家 반가)
+辛苦|수고하다 (辛苦 신고)
+大忙|큰 도움
+功劳|공로 (功勞)
+资料|자료 (資料)
+清楚|분명하다 (淸楚 청초)
+这么|이렇게
+希望|희망하다 (希望)
+以后|앞으로 (以後 이후)
+合作|협력 (合作 합작)
+段|동안, 구간 (段 단)
+时间|시간 (時間)
+周六|토요일 (週六)
+逛街|쇼핑, 거리 구경
+不好意思|미안해요 (가볍게)
+方便|편하다, 시간 되다 (方便 방편)
+加班|야근 (加班 가반)
+周日|일요일 (週日)
+忙|바쁘다, 도움 (忙 망)
+西面|서면
+迟到|지각하다 (遲到 지도)
+正好|딱, 마침 (正好 정호)
+年|해, 년 (年 년)
+进步|진보, 늘다 (進步)
+你们|너희, 여러분
+目标|목표 (目標)
+交|사귀다 (交 교)
+干杯|건배 (乾杯)`;
+const ZH_GL={};ZH_GL_RAW.split('\n').forEach(r=>{const i=r.indexOf('|');ZH_GL[r.slice(0,i)]=r.slice(i+1)});
+`妻子|아내 (妻子 처자)
+女儿|딸 (女兒 여아)
+儿子|아들 (兒子 아자)
+孩子们|아이들
+丈夫|남편 (丈夫 장부)
+父母|부모 (父母)
+朋友们|친구들
+宠物|반려동물 (寵物 총물)
+狗|개 (狗 구)
+猫|고양이 (猫 묘)
+每|매, ~마다 (每 매)
+经常|자주 (經常 경상)
+有时候|가끔
+下班|퇴근 (下班 하반)
+小|어리다, 작다 (小 소)
+才|이제야, 겨우
+寿司|초밥 (壽司 수사)
+拉面|라멘 (拉麵 납면)
+烤肉|고기구이 (烤肉 고육)
+炸鸡|치킨 (炸鷄 작계)
+披萨|피자
+生鱼片|회 (生魚片 생어편)
+泡菜汤|김치찌개 (泡菜湯 포채탕)
+甜点|디저트 (甜點 첨점)
+面条|국수 (麵條 면조)
+纳豆|낫토 (納豆 납두)
+鱼|생선 (魚 어)
+海鲜|해산물 (海鮮 해선)
+牛奶|우유 (牛奶 우내)
+蘑菇|버섯
+黄瓜|오이 (黃瓜 황과)
+内脏|내장 (內臟)
+休息|쉬다 (休息 휴식)
+陪|함께하다 (陪 배)
+孩子|아이
+店|가게 (店 점)
+打扫|청소하다 (打掃 타소)
+累|피곤하다 (累 루)
+放松|긴장을 풀다 (放鬆 방송)
+通过|통과하다 (通過 통과)
+比赛|대회 (比賽 비새)
+中|~에서 (中 중)
+获奖|상을 받다 (獲獎 획장)
+变|변하다 (變 변)
+健康|건강 (健康)
+存|저축하다 (存 존)
+成长|성장 (成長)
+新|새롭다 (新 신)
+事情|일 (事情 사정)
+外国|외국 (外國)
+坚果|견과 (堅果)
+糖饼|호떡 (糖餠 당병)
+烤|굽다 (烤 고)
+贝壳|조개 (貝殼 패각)
+炒|볶다 (炒 초)
+章鱼|문어 (章魚 장어)
+青岛|칭다오 (靑島 청도)
+西安|시안 (西安 서안)
+广州|광저우 (廣州 광주)
+香港|홍콩 (香港 향항)
+张家界|장자제 (張家界 장가계)
+哈尔滨|하얼빈
+苏州|쑤저우 (蘇州 소주)
+厦门|샤먼 (廈門 하문)
+景点|관광지 (景點 경점)
+路|길 (路 로)
+茶|차 (茶 차)
+今年|올해 (今年 금년)
+岁|살, 나이 (歲 세)
+秘密|비밀 (秘密)
+两三|두세
+月|달 (月 월)`.split('\n').forEach(r=>{const i=r.indexOf('|');if(!ZH_GL[r.slice(0,i)])ZH_GL[r.slice(0,i)]=r.slice(i+1)});
+
+const NOTES_JA={
+0:[[1,'はじめまして는 처음 만났을 때만 써요. 두 번째부터는 こんにちは.'],[7,'こちら こそ = "저야말로". 상대가 よろしく 하면 이렇게 받아요.']],
+1:[[1,'はい どうぞ는 물건을 건넬 때 쓰는 "여기요".'],[5,'날짜 세기는 불규칙: ふつか 2일, みっか 3일, よっか 4일, いつか 5일. 통째로 외워요.']],
+2:[[0,'これ(이것)·それ(그것)·あれ(저것). 가리키며 これ は いくら です か 하면 끝.'],[7,'だいじょうぶ です는 "괜찮아요 = 필요 없어요" 거절로 아주 많이 써요.']],
+3:[[0,'すみません은 "저기요"와 "죄송해요" 둘 다. 말 걸 때 첫마디로 최고.'],[2,'끝에 ね를 붙이면 "~죠?" 하고 확인하는 말투가 돼요.']],
+4:[[2,'~に いきます か = "~에 가요?" 목적지 + に.'],[6,'~て ください = "~해 주세요". とめる(세우다) → とめて ください.']],
+5:[[2,'で는 수단 "~로". ネット で, バス で, カード で.'],[6,'~ても いい です か = "~해도 돼요?" 허락 구하는 만능 문형.']],
+6:[[1,'인원: ひとり, ふたり, さんにん, よにん. 1·2명만 특별해요.'],[2,'おまち ください는 점원이 쓰는 높임말 "기다려 주세요".']],
+7:[[4,'개수 세기 ひとつ, ふたつ, みっつ… 메뉴 수량에 그대로 써요.'],[7,'かしこまりました는 점원 전용 "알겠습니다". 손님은 わかりました.']],
+8:[[0,'いただきます / ごちそうさまでした는 식사 전·후 인사. 가게 나설 때 ごちそうさまでした 하면 좋아해요.'],[4,'おかいけい おねがい します = 계산해 주세요. 손으로 X를 그려도 통해요.']],
+9:[[5,'もちかえり(포장) ↔ てんない(매장). 카페·패스트푸드 어디서나 나와요.']],
+10:[[0,'あたためます か = 데울까요? 대답은 はい おねがい します 또는 だいじょうぶ です.'],[3,'いりません = 필요 없어요. 봉투 거절할 때 딱.']],
+11:[[1,'みて いる だけ です = 그냥 보는 중. 점원이 말 걸 때 부드러운 거절.'],[7,'めんぜい = 면세. 보통 5,000엔 이상, 여권 필요.']],
+12:[[5,'だめ = 안 돼. 표지판의 撮影禁止(촬영 금지)와 같은 뜻.'],[6,'~て ください 앞에 すみません을 붙이면 더 공손해요.']],
+13:[[1,'わかりません = 몰라요/이해 못 해요. 솔직하게 말하는 게 제일 빨라요.'],[6,'ゆっくり はなして ください = 천천히 말해 주세요. 꼭 외울 생존 문장.']],
+14:[[0,'~を なくしました = ~을 잃어버렸어요. 물건 이름만 바꿔 끼우면 돼요.'],[2,'こうばん(交番)은 동네 파출소. 길 물어도 친절해요.']],
+15:[[1,'~が いたい です = ~가 아파요. あたま 머리, おなか 배, のど 목.'],[7,'しょくご 식후 / しょくぜん 식전.']],
+16:[[0,'~が つきません = ~이 안 켜져요. 고장 신고 만능.'],[6,'호실 번호의 0은 まる(동그라미)로 읽기도 해요.']],
+17:[[3,'~かいめ = ~번째. にかいめ 두 번째.'],[5,'칭찬받으면 いえいえ まだまだ です. 겸손하게 받는 게 일본식.']],
+18:[[0,'いろいろ ありがとう ございました = 여러모로 감사했어요. 과거형이라 떠날 때 써요.'],[7,'おげんき で = 잘 지내요. 헤어질 때.']],
+19:[[0,'どう いけば いい です か = 어떻게 가면 돼요? 길 묻기 고급형.'],[5,'まどがわ 창가 / つうろがわ 통로.']],
+20:[[6,'일본 온천은 문신이 있으면 입장을 제한하는 곳이 많아요. かしきり(전세탕)는 괜찮은 경우가 많아요.']],
+21:[[1,'とりあえず なま! 는 이자카야 첫 주문의 국민 대사. "일단 생맥주".'],[7,'ラストオーダー = 마지막 주문 시간.']],
+22:[[1,'していせき(지정석)는 자리 보장, じゆうせき(자유석)는 싸지만 선착순.'],[5,'のぞみ는 가장 빠른 신칸센 등급 이름.']],
+23:[[0,'~たい です = ~하고 싶어요. かりる(빌리다) → かりたい.'],[2,'~ば = ~하면. かえす → かえせば (돌려주면).']],
+24:[[1,'~そう です = ~래요 (들은 말 전하기). 일기예보 말할 때 딱.'],[6,'~て もらえます か = ~해 줄 수 있어요? ください보다 부드러워요.']],
+25:[[5,'면 익힘: かため 꼬들, ふつう 보통, やわらかめ 부드럽게.'],[6,'かえだま = 면 사리 추가. 하카타 돈코츠 라멘집 필수 단어.']],
+26:[[3,'~ましょう = (같이) ~해요. こうかん しましょう = 교환해요.'],[6,'~たら = ~하면. きたら = 오면.']],
+27:[[4,'~の が いい です か = ~하는 게 좋아요? 의견 묻기.']],
+28:[[0,'~を さがして います = ~를 찾고 있어요. 휴대폰 사진 보여 주며 말하면 끝.'],[4,'いじょう = 이상. ごせん えん いじょう = 5천 엔 이상.']],
+29:[[6,'~かも しれません = ~일지도 몰라요. 확실하지 않을 때.']],
+30:[[5,'~が いちばん よかった = ~가 제일 좋았어요. 여행 감상 만능.']],
+31:[[2,'~ずつ = ~씩. ひとつ ずつ = 하나씩.'],[4,'あげます = (남에게) 줘요.']],
+32:[[0,'なにか おこまり です か = 뭔가 곤란하세요? 먼저 말 걸 때 가장 정중한 표현.'],[6,'この 이, その 그, あの 저.']],
+33:[[1,'~られます = ~할 수 있어요. かえる(바꾸다) → かえられます.'],[6,'~なら = ~라면. カード なら = 카드라면.']],
+34:[[3,'~が おすすめ です = ~를 추천해요. 이 하나로 추천 끝.'],[5,'からい → からく ない (맵지 않다). い형용사 부정형.']],
+35:[[0,'~ましょう か = ~해 드릴까요? 제안할 때.'],[2,'たて 세로 / よこ 가로.']],
+36:[[2,'~て います = ~하고 있어요(진행·상태). はたらいて います = 일하고 있어요.']],
+37:[[3,'でも = 그래도, 하지만. 문장 앞에 붙여요.'],[7,'~けど = ~지만. 말 이을 때.']],
+38:[[1,'고유명사는 한국어 발음 그대로 가타카나로. ヘドン ヨングンサ.'],[6,'~て ください로 추천하면 "꼭 해 보세요" 느낌.']],
+39:[[1,'むしあつい = 찌는 듯이 덥다(후텁지근).'],[6,'もって いって ください = 가져가세요.']],
+40:[[5,'そちら は? = 그쪽은요? 질문 되돌리기 만능. あなた는 잘 안 써요.'],[7,'~て みたい = ~해 보고 싶다.']],
+41:[[0,'~た こと が あります か = ~한 적 있어요?'],[6,'こんど = 다음번.']],
+42:[[3,'일본 메신저는 LINE이 1위. ライン を こうかん しましょう.'],[6,'あとで = 나중에.']],
+43:[[1,'きを つけて = 조심히. 헤어질 때 정석.'],[6,'ついたら れんらく して ください = 도착하면 연락 줘요.']],
+44:[[1,'내 가족은 ちち·はは(낮춰서), 남의 가족은 おとうさん·おかあさん(높여서).'],[3,'~にん かぞく = ~인 가족. よにん = 4명.']],
+45:[[0,'과거형 ~ました. いきます → いきました.'],[4,'~て いました = ~하고 있었어요.']],
+46:[[1,'~が すき です = ~를 좋아해요. を가 아니라 が!'],[3,'にがて = 잘 못 먹는/못하는 것. きらい(싫다)보다 부드러워요.']],
+47:[[1,'~つもり です = ~할 생각이에요.'],[5,'~たい = ~하고 싶다. でる(나가다) → でたい.']],
+48:[[0,'おつかれさま でした = 수고하셨습니다. 일 끝날 때 인사.'],[3,'~の おかげ です = ~ 덕분이에요.']],
+49:[[0,'~ません か = ~하지 않을래요? 부드러운 권유.'],[1,'~は ちょっと… 하고 말끝을 흐리면 일본식 거절 완성.']],
+50:[[0,'~ましょう か = ~할까요?'],[5,'~たら = ~하면. おくれたら = 늦으면.']],
+51:[[2,'~に なりました = ~해졌어요(변화). じょうず に なりました = 잘하게 됐어요.']]};
+const NOTES_ZH={
+0:[[3,'성은 我 姓 ~, 풀네임은 我 叫 ~.'],[7,'请 多 关照 = 잘 부탁해요. 처음 만날 때 정석.']],
+1:[[1,'好的 = 네, 알겠어요. 대답 만능.'],[4,'几 = 몇 (10 미만 수를 물을 때). 多少 = 얼마 (큰 수).']],
+2:[[0,'这个 多少 钱 = 이거 얼마예요? 쇼핑 1순위 문장.'],[4,'중국은 현금보다 알리페이·위챗페이가 기본이에요.']],
+3:[[1,'一直 往 前 走 = 쭉 앞으로 가세요.'],[7,'不 客气 = 천만에요. 谢谢에 대한 답.']],
+4:[[0,'坐 = (교통수단을) 타다. 坐 地铁, 坐 公交.'],[6,'一下를 붙이면 부드러워져요. 停 一下 = 좀 세워 주세요.']],
+5:[[1,'贵姓 = 성함 (높임). 대답은 我 姓 金.'],[6,'可以 ~ 吗 = ~해도 돼요? 허락 구하기 만능.']],
+6:[[0,'几 位 = 몇 분. 位는 사람을 높여 세는 말.'],[1,'2는 숫자로 셀 땐 二, 개수를 셀 땐 两. 两 个 人.']],
+7:[[0,'服务员! = 저기요! 식당에서 직원 부를 때.'],[4,'来 + 수량 = ~ 주세요. 주문할 때 来를 많이 써요.']],
+8:[[4,'买单 = 계산할게요. 손으로 쓰는 시늉을 해도 통해요.']],
+9:[[2,'还是 = 아니면 (A 还是 B? 선택 질문).'],[5,'당도: 无糖 무설탕, 少糖 덜 달게, 全糖 기본.']],
+10:[[0,'要 ~ 吗 = ~ 필요해요? 대답은 要(네) / 不 要(아니요).'],[1,'麻烦 你 了 = 번거롭게 해 드려요 = 부탁해요/고마워요.']],
+11:[[1,'我 随便 看看 = 그냥 둘러볼게요.'],[6,'흥정: 便宜 一点 吧 = 좀 싸게 해 주세요. 시장에선 기본.']],
+12:[[3,'시간: 下午 五 点 = 오후 5시. 上午 오전, 晚上 저녁.'],[5,'不 行 = 안 돼요.']],
+13:[[1,'会 = (배워서) 할 줄 안다. 我 不 会 说 中文 = 중국어 못해요.'],[6,'请 说 慢 一点 = 천천히 말해 주세요. 생존 문장.']],
+14:[[0,'~ 丢 了 = ~를 잃어버렸어요. 了 = 이미 일어난 일.'],[6,'我 想 ~ = ~하고 싶어요.']],
+15:[[1,'~ 疼 = ~가 아파요. 头 머리, 肚子 배.'],[7,'饭 后 식후 / 饭 前 식전.']],
+16:[[0,'~ 坏 了 = ~가 고장 났어요.'],[6,'방 번호의 0은 零(líng). 302 = 三 零 二.']],
+17:[[3,'第 + 숫자 = ~번째. 第二 次 = 두 번째.'],[5,'哪里 哪里 = 아니에요(겸손). 칭찬받을 때.']],
+18:[[6,'一路 平安 = 가는 길 평안하길. 배웅 인사.'],[7,'保重 = 몸조심해요. 오래 못 볼 때.']],
+19:[[0,'怎么 走 = 어떻게 가요?'],[4,'靠窗 창가 / 靠 过道 통로.']],
+20:[[0,'표 살 땐 去 杭州 처럼 목적지만 말해도 통해요.'],[3,'二等座 2등석이 일반석이에요.']],
+21:[[1,'鸳鸯 锅 = 반반 냄비 (매운맛 + 순한맛).'],[3,'맵기: 微 辣 약간, 中 辣 중간, 特 辣 아주.']],
+22:[[0,'喂 = 여보세요.'],[6,'可以 直接 ~ 吗 = 바로 ~해도 돼요?']],
+23:[[1,'听说 = 듣자 하니 ~래요.'],[6,'借 = 빌리다. 우산은 把로 세요.']],
+24:[[0,'怎么 卖 = 어떻게 팔아요? = 얼마예요 (시장 말투).'],[4,'少 放 一点 = 조금만 넣어 주세요.']],
+25:[[2,'중국에선 연락처 교환 = 위챗(微信) 친구 추가.'],[6,'~ 的话 = ~라면.']],
+26:[[3,'轻 一点 약하게 / 重 一点 세게.'],[6,'舒服 = 편안하다, 시원하다.']],
+27:[[1,'能 ~ 吗 = ~할 수 있어요? (상황상 가능)'],[5,'성 소개 요령: "金子 的 金"처럼 "~의 ~자"로 설명해요.']],
+28:[[2,'觉得 ~ 怎么样 = ~ 어때요? 의견 묻기.'],[7,'师傅 = 기사님. 기사·기술자 부를 때.']],
+29:[[0,'适合 送 人 = 선물하기 좋은.'],[3,'几 个 = 몇 개.']],
+30:[[0,'换 钱 = 환전하다.'],[4,'汇率 = 환율.']],
+31:[[2,'跟 着 我 = 나를 따라 해요.'],[4,'동사 + 得 + 평가: 做 得 不错 = 잘하네요.']],
+32:[[0,'需要 帮忙 吗 = 도와드릴까요? 먼저 말 걸 때.'],[4,'站 = 역, 정거장. 两 站 = 두 정거장.']],
+33:[[1,'可以 换 成 ~ = ~로 바꿀 수 있어요.'],[6,'更 = 더. 更 便宜 = 더 싸요.']],
+34:[[3,'推荐 = 추천해요.'],[5,'放心 = 안심해요. 걱정 마요.']],
+35:[[0,'我 帮 你 ~ 吧 = 제가 ~해 드릴게요.'],[2,'A 还是 B = A요 B요? 竖 세로 / 横 가로.']],
+36:[[2,'上班 = 출근하다, 일하다.'],[6,'在 + 동사 = ~하는 중. 在 学 = 배우는 중.']],
+37:[[3,'但是 = 하지만.'],[7,'停 不 下来 = 멈출 수가 없다.']],
+38:[[5,'左右 = ~쯤. 一 个 小时 左右 = 한 시간쯤.']],
+39:[[1,'闷 = 후텁지근하다, 답답하다.'],[6,'记得 ~ = ~하는 거 잊지 마요.']],
+40:[[0,'一般 = 보통.'],[7,'也 想 ~ = 나도 ~하고 싶다.']],
+41:[[0,'过 = ~한 적 있다. 去 过 = 가 봤다.'],[3,'了 = ~했다. 吃 了 = 먹었다.']],
+42:[[3,'加 微信 = 위챗 친구 추가.'],[6,'晚点 = 이따가.']],
+43:[[1,'路上 小心 = 조심히 가요.'],[6,'到 了 告诉 我 = 도착하면 알려 줘요.']],
+44:[[2,'几 口 人 = 식구가 몇이에요? 가족은 口로 세요.']],
+45:[[0,'了로 과거 표현. 做 了 什么 = 뭐 했어요?'],[5,'挺 好 = 꽤 좋다.']],
+46:[[1,'最 喜欢 = 제일 좋아해요.'],[3,'受 不 了 = 못 견디겠어요. 싫은 것 말할 때.']],
+47:[[1,'打算 = ~할 계획이에요.'],[4,'加油 = 힘내. 응원 만능.']],
+48:[[0,'辛苦 了 = 수고했어요.'],[3,'都 是 你 的 功劳 = 다 당신 덕분이에요.']],
+49:[[1,'不好意思, ~ 不 太 方便 = 미안한데 ~는 좀 어려워요. 부드러운 거절.'],[6,'能 帮 我 一 个 忙 吗 = 부탁 하나 해도 돼요?']],
+50:[[0,'几 点 见 = 몇 시에 볼까요?'],[5,'迟到 的话 = 늦으면.']],
+51:[[1,'过 得 真 快 = 정말 빨리 지나갔다.'],[5,'交 朋友 = 친구를 사귀다.']]};
+const NOTES_EN={
+0:[[5,'Just this one. 처럼 짧게 답해도 충분히 자연스러워요.'],[6,'Could I get ~? = ~ 받을 수 있을까요? 요청 만능. Can I보다 살짝 공손.']],
+1:[[1,"I'm here on vacation / for work. 방문 목적은 이 틀로."],[3,'About a week. 숫자 앞에 about(대략)을 붙이면 자연스러워요.']],
+2:[[1,'Can I get ~? 가 카페 주문의 표준. I want ~ 는 좀 직설적이에요.'],[4,'For here or to go? = 드시고 가세요, 가져가세요?']],
+3:[[3,'Tbh = to be honest. 솔직한 의견 앞에 붙여요.'],[6,'Edit: = 글 수정 표시. 감사 인사를 덧붙일 때 자주 써요.']],
+4:[[0,'I have a reservation under ~. under(~ 이름으로)가 포인트.'],[3,'incidentals = 미니바 등 부대비용 보증.']],
+5:[[0,"I'll be taking care of you. 서버가 자기소개할 때 하는 말."],[6,"I'll have ~. = ~로 할게요. 주문 확정 표현."]],
+6:[[3,"You can't miss it. = 못 찾을 수가 없어요 = 바로 보여요."],[5,'a ten-minute walk의 like = 한 ~쯤 (구어).']],
+7:[[1,'Right?? = 그쵸?? 물음표 두 개는 흥분한 느낌.'],[2,'Is that a thing? = 그게 흔한/유명한 거예요?']],
+8:[[0,"How's your day going? 대답은 Pretty good / Not bad 로 충분."],[4,'No way! = 말도 안 돼! 놀라움·반가움 둘 다.']],
+9:[[1,'No worries. = 괜찮아요. 아주 흔한 구어.'],[3,'exchange 교환 / refund 환불.']],
+10:[[0,'Is this seat taken? = 자리 있어요?'],[4,'How are you liking it so far? = 지금까진 어때요?']],
+11:[[1,'Local here. = 현지인이에요. 답글 첫머리에 신뢰도를 올려 줘요.'],[7,'This is gold. = 완전 꿀정보.']],
+12:[[0,"~ isn't working. = ~가 안 돼요. 고장 신고 만능."],[1,"I'll send someone up. = 사람 올려 보낼게요."]],
+13:[[0,'coming down with a cold = 감기 기운이 있다.'],[2,'sore throat 목 아픔, runny nose 콧물.']],
+14:[[0,'I think I left my ~ on the train. = ~를 두고 내린 것 같아요.'],[6,'turned it in = (분실물을) 맡겼다.']],
+15:[[2,'wholesome = 훈훈한. 착한 이야기에 꼭 달리는 단어.'],[5,'hits different = 느낌이 남다르다 (최신 구어).']],
+16:[[0,'Do you need some help? 먼저 말 걸기. Can I help you?보다 덜 점원 같아요.'],[7,"You're a lifesaver. = 구세주예요."]],
+17:[[1,'in the mood for ~ = ~이 당기는.'],[5,'Trust me, ~ = 내 말 믿어 봐요. 자신 있게 추천할 때.']],
+18:[[3,'Not really. = 별로요. No보다 부드러워요.'],[6,'nobody expects ~ = 아무도 ~를 기대 안 해요. 상대를 안심시킬 때.']],
+19:[[1,"I see where you're coming from, but ~ = 무슨 말인지 알지만~. 정중한 반박의 정석."],[4,'Fair point. = 일리 있네요.']],
+20:[[1,'여러 명에게 인사할 땐 Nice to meet you all.'],[6,'Please be patient with me. = 너그럽게 봐 주세요.']],
+21:[[0,'What do you do (for work)? 가 What is your job? 보다 자연스러워요.'],[3,"I'm into ~ = ~에 관심 많아요/빠졌어요."]],
+22:[[3,'binge-watch = 몰아 보다.'],[7,"I've been getting into ~ lately. = 요즘 ~에 빠졌어요."]],
+23:[[0,'~ here = "~인데요" 레딧식 자기소개.'],[7,"That's the key. = 그게 핵심이에요."]],
+24:[[1,'chilling = 쉬기, 빈둥거리기.'],[6,'just in case = 혹시 모르니까.']],
+25:[[1,"I'm pretty flexible. = 일정 꽤 유연해요."],[4,'push it to 10 = 10시로 미루다 / move it up = 당기다.']],
+26:[[1,"I'd love to, but ~ = 그러고 싶은데~. 거절의 정석."],[5,'Rain check? = 다음으로 미뤄도 돼요?']],
+27:[[0,'PSA = 공지. 정보 공유 글 제목에 붙여요.'],[4,'worth it = 그만한 가치가 있다.']],
+28:[[1,"I'd like to make a reservation for ~. 전화 예약 첫 문장."],[6,'Could you say that again? 못 알아들었으면 당당하게.']],
+29:[[1,'loud and clear = 아주 잘 들려요.'],[5,'I hear you. = 공감해요.']],
+30:[[3,'That means a lot (coming from you). = 큰 힘이 돼요.'],[6,"I couldn't have done it without you. = 당신 없인 못 했어요."]],
+31:[[0,'Ngl = not gonna lie, lowkey = 은근히. 둘 다 SNS 필수.'],[1,'Fr = for real. "ㄹㅇ" 느낌.']],
+32:[[0,'chilly = 쌀쌀한. cold보다 약해요.'],[6,'humid = 습한.']],
+33:[[1,"I'm not a big fan of ~ = ~ 별로예요. I hate 보다 부드러워요."],[7,"I'm always down for ~ = ~는 언제나 콜."]],
+34:[[1,'지난 일은 과거형: go → went.'],[7,'paid off = 노력이 결실을 맺었다.']],
+35:[[0,"TL;DR = too long; didn't read. 긴 글의 요약."],[3,'budget = 예산 (동사로도 써요).']],
+36:[[1,"I get your point, but I'm not sure I agree. = 말씀은 알겠는데 동의하는지는 모르겠어요."],[6,'반박 뒤엔 But I agree ~ 로 공통점을 찾으면 부드러워요.']],
+37:[[1,'Have you watched ~? = ~ 봤어요? 경험 묻기.'],[6,'Good call. = 좋은 판단이에요.']],
+38:[[2,'What do you miss about ~? = ~의 뭐가 그리워요?'],[7,'The grass is always greener. = 남의 떡이 커 보인다.']],
+39:[[1,"I'm in the same boat. = 저도 같은 처지예요."],[3,'It adds up. = 쌓여요.']],
+40:[[0,'arrived damaged = 파손된 채 도착했다.'],[3,'replacement 교환품 / refund 환불.']],
+41:[[0,"I don't think we've met. = 처음 뵙는 것 같네요. 네트워킹 첫마디."],[6,"Let's keep in touch. = 연락하고 지내요."]],
+42:[[1,'laid-back = 느긋한.'],[7,'bucket list = 언젠가 꼭 해 볼 목록.']],
+43:[[1,'meet up = (약속 잡고) 만나다.'],[5,'How about ~? = ~ 어때요? 제안 만능.']],
+44:[[1,'stressed out = 스트레스로 지친.'],[4,'a lot on your plate = 할 일이 많다.']],
+45:[[0,'work out = 운동하다.'],[7,'Hold me to it! = 꼭 지키게 해 줘요!']],
+46:[[4,"That's a steal. = 거저네요 (엄청 싸다)."],[5,'문장 끝 , though = 그래도.']],
+47:[[0,'AMA = Ask Me Anything. 레딧 Q&A 글.'],[4,'Pretty much. = 거의 그래요.']],
+48:[[1,'have a full conversation = 대화를 끝까지 이어 가다.'],[7,'working toward ~ = ~를 목표로 노력 중.']],
+49:[[1,'Time flew by. = 시간이 쏜살같이 지났어요.'],[3,'I had a blast. = 엄청 즐거웠어요.']],
+50:[[0,'Make yourself at home. = 편하게 있어요. 손님맞이 정석.'],[6,'Help yourself. = 마음껏 드세요.']],
+51:[[4,'kept showing up = 꾸준히 나타났다 = 계속 해냈다.'],[7,"You've got this! = 넌 할 수 있어!"]]};
+
+/* 내 정보 → 각 언어 변환 (이름, 나이, 직업, 도시, 취미) */
+const ME_JOBS=[['공무원','こうむいん','公务员','gōng wù yuán','a civil servant'],['회사원','かいしゃいん','上班族','shàng bān zú','an office worker'],['학생','がくせい','学生','xué sheng','a student'],['대학생','だいがくせい','大学生','dà xué shēng','a college student'],
+ ['교사','きょうし','老师','lǎo shī','a teacher'],['간호사','かんごし','护士','hù shi','a nurse'],['엔지니어','エンジニア','工程师','gōng chéng shī','an engineer'],['디자이너','デザイナー','设计师','shè jì shī','a designer'],
+ ['의사','いしゃ','医生','yī shēng','a doctor'],['자영업자','じえいぎょう','老板','lǎo bǎn','a business owner'],['주부','しゅふ','家庭主妇','jiā tíng zhǔ fù','a homemaker'],['프리랜서','フリーランス','自由职业者','zì yóu zhí yè zhě','a freelancer']];
+const ME_CITIES=[['부산','プサン','釜山','fǔ shān','Busan'],['서울','ソウル','首尔','shǒu ěr','Seoul'],['인천','インチョン','仁川','rén chuān','Incheon'],['대구','テグ','大邱','dà qiū','Daegu'],['대전','テジョン','大田','dà tián','Daejeon'],
+ ['광주','クァンジュ','光州','guāng zhōu','Gwangju'],['울산','ウルサン','蔚山','wèi shān','Ulsan'],['제주','チェジュ','济州','jì zhōu','Jeju'],['수원','スウォン','水原','shuǐ yuán','Suwon'],['창원','チャンウォン','昌原','chāng yuán','Changwon'],['경기도','キョンギド','京畿道','jīng jī dào','Gyeonggi-do']];
+const ME_HOBBIES=[['여행','りょこう','旅行','lǚ xíng','traveling'],['독서','どくしょ','看书','kàn shū','reading'],['영화 보기','えいが','看电影','kàn diàn yǐng','watching movies'],['운동','うんどう','运动','yùn dòng','working out'],
+ ['요리','りょうり','做饭','zuò fàn','cooking'],['등산','とざん','爬山','pá shān','hiking'],['음악 듣기','おんがく','听音乐','tīng yīn yuè','listening to music'],['게임','ゲーム','玩游戏','wán yóu xì','playing games'],
+ ['사진','しゃしん','拍照','pāi zhào','taking photos'],['공부','べんきょう','学习','xué xí','studying'],['카페 가기','カフェめぐり','去咖啡厅','qù kā fēi tīng','going to cafés'],['달리기','ランニング','跑步','pǎo bù','running']];
+const SUR={'김':['キム','金','jīn','Kim'],'이':['イ','李','lǐ','Lee'],'박':['パク','朴','piáo','Park'],'최':['チェ','崔','cuī','Choi'],'정':['チョン','郑','zhèng','Jung'],'강':['カン','姜','jiāng','Kang'],'조':['チョ','赵','zhào','Cho'],
+ '윤':['ユン','尹','yǐn','Yoon'],'장':['チャン','张','zhāng','Jang'],'임':['イム','林','lín','Lim'],'한':['ハン','韩','hán','Han'],'오':['オ','吴','wú','Oh'],'서':['ソ','徐','xú','Seo'],'신':['シン','申','shēn','Shin'],
+ '권':['クォン','权','quán','Kwon'],'황':['ファン','黄','huáng','Hwang'],'안':['アン','安','ān','Ahn'],'송':['ソン','宋','sòng','Song'],'류':['リュ','柳','liǔ','Ryu'],'홍':['ホン','洪','hóng','Hong'],'전':['チョン','全','quán','Jeon'],'고':['コ','高','gāo','Ko'],'문':['ムン','文','wén','Moon'],'양':['ヤン','梁','liáng','Yang'],'손':['ソン','孙','sūn','Son'],'배':['ペ','裴','péi','Bae'],'백':['ペク','白','bái','Baek'],'허':['ホ','许','xǔ','Heo'],'남':['ナム','南','nán','Nam'],'노':['ノ','卢','lú','Noh']};
+const decH=ch=>{const c=ch.charCodeAt(0)-0xAC00;if(c<0||c>11171)return null;return [Math.floor(c/588),Math.floor(c%588/28),c%28]};
+function toKata(hs,mode){
+  const ROW={k:'カキクケコ',g:'ガギグゲゴ',s:'サシスセソ',n:'ナニヌネノ',h:'ハヒフヘホ',b:'バビブベボ',p:'パピプペポ',m:'マミムメモ',r:'ラリルレロ','':'アイウエオ'};
+  const SP={j:['ジャ','ジ','ジュ','ジェ','ジョ'],ch:['チャ','チ','チュ','チェ','チョ'],t:['タ','チ','トゥ','テ','ト'],d:['ダ','ジ','ドゥ','デ','ド']};
+  const row=c=>SP[c]||ROW[c].split('');
+  const C0=['k','k','n','t','t','r','m','p','p','s','s','','ch','ch','ch','k','t','p','h'],C1=['g','k','n','d','t','r','m','b','p','s','s','','j','ch','ch','k','t','p','h'],C2=['k','k','n','d','t','r','m','b','p','s','s','','j','ch','ch','k','t','p','h'];
+  const V=['a','e','ya','ye','o','e','yo','ye','o','wa','we','we','yo','u','wo','we','wi','yu','u','i','i'],VI={a:0,i:1,u:2,e:3,o:4};
+  const F=['','ク','ク','ク','ン','ン','ン','ッ','ル','ル','ル','ル','ル','ル','ル','ル','ム','プ','プ','ッ','ッ','ン','ッ','ッ','ク','ッ','プ','ッ'];
+  let out='';[...hs].forEach((ch,i)=>{const d=decH(ch);if(!d){out+=ch;return}
+    const c=(i===0?(mode==='sur'?C0:C2):C1)[d[0]],v=V[d[1]],r=row(c);let k;
+    if(v.length===1)k=r[VI[v]];
+    else if(v[0]==='y'){const t=v[1];if(c==='')k={a:'ヤ',u:'ユ',o:'ヨ',e:'イェ'}[t];else if(SP[c]&&c!=='t'&&c!=='d')k=r[VI[t]];else k=t==='e'?r[3]:r[1]+{a:'ャ',u:'ュ',o:'ョ'}[t]}
+    else{const t=v[1];if(c==='')k={a:'ワ',o:'ウォ',e:'ウェ',i:'ウイ'}[t];else k=r[2]+{a:'ァ',o:'ォ',e:'ェ',i:'イ'}[t]}
+    out+=k+F[d[2]]});return out}
+function toRoman(hs){const I=['g','kk','n','d','tt','r','m','b','pp','s','ss','','j','jj','ch','k','t','p','h'],V=['a','ae','ya','yae','eo','e','yeo','ye','o','wa','wae','oe','yo','u','wo','we','wi','yu','eu','ui','i'],
+  F=['','k','k','k','n','n','n','t','l','l','l','l','l','l','l','l','m','p','p','t','t','ng','t','t','k','t','p','t'];
+  const s=[...hs].map(ch=>{const d=decH(ch);return d?I[d[0]]+V[d[1]]+F[d[2]]:ch}).join('');return s.charAt(0).toUpperCase()+s.slice(1)}
+function nameParts(full){full=(full||'').replace(/\s/g,'');if(!full)return {sur:'',given:''};
+  if(full.length>=3&&SUR[full[0]])return {sur:full[0],given:full.slice(1)};
+  if(full.length<=2&&SUR[full[0]])return {sur:full[0],given:full.slice(1)};return {sur:full[0],given:full.slice(1)}}
+function meDefaults(full){const {sur,given}=nameParts(full),S0=SUR[sur];
+  return {nameJ:((S0?S0[0]:toKata(sur,'sur'))+(given?' '+toKata(given,'given'):'')).trim(),nameZ:S0?S0[1]:'',nameE:((given?toRoman(given)+' ':'')+(S0?S0[3]:toRoman(sur))).trim()}}
+function ageJ(n){const o=['','いち','に','さん','よん','ご','ろく','なな','はち','きゅう'];if(n===20)return 'はたち';const t=Math.floor(n/10),u=n%10;
+  let s=(t?(t===1?'':o[t])+'じゅう':'');if(u===1)return s+'いっさい';if(u===8)return s+'はっさい';if(u===0)return s.replace(/じゅう$/,'じゅっ')+'さい';return s+o[u]+'さい'}
+function ageZ(n){const d=['零','一','二','三','四','五','六','七','八','九'],p=['líng','yī','èr','sān','sì','wǔ','liù','qī','bā','jiǔ'];const t=Math.floor(n/10),u=n%10,tt=[],pp=[];
+  if(n===2){tt.push('两');pp.push('liǎng')}else{if(t>1){tt.push(d[t]);pp.push(p[t])}if(t>=1){tt.push('十');pp.push('shí')}if(u||!t){tt.push(d[u]);pp.push(p[u])}}
+  tt.push('岁');pp.push('suì');return {t:tt.join(''),py:pp.join(' ')}}
+function ageE(n){const a=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],T=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+  return n<20?a[n]:T[Math.floor(n/10)]+(n%10?'-'+a[n%10]:'')}
+
+/* ---- 내 이야기 보기 목록: [한국어, 일본어, 중국어, 병음, 영어, (영어 추가)] ---- */
+ME_HOBBIES.forEach((h,i)=>{h.jaV=['りょこう に いきます','ほん を よみます','えいが を みます','うんどう を します','りょうり を します','やま に のぼります','おんがく を ききます','ゲーム を します','しゃしん を とります','べんきょう を します','カフェ に いきます','はしります'][i];
+  h.enV=['travel','read','watch movies','work out','cook','go hiking','listen to music','play games','take photos','study','go to cafés','go running'][i]});
+const OP={
+ fam:[['아내와 딸','つま と むすめ','妻子 和 女儿','qī zi hé nǚ ér','my wife and my daughter'],['아내와 아들','つま と むすこ','妻子 和 儿子','qī zi hé ér zi','my wife and my son'],['아내와 아이들','つま と こども たち','妻子 和 孩子们','qī zi hé hái zi men','my wife and our kids'],
+  ['남편과 딸','おっと と むすめ','丈夫 和 女儿','zhàng fu hé nǚ ér','my husband and my daughter'],['남편과 아들','おっと と むすこ','丈夫 和 儿子','zhàng fu hé ér zi','my husband and my son'],['남편과 아이들','おっと と こども たち','丈夫 和 孩子们','zhàng fu hé hái zi men','my husband and our kids'],
+  ['아내','つま','妻子','qī zi','my wife'],['남편','おっと','丈夫','zhàng fu','my husband'],['부모님','りょうしん','父母','fù mǔ','my parents'],['부모님과 형제','りょうしん と きょうだい','父母 和 兄弟 姐妹','fù mǔ hé xiōng dì jiě mèi','my parents and my siblings'],
+  ['친구들','ともだち','朋友们','péng you men','my friends'],['반려동물','ペット','宠物','chǒng wù','my pet']],
+ mem:[['딸','むすめ','むすめさん','我 女儿','wǒ nǚ ér','你 女儿','nǐ nǚ ér','my daughter'],['아들','むすこ','むすこさん','我 儿子','wǒ ér zi','你 儿子','nǐ ér zi','my son'],['아내','つま','おくさん','我 妻子','wǒ qī zi','你 妻子','nǐ qī zi','my wife'],
+  ['남편','おっと','ごしゅじん','我 丈夫','wǒ zhàng fu','你 丈夫','nǐ zhàng fu','my husband'],['엄마','はは','おかあさん','我 妈妈','wǒ mā ma','你 妈妈','nǐ mā ma','my mom'],['아빠','ちち','おとうさん','我 爸爸','wǒ bà ba','你 爸爸','nǐ bà ba','my dad'],
+  ['강아지','いぬ','わんちゃん','我 的 狗','wǒ de gǒu','你 的 狗','nǐ de gǒu','my dog'],['고양이','ねこ','ねこちゃん','我 的 猫','wǒ de māo','你 的 猫','nǐ de māo','my cat']],
+ freq:[['매일','まいにち','每天','měi tiān','every day'],['주말마다','しゅうまつ に','每 个 周末 都','měi ge zhōu mò dōu','on weekends'],['자주','よく','经常','jīng cháng','a lot'],['가끔','ときどき','有时候','yǒu shí hou','sometimes'],['퇴근 후에','しごと の あと','下班 后','xià bān hòu','after work'],['아침에','あさ','早上','zǎo shang','in the morning']],
+ since:[['작년부터','きょねん から です','从 去年 开始 的','cóng qù nián kāi shǐ de','Since last year.'],['어릴 때부터','こども の ころ から です','从 小 就 喜欢','cóng xiǎo jiù xǐ huan','Since I was a kid.'],['최근에 시작했어요','さいきん はじめました','最近 才 开始','zuì jìn cái kāi shǐ','I just started recently.'],
+  ['몇 년 됐어요','すうねん まえ から です','几 年 前 开始 的','jǐ nián qián kāi shǐ de','For a few years now.'],['10년 넘었어요','じゅうねん いじょう です','已经 十 多 年 了','yǐ jīng shí duō nián le','For over ten years now.']],
+ like:[['초밥','すし','寿司','shòu sī','sushi'],['라멘','ラーメン','拉面','lā miàn','ramen'],['고기구이','やきにく','烤肉','kǎo ròu','Korean barbecue'],['치킨','チキン','炸鸡','zhá jī','fried chicken'],['피자','ピザ','披萨','pī sà','pizza'],['회','さしみ','生鱼片','shēng yú piàn','raw fish'],
+  ['김치찌개','キムチチゲ','泡菜汤','pào cài tāng','kimchi stew'],['떡볶이','トッポッキ','炒年糕','chǎo nián gāo','tteokbokki'],['국밥','クッパ','汤饭','tāng fàn','rice soup'],['매운 음식','からい もの','辣 的 菜','là de cài','spicy food'],['디저트','あまい もの','甜点','tián diǎn','desserts'],['국수','めん','面条','miàn tiáo','noodles'],['만두','ギョーザ','饺子','jiǎo zi','dumplings']],
+ dislike:[['없어요 (다 잘 먹어요)','','','',''],['고수','パクチー','香菜','xiāng cài','cilantro'],['낫토','なっとう','纳豆','nà dòu','natto'],['생선','さかな','鱼','yú','fish'],['매운 음식','からい もの','辣 的 菜','là de cài','spicy food'],['해산물','シーフード','海鲜','hǎi xiān','seafood'],
+  ['우유','ぎゅうにゅう','牛奶','niú nǎi','milk'],['버섯','きのこ','蘑菇','mó gu','mushrooms'],['오이','きゅうり','黄瓜','huáng guā','cucumbers'],['내장','ホルモン','内脏','nèi zàng','organ meat'],['단 음식','あまい もの','甜 的 东西','tián de dōng xi','sweets']],
+ wknd:[['가족과 바다에 갔어요','かぞく と うみ に いきました','和 家人 去 了 海边','hé jiā rén qù le hǎi biān','I went to the beach with my family.',"I'm going to the beach with my family."],
+  ['집에서 쉬었어요','いえ で やすみました','在 家 休息 了','zài jiā xiū xi le','I just rested at home.',"I'm just going to rest at home."],['친구를 만났어요','ともだち に あいました','见 了 朋友','jiàn le péng you','I met up with some friends.',"I'm meeting up with some friends."],
+  ['공부했어요','べんきょう しました','学习 了','xué xí le','I studied all weekend.',"I'm going to study."],['운동했어요','うんどう しました','运动 了','yùn dòng le','I worked out.',"I'm going to work out."],['영화를 봤어요','えいが を みました','看 了 电影','kàn le diàn yǐng','I watched a movie.',"I'm going to see a movie."],
+  ['등산했어요','やま に のぼりました','去 爬山 了','qù pá shān le','I went hiking.',"I'm going hiking."],['아이와 놀았어요','こども と あそびました','陪 孩子 玩 了','péi hái zi wán le','I played with my kid.',"I'm going to spend time with my kid."],
+  ['맛집에 갔어요','おいしい みせ に いきました','去 了 一 家 好吃 的 店','qù le yì jiā hǎo chī de diàn','I went to a nice restaurant.',"I'm going to try a new restaurant."],['청소했어요','そうじ しました','打扫 了 房间','dǎ sǎo le fáng jiān','I cleaned the house.',"I'm going to clean the house."],['일했어요','しごと を しました','加班 了','jiā bān le','I had to work.','I have to work.']],
+ wkfeel:[['즐거웠어요','たのしかった です','很 开心','hěn kāi xīn'],['좀 피곤했어요','ちょっと つかれました','有点儿 累','yǒu diǎn r lèi'],['푹 쉬었어요','のんびり できました','很 放松','hěn fàng sōng'],['그저 그랬어요','まあまあ でした','还 可以','hái kě yǐ']],
+ goal:[['시험 합격','しけん に ごうかく したい です','想 通过 考试','xiǎng tōng guò kǎo shì','pass my exam'],['가족 여행','かぞく と りょこう したい です','想 和 家人 去 旅行','xiǎng hé jiā rén qù lǚ xíng','travel with my family'],['공모전 수상','コンテスト で しょう を とりたい です','想 在 比赛 中 获奖','xiǎng zài bǐ sài zhōng huò jiǎng','win a contest'],
+  ['마라톤 완주','マラソン を はしりたい です','想 跑 马拉松','xiǎng pǎo mǎ lā sōng','run a marathon'],['더 건강해지기','けんこう に なりたい です','想 变 得 更 健康','xiǎng biàn de gèng jiàn kāng','get healthier'],['돈 모으기','おかね を ためたい です','想 存 钱','xiǎng cún qián','save money'],
+  ['일에서 성장','しごと で せいちょう したい です','想 在 工作 上 成长','xiǎng zài gōng zuò shang chéng zhǎng','grow at work'],['새로운 도전','あたらしい こと を はじめたい です','想 开始 新 的 事情','xiǎng kāi shǐ xīn de shì qing','start something new'],
+  ['외국인 친구 사귀기','がいこく の ともだち を つくりたい です','想 交 外国 朋友','xiǎng jiāo wài guó péng you','make friends from abroad'],['책 많이 읽기','ほん を たくさん よみたい です','想 多 看 书','xiǎng duō kàn shū','read more books']],
+ dish:[['돼지국밥','テジクッパ','猪肉 汤饭','zhū ròu tāng fàn','dwaeji gukbap','pork soup with rice',0],['밀면','ミルミョン','小麦 冷面','xiǎo mài lěng miàn','milmyeon','cold wheat noodles',0],['회','さしみ','生鱼片','shēng yú piàn','fresh raw fish','a must by the sea',0],
+  ['씨앗호떡','シアッ ホットク','坚果 糖饼','jiān guǒ táng bǐng','seed hotteok','a sweet pancake with nuts',0],['어묵','オデン','鱼饼','yú bǐng','eomuk','Busan-style fish cakes',0],['조개구이','やきがい','烤 贝壳','kǎo bèi ké','grilled clams','perfect at night by the beach',0],['낙곱새','ナッコプセ','辣 炒 章鱼','là chǎo zhāng yú','nakgopsae','a spicy octopus stew',1]],
+ msgr:[['라인','ライン','微信','wēi xìn','LINE'],['인스타그램','インスタ','小红书','xiǎo hóng shū','Instagram'],['카카오톡','カカオトーク','微信','wēi xìn','KakaoTalk']],
+ season:[['봄','はる','春天','chūn tiān','spring','I love the cherry blossoms.'],['여름','なつ','夏天','xià tiān','summer','I love going to the beach.'],['가을','あき','秋天','qiū tiān','fall',"It's not too hot or too cold."],['겨울','ふゆ','冬天','dōng tiān','winter','I like the cold, crisp air.']],
+ feel:[['스트레스 받는 중',"Honestly, I've been pretty stressed out lately."],['꽤 좋아요','Pretty good, actually. Things are going well.'],['바쁘지만 좋아요','Busy, but in a good way.'],['좀 피곤해요','A bit tired, to be honest.'],['설레요 (곧 여행)','Really excited. I have a trip coming up.']],
+ exer:[['달리기','go running'],['헬스','go to the gym'],['등산','go hiking'],['수영','go swimming'],['요가','do yoga'],['자전거','go cycling'],['걷기','take long walks'],['홈트','work out at home']],
+ tripJ:[['후쿠오카','ふくおか'],['오사카','おおさか'],['교토','きょうと'],['도쿄','とうきょう'],['홋카이도','ほっかいどう'],['오키나와','おきなわ'],['나고야','なごや'],['나가사키','ながさき'],['고베','こうべ'],['유후인','ゆふいん'],['나라','なら'],['가고시마','かごしま']],
+ doJ:[['라멘을 많이 먹었어요','ラーメン を たくさん たべました'],['온천에 들어갔어요','おんせん に はいりました'],['쇼핑했어요','かいもの を しました'],['절과 신사를 구경했어요','おてら と じんじゃ を みました'],['많이 걸었어요','たくさん あるきました'],['이자카야에서 마셨어요','いざかや で のみました'],['맛있는 걸 많이 먹었어요','おいしい もの を たくさん たべました']],
+ tripZ:[['상하이','上海','shàng hǎi'],['베이징','北京','běi jīng'],['칭다오','青岛','qīng dǎo'],['시안','西安','xī ān'],['청두','成都','chéng dū'],['항저우','杭州','háng zhōu'],['광저우','广州','guǎng zhōu'],['홍콩','香港','xiāng gǎng'],['장자제','张家界','zhāng jiā jiè'],['하얼빈','哈尔滨','hā ěr bīn'],['쑤저우','苏州','sū zhōu'],['샤먼','厦门','xià mén']],
+ doZ:[['맛있는 걸 많이 먹었어요','吃 了 很多 好吃 的','chī le hěn duō hǎo chī de'],['쇼핑을 많이 했어요','买 了 很多 东西','mǎi le hěn duō dōng xi'],['관광지를 많이 봤어요','看 了 很多 景点','kàn le hěn duō jǐng diǎn'],['많이 걸었어요','走 了 很多 路','zǒu le hěn duō lù'],['차를 많이 마셨어요','喝 了 很多 茶','hē le hěn duō chá'],['유람선을 탔어요','坐 了 船','zuò le chuán']],
+ tripE:[['후쿠오카','Fukuoka in Japan'],['오사카','Osaka'],['도쿄','Tokyo'],['상하이','Shanghai'],['방콕','Bangkok'],['다낭','Da Nang in Vietnam'],['괌','Guam'],['하와이','Hawaii'],['뉴욕','New York'],['런던','London'],['파리','Paris'],['시드니','Sydney'],['싱가포르','Singapore']],
+ doE:[['맛있는 걸 엄청 먹었어요','I ate so much good food.'],['쇼핑을 많이 했어요','I did a lot of shopping.'],['하루 종일 시내를 걸었어요','I walked around the city all day.'],['해변에서 푹 쉬었어요','I just relaxed at the beach.'],['박물관을 많이 갔어요','I went to a lot of museums.'],['길거리 음식을 다 먹어 봤어요','I tried all the local street food.']]
+};
+const CNT_J={2:'ふたり',3:'さんにん',4:'よにん',5:'ごにん',6:'ろくにん',7:'しちにん',8:'はちにん',9:'きゅうにん'};
+const CNT_Z={2:['两','liǎng'],3:['三','sān'],4:['四','sì'],5:['五','wǔ'],6:['六','liù'],7:['七','qī'],8:['八','bā'],9:['九','jiǔ']};
+const CNT_E={2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine'};
+const kataWords=s=>s.trim().split(/\s+/).map(w=>toKata(w,'given')).join(' ');
+const romWords=s=>s.trim().split(/\s+/).map(w=>/[가-힣]/.test(w)?toRoman(w):w).join(' ');
+/* 슬롯 정의: key, 질문, 종류, 보기 */
+const SLOT={
+ fam:{q:'같이 사는 가족은?',type:'choice',o:'fam'},famN:{q:'우리 집 식구 수 (2~9)',type:'number',min:2,max:9},
+ mem:{q:'소개하고 싶은 가족 한 명은?',type:'choice',o:'mem'},memName:{q:'그 가족의 이름 (예: 민지, 콩이)',type:'text'},
+ freq:{q:'취미는 얼마나 자주 해요?',type:'choice',o:'freq'},since:{q:'그 취미는 언제부터?',type:'choice',o:'since'},
+ like:{q:'제일 좋아하는 음식은?',type:'choice',o:'like'},dislike:{q:'잘 못 먹는 음식은?',type:'choice',o:'dislike'},
+ wknd:{q:'요즘 주말엔 주로 뭐 해요?',type:'choice',o:'wknd'},wkfeel:{q:'그 주말은 어땠어요?',type:'choice',o:'wkfeel'},
+ goal:{q:'올해(내년) 목표는?',type:'choice',o:'goal'},dish:{q:'관광객에게 추천할 부산 음식은?',type:'choice',o:'dish'},
+ msgr:{q:'주로 쓰는 메신저·SNS는?',type:'choice',o:'msgr'},season:{q:'제일 좋아하는 계절은?',type:'choice',o:'season'},
+ feel:{q:'요즘 기분은?',type:'choice',o:'feel'},exer:{q:'주로 하는 운동은?',type:'choice',o:'exer'},spot:{q:'주로 운동하는 곳 (예: 광안리 해변)',type:'text'},
+ tripJ:{q:'가 본 (가고 싶은) 일본 도시는?',type:'choice',o:'tripJ'},doJ:{q:'거기서 뭐 했어요?',type:'choice',o:'doJ'},nextJ:{q:'다음에 가고 싶은 일본 도시는?',type:'choice',o:'tripJ'},
+ tripZ:{q:'가 본 (가고 싶은) 중국 도시는?',type:'choice',o:'tripZ'},doZ:{q:'거기서 뭐 했어요?',type:'choice',o:'doZ'},nextZ:{q:'다음에 가고 싶은 중국 도시는?',type:'choice',o:'tripZ'},
+ tripE:{q:'가 본 해외 여행지는?',type:'choice',o:'tripE'},doE:{q:'거기서 뭐 했어요?',type:'choice',o:'doE'}
+};
+
+['가족이랑 바다에 갈 거예요','집에서 쉴 거예요','친구들 만날 거예요','공부할 거예요','운동할 거예요','영화 보러 갈 거예요','등산 갈 거예요','아이랑 시간 보낼 거예요','새 맛집 가 볼 거예요','집 청소할 거예요','일해야 해요'].forEach((k,i)=>OP.wknd[i][6]=k);
+
+/* 장면별 '내 이야기' 치환: 원본 장면 번호 → [{i:줄, k:[필요한 항목], f:(me)=>{t,py,ko}}] */
+const py2=s=>[...s.replace(/\s/g,'')].join(' ');
+const nmZ=m=>(m.memNameZ||'').trim()||romWords(m.memName||'');
+const PERS_JA={
+ 44:[{i:1,k:['fam'],f:m=>{const x=OP.fam[m.fam];return {t:`はい ${x[1]} です`,ko:`네, ${x[0]}예요`}}},
+     {i:3,k:['famN'],f:m=>({t:`${CNT_J[m.famN]} かぞく です`,ko:`${m.famN}인 가족이에요`})},
+     {i:4,k:['mem','memName'],f:m=>{const x=OP.mem[m.mem];return {t:`${x[2]} の おなまえ は`,ko:`${x[0]} 이름은요?`}}},
+     {i:5,k:['mem','memName'],f:m=>{const x=OP.mem[m.mem];return {t:`${x[1]} は ${kataWords(m.memName)} です`,ko:`${x[0]} 이름은 ${m.memName}이에요`}}}],
+ 40:[{i:1,k:['hobby','freq'],f:m=>{const h=ME_HOBBIES[m.hobby],q=OP.freq[m.freq];return {t:`${q[1]} ${h.jaV}`,ko:`${q[0]} ${h[0]} 해요`}}},
+     {i:2,k:['freq','since'],f:()=>({t:'いつ から です か',ko:'언제부터예요?'})},
+     {i:3,k:['freq','since'],f:m=>{const s=OP.since[m.since];return {t:s[1],ko:s[0]}}}],
+ 46:[{i:1,k:['like'],f:m=>{const x=OP.like[m.like];return {t:`${x[1]} が いちばん すき です`,ko:`${x[0]}를 제일 좋아해요`}}},
+     {i:3,k:['dislike'],f:m=>{const x=OP.dislike[m.dislike];return +m.dislike===0?{t:'とくに ありません なんでも たべます',ko:'특별히 없어요. 뭐든 먹어요'}:{t:`${x[1]} は ちょっと にがて です`,ko:`${x[0]}는 좀 별로예요`}}}],
+ 45:[{i:1,k:['wknd'],f:m=>{const x=OP.wknd[m.wknd];return {t:x[1],ko:x[0]}}},
+     {i:2,k:['wknd','wkfeel'],f:()=>({t:'いい です ね どう でした か',ko:'좋네요, 어땠어요?'})},
+     {i:3,k:['wknd','wkfeel'],f:m=>{const x=OP.wkfeel[m.wkfeel];return {t:x[1],ko:x[0]}}}],
+ 47:[{i:5,k:['goal'],f:m=>{const x=OP.goal[m.goal];return {t:`それから ${x[1]}`,ko:`그리고 ${x[0]}도 하고 싶어요`}}}],
+ 41:[{i:1,k:['tripJ'],f:m=>{const x=OP.tripJ[m.tripJ];return {t:`はい ${x[1]} に いきました`,ko:`네, ${x[0]}에 갔어요`}}},
+     {i:3,k:['doJ'],f:m=>{const x=OP.doJ[m.doJ];return {t:x[1],ko:x[0]}}},
+     {i:6,k:['nextJ'],f:m=>{const x=OP.tripJ[m.nextJ];return {t:`こんど は ${x[1]} に いきたい です`,ko:`다음엔 ${x[0]}에 가고 싶어요`}}},
+     {i:7,k:['nextJ'],f:()=>({t:'いい です ね おすすめ です よ',ko:'좋네요, 추천해요'})}],
+ 42:[{i:3,k:['msgr'],f:m=>{const x=OP.msgr[m.msgr];return {t:`じゃあ ${x[1]} を こうかん しましょう`,ko:`그럼 ${x[0]} 교환해요`}}}],
+ 34:[{i:3,k:['dish'],f:m=>{const x=OP.dish[m.dish];return {t:`じゃあ ${x[1]} が おすすめ です`,ko:`그럼 ${x[0]} 추천해요`}}},
+     {i:5,k:['dish'],f:m=>OP.dish[m.dish][6]?{t:'すこし からい です',ko:'좀 매워요'}:{t:'からく ない です だいじょうぶ です',ko:'안 매워요, 괜찮아요'}}],
+ 39:[{i:1,k:['city'],f:m=>{const c=ME_CITIES[m.city];return {t:`はい ${c[1]} の なつ は むしあつい です`,ko:`네, ${c[0]} 여름은 후텁지근해요`}}}]
+};
+const PERS_ZH={
+ 44:[{i:1,k:['fam'],f:m=>{const x=OP.fam[m.fam];return {t:`对 我 ${x[2]}`,py:`duì wǒ ${x[3]}`,ko:`네, 제 ${x[0]}예요`}}},
+     {i:3,k:['famN'],f:m=>{const c=CNT_Z[m.famN];return {t:`${c[0]} 口 人`,py:`${c[1]} kǒu rén`,ko:`${m.famN}식구예요`}}},
+     {i:4,k:['mem','memName'],f:m=>{const x=OP.mem[m.mem];return {t:`${x[5]} 叫 什么 名字`,py:`${x[6]} jiào shén me míng zi`,ko:`${x[0]} 이름이 뭐예요?`}}},
+     {i:5,k:['mem','memName'],f:m=>{const x=OP.mem[m.mem],n=nmZ(m);return {t:`${x[3]} 叫 ${n}`,py:`${x[4]} jiào ${py2(n)}`,ko:`${x[0]} 이름은 ${m.memName}이에요`}}}],
+ 40:[{i:1,k:['hobby','freq'],f:m=>{const h=ME_HOBBIES[m.hobby],q=OP.freq[m.freq];return {t:`我 ${q[2]} ${h[2]}`,py:`wǒ ${q[3]} ${h[3]}`,ko:`${q[0]} ${h[0]} 해요`}}},
+     {i:2,k:['freq','since'],f:()=>({t:'从 什么 时候 开始 的',py:'cóng shén me shí hou kāi shǐ de',ko:'언제부터예요?'})},
+     {i:3,k:['freq','since'],f:m=>{const s=OP.since[m.since];return {t:s[2],py:s[3],ko:s[0]}}}],
+ 46:[{i:1,k:['like'],f:m=>{const x=OP.like[m.like];return {t:`我 最 喜欢 ${x[2]}`,py:`wǒ zuì xǐ huan ${x[3]}`,ko:`${x[0]}를 제일 좋아해요`}}},
+     {i:3,k:['dislike'],f:m=>{const x=OP.dislike[m.dislike];return +m.dislike===0?{t:'没有 我 什么 都 吃',py:'méi yǒu wǒ shén me dōu chī',ko:'없어요. 뭐든 먹어요'}:{t:`${x[2]} 有点儿 受 不 了`,py:`${x[3]} yǒu diǎn r shòu bu liǎo`,ko:`${x[0]}는 좀 못 먹겠어요`}}},
+     {i:4,k:['dislike'],f:()=>({t:'是 吗',py:'shì ma',ko:'그래요?'})}],
+ 45:[{i:1,k:['wknd'],f:m=>{const x=OP.wknd[m.wknd];return {t:x[2],py:x[3],ko:x[0]}}},
+     {i:2,k:['wknd','wkfeel'],f:()=>({t:'不错 怎么样',py:'bú cuò zěn me yàng',ko:'좋네요, 어땠어요?'})},
+     {i:3,k:['wknd','wkfeel'],f:m=>{const x=OP.wkfeel[m.wkfeel];return {t:x[2],py:x[3],ko:x[0]}}}],
+ 47:[{i:5,k:['goal'],f:m=>{const x=OP.goal[m.goal];return {t:`还 ${x[2]}`,py:`hái ${x[3]}`,ko:`${x[0]}도 하고 싶어요`}}}],
+ 41:[{i:1,k:['tripZ'],f:m=>{const x=OP.tripZ[m.tripZ];return {t:`去 过 去年 去 了 ${x[1]}`,py:`qù guo qù nián qù le ${x[2]}`,ko:`가 봤어요. 작년에 ${x[0]} 갔어요`}}},
+     {i:3,k:['doZ'],f:m=>{const x=OP.doZ[m.doZ];return {t:x[1],py:x[2],ko:x[0]}}},
+     {i:6,k:['nextZ'],f:m=>{const x=OP.tripZ[m.nextZ];return {t:`下次 想 去 ${x[1]}`,py:`xià cì xiǎng qù ${x[2]}`,ko:`다음엔 ${x[0]}에 가고 싶어요`}}},
+     {i:7,k:['nextZ'],f:()=>({t:'那里 很 好玩',py:'nà lǐ hěn hǎo wán',ko:'거기 재밌어요'})}],
+ 34:[{i:3,k:['dish'],f:m=>{const x=OP.dish[m.dish];return {t:`那 推荐 ${x[2]}`,py:`nà tuī jiàn ${x[3]}`,ko:`그럼 ${x[0]} 추천해요`}}},
+     {i:5,k:['dish'],f:m=>OP.dish[m.dish][6]?{t:'有点儿 辣',py:'yǒu diǎn r là',ko:'좀 매워요'}:{t:'不 辣 放心',py:'bú là fàng xīn',ko:'안 매워요, 걱정 마요'}}],
+ 39:[{i:1,k:['city'],f:m=>{const c=ME_CITIES[m.city];return {t:`是 啊 ${c[2]} 的 夏天 很 闷`,py:`shì a ${c[3]} de xià tiān hěn mēn`,ko:`그러게요, ${c[0]} 여름은 후텁지근해요`}}}]
+};
+const PERS_EN={
+ 22:[{i:1,k:['hobby','freq'],f:m=>{const h=ME_HOBBIES[m.hobby],q=OP.freq[m.freq];return {t:`I ${h.enV} ${q[4]}.`,ko:`${q[0]} ${h[0]} 해요.`}}},
+     {i:2,k:['freq','since'],f:()=>({t:'Nice! How long have you been doing that?',ko:'좋네요! 한 지 얼마나 됐어요?'})},
+     {i:3,k:['freq','since'],f:m=>{const s=OP.since[m.since];return {t:s[4],ko:s[0]+'.'}}},
+     {i:4,k:['freq','since'],f:()=>({t:'Cool. Do you watch any shows too?',ko:'멋지다. 드라마도 봐요?'})}],
+ 33:[{i:1,k:['dislike'],f:m=>{const x=OP.dislike[m.dislike];return +m.dislike===0?{t:"Not really. I'll eat pretty much anything.",ko:'딱히요. 거의 다 잘 먹어요.'}:{t:`I'm not a big fan of ${x[4]}.`,ko:`${x[0]}는 별로예요.`}}},
+     {i:2,k:['dislike'],f:()=>({t:'Good to know.',ko:'알아 둘게요.'})},
+     {i:6,k:['like'],f:m=>{const x=OP.like[m.like];return {t:`How do you feel about ${x[4]}?`,ko:`${x[0]} 어때요?`}}}],
+ 24:[{i:1,k:['wknd'],f:m=>{const x=OP.wknd[m.wknd];return {t:x[5],ko:x[6]+'.'}}}],
+ 32:[{i:3,k:['season'],f:m=>{const x=OP.season[m.season];return {t:`Definitely ${x[4]}. ${x[5]}`,ko:`무조건 ${x[0]}이요.`}}}],
+ 34:[{i:1,k:['tripE'],f:m=>{const x=OP.tripE[m.tripE];return {t:`I went to ${x[1]} last year.`,ko:`작년에 ${x[0]}에 갔어요.`}}},
+     {i:3,k:['doE'],f:m=>{const x=OP.doE[m.doE];return {t:`It was amazing. ${x[1]}`,ko:`최고였어요. ${x[0]}.`}}},
+     {i:4,k:['doE'],f:()=>({t:'That sounds like so much fun.',ko:'진짜 재밌었겠다.'})},
+     {i:5,k:['doE'],f:()=>({t:"It really was. I'd love to go back.",ko:'정말요. 또 가고 싶어요.'})},
+     {i:6,k:['tripE'],f:()=>({t:'The best part was talking to the locals.',ko:'제일 좋았던 건 현지 사람들과 이야기한 거예요.'})}],
+ 44:[{i:1,k:['feel'],f:m=>{const x=OP.feel[m.feel];return {t:x[1],ko:x[0]}}},
+     {i:2,k:['feel'],f:()=>({t:"Oh yeah? What's been going on?",ko:'그래요? 요즘 어때요?'})}],
+ 45:[{i:1,k:['exer','freq'],f:m=>{const e=OP.exer[m.exer],q=OP.freq[m.freq];return {t:`I try to. I ${e[1]} ${q[4]}.`,ko:`하려고 해요. ${q[0]} ${e[0]} 해요.`}}},
+     {i:2,k:['exer','freq'],f:()=>({t:'Nice. Where do you usually go?',ko:'좋네요. 보통 어디로 가요?'})},
+     {i:3,k:['spot'],f:m=>({t:`Usually around ${romWords(m.spot)}.`,ko:`보통 ${m.spot} 근처요.`})}],
+ 48:[{i:3,k:['goal'],f:m=>{const x=OP.goal[m.goal];return {t:`I'd also like to ${x[4]}.`,ko:`${x[0]}도 해 보고 싶어요.`}}}],
+ 17:[{i:3,k:['dish'],f:m=>{const x=OP.dish[m.dish];return {t:`Then you have to try ${x[4]}. It's ${x[5]}.`,ko:`그럼 ${x[0]} 꼭 먹어 봐요.`}}},
+     {i:5,k:['dish'],f:m=>OP.dish[m.dish][6]?{t:"It's a little spicy, but you can ask for mild.",ko:'좀 맵긴 한데 순하게 해 달라고 하면 돼요.'}:{t:"Trust me, you'll love it.",ko:'믿어 봐요, 좋아할 거예요.'}}]
+};
+const PNOTE_JA={44:[[4,'남의 가족은 높여 불러요: むすめさん, おくさん, ごしゅじん. 내 가족은 낮춰서 むすめ, つま, おっと.']],40:[[2,'いつ から です か = 언제부터예요? 경험 묻기 기본.']],45:[[3,'느낌 말하기: たのしかった 즐거웠다, つかれました 피곤했다.']]};
+const PNOTE_ZH={44:[[4,'~ 叫 什么 名字 = ~ 이름이 뭐예요? 사람·반려동물 다 써요.']],40:[[2,'从 什么 时候 开始 的 = 언제부터예요?']]};
+const PNOTE_EN={22:[[2,'How long have you been ~ing? = ~한 지 얼마나 됐어요? 현재완료 진행형의 대표 문장.']],45:[[1,'빈도 표현은 문장 끝에: every day, on weekends, after work.']]};
+
+const PART_ZH=(()=>{const m={};[36,0,44,40,46,39,13,45,50,49,42,48].forEach(i=>m[i]='b');[32,33,34,35,37,38,41,43].forEach(i=>m[i]='g');[47,51].forEach(i=>m[i]='f');for(let i=0;i<52;i++)m[i]=m[i]||'t';return m})();
+const PNAME={b:'기초회화',g:'관광객 안내',t:'여행회화',f:'마무리'};
+const LANG={code:'zh',name:'중국어',speech:'zh-CN',voicePref:/^zh[-_]CN/i,voiceRe:/^zh/i,rate:0.95,unitName:'한자·문형',stampChar:'过',canType:false,
+  nameField:{key:'nameZ',label:'중국어 이름 (한자)',ph:'예: 金敏洙',hint:'성은 자동으로 채워져요. 이름 한자를 알면 이어서 입력하세요. 모르면 성만 둬도 돼요.'},
+  shadow:'두 줄을 소리 내서 2번씩 따라 하세요. 성조(병음 위 표시)를 과장해서 살려요.',
+  ranks:[[0,'여행 초보'],[30,'관광객'],[100,'단골 손님'],[200,'동네 주민'],[300,'라오펑유'],[364,'중국통']],
+  souv:['와이탄 엽서','샤오룽바오 자석','판다 인형','버블티 컵 홀더','훠궈 앞치마','룽징차','베이징 오리 열쇠고리','만리장성 엽서','병마용 미니어처','산수화 책갈피','홍등 장식','붉은 매듭','비단 부채','젓가락 세트','이름 도장','차 주전자','경극 가면 자석','판다 배지','월병','탕후루 스티커','보이차','비단 손수건','마작 열쇠고리','붓','먹','복(福) 스티커'],
+  partOf:i=>'p-'+PART_ZH[ORDER[i]],partName:w=>PNAME[PART_ZH[ORDER[w]]],
+  legend:'<span class="lg p-b">기초회화</span><span class="lg p-g">관광객 안내</span><span class="lg p-t">여행회화</span><span class="lg p-f">마무리</span>',
+  howto:'<div><b>한자어로 외우기</b> 중국어 낱말의 상당수는 한국 한자어와 같은 뿌리예요. 낱말 뜻에 함께 적힌 한자음(예: 学习 = 學習 학습)을 연결하면 훨씬 빨리 외워져요.</div><div><b>소리는 첫날 한 번</b> 성조와 소리 규칙은 DAY 1에 한 화면으로 보고, 이후엔 매일 음성을 따라 하며 익혀요. 한자는 하루 1~2자씩 대화 속에 스며들어요.</div><div><b>한글 발음은 참고용</b> 성조가 표시된 병음과 음성을 기준으로 따라 하세요.</div>'};
+const RAW=ZH_OLD.concat(ZH_NEW).map((s,k)=>({t:s.t,who:s.who,ctx:s.ctx,notes:NOTES_ZH[k]||[],L:s.L.map(x=>({sp:x[0],t:x[1],py:x[2],ko:x[3]})),V:s.V.map(v=>({t:v[0],py:v[1],ko:v[2],base:v[3]}))}));
+RAW[0].who='중국인';RAW[0].ctx='처음 만난 중국인과 인사를 나눈다.';
+const PERS=PERS_ZH,PNOTE=PNOTE_ZH;
+const PERSONAL_IDX=36;
+const ORDER_A=[36,0,44,40,46,39,13,45,50,49,42,48,32,33,34,35,37,38,41,43,1,5,4,3,2,9,10,6,7,8,21,25,11,28,12,22,23,20,24,27,29,30,26,17,15,14,16,31,18,19,47,51];
+const ORDER_B=ORDER_A.slice(0,12).concat(ORDER_A.slice(20,50),ORDER_A.slice(12,20),[47,51]);
+const plain=t=>t.replace(/ /g,'');
+const SND=[{k:'ā',n:'1성',d:'높고 평평하게 쭉',ex:'妈'},{k:'á',n:'2성',d:'아래에서 위로 ("응?")',ex:'麻'},{k:'ǎ',n:'3성',d:'낮게 깔았다 살짝 올리기',ex:'马'},{k:'à',n:'4성',d:'위에서 뚝 ("야!")',ex:'骂'},
+ {k:'ma',n:'경성',d:'표시 없음, 짧고 가볍게',ex:'吗'},{k:'zh ch sh r',n:'혀 말기',d:'혀끝을 입천장 쪽으로 말아서',ex:'是'},{k:'z c s',n:'혀끝 앞',d:'혀끝을 윗니 뒤에 대고',ex:'四'},{k:'j q x',n:'지·치·시',d:'혀를 평평하게',ex:'去'},
+ {k:'ü',n:'위',d:'"이" 입 모양에서 입술만 동그랗게',ex:'旅'},{k:'e',n:'으어',d:'"으"와 "어" 사이',ex:'喝'},{k:'-n / -ng',n:'두 받침',d:'-n은 ㄴ, -ng는 ㅇ',ex:'安'},{k:'ǎ+ǎ',n:'3성 연속',d:'앞의 3성은 2성으로 (你好 ní hǎo)',ex:'你好'}];
+const PYALL={},HSET=new Set(),FIRST={};
+RAW.forEach((x,s)=>x.L.concat(x.V).forEach((r,j)=>{const p=r.py.split(' ');[...plain(r.t)].forEach((c,i)=>{HSET.add(c);(PYALL[c]=PYALL[c]||{})[p[i]]=(PYALL[c][p[i]]||0)+1})}));
+const OVR={'不':'bù','一':'yī','个':'gè','儿':'r','子':'zi','的':'de','了':'le','么':'me','们':'men'};
+const hasTone=p=>/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(p);
+const PYOF={};Object.keys(PYALL).forEach(c=>{const e=Object.entries(PYALL[c]).sort((a,b)=>(hasTone(b[0])-hasTone(a[0]))||b[1]-a[1]);PYOF[c]=OVR[c]||e[0][0]});
+const TONEV={'ā':'a','á':'a','ǎ':'a','à':'a','ē':'e','é':'e','ě':'e','è':'e','ī':'i','í':'i','ǐ':'i','ì':'i','ō':'o','ó':'o','ǒ':'o','ò':'o','ū':'u','ú':'u','ǔ':'u','ù':'u','ǖ':'ü','ǘ':'ü','ǚ':'ü','ǜ':'ü'};
+const bare=p=>[...p].map(c=>TONEV[c]||c).join('');
+const INI={b:'ㅂ',p:'ㅍ',m:'ㅁ',f:'ㅍ',d:'ㄷ',t:'ㅌ',n:'ㄴ',l:'ㄹ',g:'ㄱ',k:'ㅋ',h:'ㅎ',j:'ㅈ',q:'ㅊ',x:'ㅅ',zh:'ㅈ',ch:'ㅊ',sh:'ㅅ',r:'ㄹ',z:'ㅉ',c:'ㅊ',s:'ㅆ'};
+const FIN={a:[['ㅏ']],ai:[['ㅏ'],['ㅣ']],ao:[['ㅏ'],['ㅗ']],an:[['ㅏ','ㄴ']],ang:[['ㅏ','ㅇ']],o:[['ㅗ']],ou:[['ㅓ'],['ㅜ']],ong:[['ㅗ','ㅇ']],e:[['ㅓ']],ei:[['ㅔ'],['ㅣ']],en:[['ㅓ','ㄴ']],eng:[['ㅓ','ㅇ']],er:[['ㅓ','ㄹ']],
+ i:[['ㅣ']],ia:[['ㅑ']],iao:[['ㅑ'],['ㅗ']],ian:[['ㅣ'],['ㅔ','ㄴ']],iang:[['ㅑ','ㅇ']],ie:[['ㅣ'],['ㅔ']],in:[['ㅣ','ㄴ']],ing:[['ㅣ','ㅇ']],iong:[['ㅛ','ㅇ']],iu:[['ㅣ'],['ㅜ']],u:[['ㅜ']],ua:[['ㅘ']],uai:[['ㅘ'],['ㅣ']],uan:[['ㅘ','ㄴ']],uang:[['ㅘ','ㅇ']],
+ ui:[['ㅜ'],['ㅣ']],un:[['ㅜ','ㄴ']],uo:[['ㅜ'],['ㅓ']],ueng:[['ㅝ','ㅇ']],'ü':[['ㅟ']],'üe':[['ㅟ'],['ㅔ']],'üan':[['ㅟ'],['ㅔ','ㄴ']],'ün':[['ㅟ','ㄴ']]};
+const ZERO={ya:'ia',yao:'iao',yan:'ian',yang:'iang',ye:'ie',yin:'in',ying:'ing',yong:'iong',you:'iu',yi:'i',yu:'ü',yue:'üe',yuan:'üan',yun:'ün',wu:'u',wa:'ua',wo:'uo',wai:'uai',wei:'ui',wan:'uan',wen:'un',weng:'ueng',wang:'uang'};
+const ZFIN={ui:[['ㅞ'],['ㅣ']],uo:[['ㅝ']],un:[['ㅝ','ㄴ']],iu:[['ㅕ'],['ㅜ']],ian:[['ㅖ','ㄴ']],ie:[['ㅖ']]};
+const CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ',JUNG='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ',JONG=['','ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+const syl=(c,v,f)=>String.fromCharCode(0xAC00+(CHO.indexOf(c)*21+JUNG.indexOf(v))*28+JONG.indexOf(f||''));
+function hang(p){let s=bare(p);if(s==='r')return 'ㄹ';if(!/^[a-zü]+$/.test(s))return '';let ini='',fin=s,zero=false;const m=s.match(/^(zh|ch|sh|[bpmfdtnlgkhjqxrzcs])(.*)$/);
+  if(m){ini=m[1];fin=m[2]}else{zero=true;if(/^[yw]/.test(s))fin=ZERO[s]||s.slice(1)}
+  if(/^[jqx]$/.test(ini)&&fin[0]==='u')fin='ü'+fin.slice(1);
+  let bl=(zero&&ZFIN[fin])||FIN[fin];if(!bl)return '';if(fin==='i'&&/^(z|c|s|zh|ch|sh|r)$/.test(ini))bl=[['ㅡ']];
+  return bl.map((b,i)=>syl(i===0&&ini?INI[ini]:'ㅇ',b[0],b[1])).join('')}
+function hangW(py){const out=[];py.split(' ').forEach(p=>{const h=hang(p);if(h==='ㄹ'&&out.length){const l=out[out.length-1],cd=l.charCodeAt(l.length-1)-0xAC00;if(cd>=0&&cd%28===0){out[out.length-1]=l.slice(0,-1)+String.fromCharCode(l.charCodeAt(l.length-1)+8);return}}out.push(h)});return out.join('')}
+let LEARNED=new Set();
+function words(l){const p=(l.py||'').split(' ');let k=0;return l.t.split(' ').map(w=>[...w].map(c=>({c,p:p[k++]||c})))}
+const pyLine=l=>words(l).map(w=>w.map(x=>x.p).join('')).join(' ');
+const hangLine=l=>words(l).map(w=>hangW(w.map(x=>x.p).join(' '))).join(' ');
+const ME_GL={};[ME_JOBS,ME_CITIES,ME_HOBBIES].forEach(a=>a.forEach(x=>ME_GL[x[2]]=x[0]));Object.assign(ME_GL,{'今年':'올해 (今年 금년)','多':'얼마나','大':'(나이가) 많다','住':'살다 (住 주)'});
+
+const UNITS=[{id:'s:guide',type:'guide',day:1,noq:true}];
+(()=>{const sc={};HSET.forEach(c=>sc[c]=0);ORDER_A.forEach((ri,w)=>RAW[ri].L.forEach((l,i)=>{for(const c of plain(l.t))sc[c]+=100/(w*7+Math.floor(i/2)+4)}));
+  const hz=[...HSET].sort((a,b)=>sc[b]-sc[a]);hz.forEach((c,i)=>UNITS.push({id:'h:'+c,type:'han',c,day:1+Math.floor(i*318/hz.length)}));
+  ZH_PAT.forEach((w,i)=>UNITS.push({id:'p:'+i,type:'pat',w,day:30+Math.floor(i*300/ZH_PAT.length)}))})();
+UNITS.sort((a,b)=>a.day-b.day);
+const firstLine=c=>{for(let s=0;s<SC.length;s++)for(let i=0;i<8;i++)if(plain(SC[s].L[i].t).includes(c))return LN(`l:${s}-${i}`);return null};
+const glOf=w=>ZH_GL[w]||ME_GL[w]||'';
+const H={
+  R:(l,hl)=>'<span class="jp" lang="zh-CN">'+words(l).map(w=>'<span class="ck">'+w.map(x=>LEARNED.has(x.c)||x.p===x.c?`<b class="${hl===x.c?'hl':''}">${esc(x.c)}</b>`:`<i>${esc(x.p)}</i>`).join('')+'</span>').join('<span class="gap"></span>')+'</span>',
+  chunks:l=>words(l).map(w=>({t:w.map(x=>x.c).join(''),py:w.map(x=>x.p).join(' ')})),
+  gloss:l=>words(l).map(w=>{const t=w.map(x=>x.c).join('');return {t,py:w.map(x=>x.p).join(' '),g:glOf(t)}}),
+  readLine:l=>`<span class="py">${esc(pyLine(l))} · 한글 ${esc(hangLine(l))}</span>`,
+  speech:t=>plain(t),
+  reset:()=>{LEARNED=new Set()},
+  learn:u=>{if(u.type==='han')LEARNED.add(u.c)},
+  personal:me=>{const J=ME_JOBS[me.job]||ME_JOBS[0],C=ME_CITIES[me.city]||ME_CITIES[0],B=ME_HOBBIES[me.hobby]||ME_HOBBIES[0];
+    const nz=(me.nameZ||'').replace(/\s/g,''),sp=Object.values(SUR).find(x=>x[1]===nz[0]),py1=c=>(Object.values(SUR).find(x=>x[1]===c)||[])[2]||PYOF[c]||c;
+    const nameLine=nz.length>1?{t:`我 叫 ${nz}`,py:'wǒ jiào '+[...nz].map(py1).join(' ')}:{t:`我 姓 ${nz||'金'}`,py:'wǒ xìng '+(nz?py1(nz):'jīn')};
+    const V=[{t:`我 住 在 ${C[2]}`,py:'wǒ zhù zài '+C[3],ko:`저는 ${C[0]}에 살아요`,base:3},{t:'很 高兴 认识 你',py:'hěn gāo xìng rèn shi nǐ',ko:'만나서 반가워요',base:1}];
+    const ag=me.age?ageZ(me.age):null;
+    return {t:'나의 자기소개',who:'중국인 친구',ctx:'내 정보로 만든 자기소개. 중국 사람을 처음 만났다.',notes:[[1,'풀네임은 我 叫 ~, 성만 말할 땐 我 姓 ~.'],[3,'나이: 숫자 + 岁(suì). 올해 몇 살이에요? = 你 今年 多 大?'],[7,'我 喜欢 ~ = ~를 좋아해요. 취미 말하기 만능.']],
+      L:[{sp:'b',t:'你好 你 叫 什么 名字',py:'nǐ hǎo nǐ jiào shén me míng zi',ko:'안녕하세요, 이름이 뭐예요?'},{sp:'a',...nameLine,ko:`저는 ${me.name}이에요`},
+        {sp:'b',t:'你 今年 多 大',py:'nǐ jīn nián duō dà',ko:'올해 몇 살이에요?'},ag?{sp:'a',t:`我 ${ag.t}`,py:'wǒ '+ag.py,ko:`${me.age}살이에요`}:{sp:'a',t:'这个 是 秘密',py:'zhè ge shì mì mì',ko:'그건 비밀이에요'},
+        {sp:'b',t:'你 做 什么 工作',py:'nǐ zuò shén me gōng zuò',ko:'무슨 일 해요?'},{sp:'a',t:`我 是 ${J[2]}`,py:'wǒ shì '+J[3],ko:`${J[0]}이에요`},
+        {sp:'b',t:'你 的 爱好 是 什么',py:'nǐ de ài hào shì shén me',ko:'취미가 뭐예요?'},{sp:'a',t:`我 喜欢 ${B[2]}`,py:'wǒ xǐ huan '+B[3],ko:`${B[0]}를 좋아해요`}],V}},
+  progress:()=>{let k=0,n=0;SC.forEach(x=>x.L.forEach(l=>{for(const c of plain(l.t)){n++;if(LEARNED.has(c))k++}}));const pc=n?Math.round(k/n*100):0;
+    return {label:'한자로 스며든 정도',pc,text:`전체 대화 속 글자 중 <b style="color:var(--accent)">${pc}%</b>가 한자로 보여요.`}},
+  chip:u=>u.type==='han'?u.c:u.type==='guide'?'<span style="font-size:13px;letter-spacing:0">소리 안내</span>':'<span style="font-size:13px;letter-spacing:0">문형</span>',
+  unitLabel:u=>u.type==='han'?PYOF[u.c]:u.type==='guide'?'성조·소리':u.w[0]+' · '+u.w[1],
+  unitSay:u=>u.type==='han'?u.c:u.type==='guide'?'':plain(u.w[2]),
+  unitIntro:u=>{
+    if(u.type==='guide')return `<span class="tag">소리 안내 · 한 번만 보면 돼요</span><p class="qprompt">중국어는 같은 소리라도 높낮이(성조)로 뜻이 갈려요. 지금 다 외울 필요는 없어요. 매일 음성을 따라 하다 보면 몸에 붙어요. 눌러서 들어 보세요.</p>
+      <div class="wlist">${SND.map(x=>`<button class="wl" data-say="${x.ex}"><b style="font-family:var(--f-body)">${x.k}</b><span>${x.n} · ${esc(x.d)} · ${x.ex}</span></button>`).join('')}</div>
+      <div class="exbox"><small>요령</small><span>병음 위 표시가 성조예요: ā 평평, á 올림, ǎ 낮게, à 내림. 따라 할 땐 과장될 만큼 크게 해 보세요.</span></div>`;
+    if(u.type==='han'){const c=u.c,ex=firstLine(c),alts=Object.keys(PYALL[c]).filter(p=>p!==PYOF[c]),wd=ex?H.gloss(ex).find(w=>w.t.includes(c)):null;
+      return `<span class="tag">새 한자</span><div class="bigk" lang="zh-CN">${c}</div><div class="bigr">${PYOF[c]}</div><div class="note">한글 ${hang(PYOF[c])}${alts.length?` · 문장에 따라 ${alts.join(', ')}`:''}</div>
+      ${wd&&wd.g?`<div class="exbox"><small>이 한자가 든 낱말</small><b class="jp" style="font-size:22px">${esc(wd.t)}</b><span>${esc(wd.g)}</span></div>`:''}
+      <button class="play big" data-say="${c}" aria-label="듣기">${PLAY}</button>${ex?`<div class="exbox"><small>「${esc(SC[ex.s].t)}」 대화 속 · 이제 이 자리는 한자로 보여요</small>${H.R(ex,c)}<small>${esc(ex.ko)}</small></div>`:''}`}
+    const w=u.w,l={t:w[2],py:w[3]};return `<span class="tag">문형 카드</span><div class="qbig" style="font-family:var(--f-kana);font-size:30px">${esc(w[0])}</div><div class="note">${esc(w[1])}</div>
+      <div class="exbox"><small>예문</small>${H.R(l)}<small>${esc(w[3])} · ${esc(w[4])}</small></div><div class="gl">${H.gloss(l).map(c=>`<span class="gc"><span class="gt">${H.R({t:c.t,py:c.py})}</span><span class="gg">${esc(c.g||'·')}</span></span>`).join('')}</div>
+      <button class="play big" data-say="${w[2]}" aria-label="듣기">${PLAY}</button>`},
+  unitQ:u=>{
+    if(u.type==='han'){const c=u.c,cand=shuffle([...LEARNED].filter(x=>x!==c)).concat(shuffle([...HSET].filter(x=>x!==c)));
+      const opts=shuffle([c,...distinct(cand,3,x=>PYOF[x],PYOF[c])]),fwd=Math.random()<.6;
+      return {tag:'한자',ans:c,say:c,detail:`<p><span class="jp"><b>${c}</b></span> = ${PYOF[c]} (${hang(PYOF[c])})</p>`,
+        html:fwd?`<p class="qprompt">이 한자는 어떻게 읽나요?</p><div class="qbig kana" lang="zh-CN">${c}</div><div class="opts k4">${opts.map(o=>`<button class="opt" data-v="${o}" style="font-family:var(--f-body)">${PYOF[o]}</button>`).join('')}</div>`
+          :`<p class="qprompt">"${PYOF[c]}" 소리의 한자는?</p><div class="qbig">${PYOF[c]}</div><div style="display:flex;justify-content:center"><button class="play" data-say="${c}" aria-label="듣기">${PLAY}</button></div><div class="opts k4">${opts.map(o=>`<button class="opt kf" data-v="${o}" lang="zh-CN">${o}</button>`).join('')}</div>`}}
+    const pool=UNITS.filter(x=>x.type==='pat'&&x.id!==u.id),cand=shuffle(pool.filter(x=>has(x.id))).concat(shuffle(pool)),opts=shuffle([u,...distinct(cand,3,x=>x.w[1],u.w[1])]),fwd=Math.random()<.6;
+    return {tag:'문형',ans:u.id,say:plain(u.w[2]),detail:`<p><b>${esc(u.w[0])}</b> = ${esc(u.w[1])}</p><p>${esc(u.w[2])} · ${esc(u.w[4])}</p>`,
+      html:fwd?`<p class="qprompt">이 문형의 뜻은?</p><div class="qbig" style="font-family:var(--f-kana)">${esc(u.w[0])}</div><div class="opts">${opts.map(o=>`<button class="opt" data-v="${o.id}">${esc(o.w[1])}</button>`).join('')}</div>`
+        :`<p class="qprompt">"${esc(u.w[1])}"는?</p><div class="opts">${opts.map(o=>`<button class="opt" data-v="${o.id}" style="font-family:var(--f-kana);font-size:20px">${esc(o.w[0])}</button>`).join('')}</div>`}},
+  unitsView:()=>{const hz=UNITS.filter(u=>u.type==='han'),pats=UNITS.filter(u=>u.type==='pat'),n=hz.filter(u=>LEARNED.has(u.c)).length;
+    return `<header><div class="eyebrow">한자·문형 · 누르면 자세히</div><h2 style="margin:4px 0 0;font-size:22px">한자 ${n}/${hz.length}</h2></header>
+      <button class="btn ghost" data-unit="s:guide">성조·소리 안내 다시 보기</button>
+      <section class="sec"><h3>문형 ${pats.filter(u=>has(u.id)).length}/${pats.length}</h3><div class="wlist">${pats.map(u=>has(u.id)?`<button class="wl" data-unit="${u.id}"><b style="font-size:16px">${esc(u.w[0])}</b><span>${esc(u.w[1])}</span></button>`:`<div class="wl off"><b>?</b><span>DAY ${u.day}</span></div>`).join('')}</div></section>
+      <section class="sec"><h3>한자 · 흐린 칸은 열리는 날</h3><div class="ktable" style="grid-template-columns:repeat(6,1fr)">${hz.map(u=>{const on=LEARNED.has(u.c);return `<button class="kc ${on?'':'off'}" ${on?`data-unit="${u.id}"`:`data-say="${u.c}"`}><b>${u.c}</b><span>${on?PYOF[u.c]:'D'+u.day}</span></button>`}).join('')}</div></section>`}
+};
+
+/* ===== 365 엔진 v2 ===== 팩이 LANG, RAW, ORDER_A, ORDER_B, PERSONAL_IDX, UNITS, H 를 정의 */
+const TOTAL=365,WEEKS=52,CAP=36;
+const $=s=>document.querySelector(s);
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const PLAY='<svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg>';
+const STAR=on=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z" fill="${on?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
+const UMAP={};UNITS.forEach(u=>UMAP[u.id]=u);
+const UDAY={};UNITS.forEach(u=>(UDAY[u.day]=UDAY[u.day]||[]).push(u.id));
+
+/* ---- 상태 ---- */
+const KEY='y365-'+LANG.code+'-v2',IV=[1,3,7,14,30,60,120,240],SIV=[3,7,14,30,60,120];
+function fresh(){return {v:2,lang:LANG.code,day:1,last:null,streak:0,best:0,tick:0,items:{},sc:{},souv:[],fav:{},me:null,order:'A',onb:false,slow:false}}
+function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);if(o&&o.v===2&&o.lang===LANG.code){o.fav=o.fav||{};return o}}}catch(e){}return fresh()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let S=load();
+const ORDER=(S.order==='B'?ORDER_B:ORDER_A);
+const BASEK=['name','age','job','city','hobby'];
+const filled=k=>!!S.me&&S.me[k]!=null&&S.me[k]!=='';
+function persScene(ri){
+  if(ri===PERSONAL_IDX&&S.me){const p=H.personal(S.me);p.L=p.L.map(l=>l.sp==='a'?{...l,me:true}:l);p.V=p.V.map(v=>({...v,me:true}));return p}
+  const b=RAW[ri],P=PERS[ri];if(!P||!S.me)return b;
+  const L=b.L.slice();let hit=false;
+  P.forEach(o=>{if(o.f&&o.k.every(filled)){L[o.i]={sp:b.L[o.i].sp,...o.f(S.me),me:true};hit=true}});
+  return {...b,L,notes:hit&&PNOTE[ri]?b.notes.concat(PNOTE[ri]):b.notes}}
+const SC=ORDER.map(persScene);
+function applyMe(){ORDER.forEach((ri,w)=>{SC[w]=persScene(ri)})}
+const slotKeys=ri=>[...new Set((PERS[ri]||[]).flatMap(o=>o.k))].filter(k=>!BASEK.includes(k));
+const ALLSLOTS=[...new Set(ORDER.flatMap(ri=>slotKeys(ri)))];
+const missingSlots=w=>S.me?slotKeys(ORDER[w]).filter(k=>!filled(k)&&!((S.me._skip||{})[k])):[];
+function fieldHTML(k){const d=SLOT[k],v=S.me&&S.me[k]!=null?S.me[k]:'';
+  if(d.type==='choice')return `<label>${esc(d.q)}<select id="sl_${k}"><option value="">선택 안 함</option>${OP[d.o].map((o,i)=>`<option value="${i}" ${v!==''&&+v===i?'selected':''}>${esc(o[0])}</option>`).join('')}</select></label>`;
+  if(d.type==='number')return `<label>${esc(d.q)}<input id="sl_${k}" type="number" inputmode="numeric" min="${d.min}" max="${d.max}" value="${esc(v)}"></label>`;
+  return `<label>${esc(d.q)}<input id="sl_${k}" value="${esc(v)}" autocomplete="off" placeholder="한글로 입력">${LANG.code==='zh'&&k==='memName'?`</label><label>(선택) 이름 한자<input id="sl_${k}Z" value="${esc(S.me&&S.me[k+'Z']||'')}" autocomplete="off" placeholder="예: 敏智 · 모르면 비워 두세요">`:''}</label>`}
+function readFields(keys){keys.forEach(k=>{const el=document.getElementById('sl_'+k);if(!el)return;const d=SLOT[k];let v=el.value.trim();
+  if(v==='')v=null;else if(d.type==='choice')v=+v;else if(d.type==='number'){v=parseInt(v,10);if(!(v>=d.min&&v<=d.max))v=null}
+  S.me[k]=v;const z=document.getElementById('sl_'+k+'Z');if(z)S.me[k+'Z']=z.value.trim();if(v!=null&&S.me._skip)delete S.me._skip[k]})}
+function todayNum(){const d=new Date();return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5)}
+function addItem(id){if(!S.items[id])S.items[id]={b:0,due:todayNum()+1};if(UMAP[id]&&H.learn)H.learn(UMAP[id])}
+const has=id=>!!S.items[id];
+function relearn(){if(H.reset)H.reset();Object.keys(S.items).forEach(id=>{if(UMAP[id]&&H.learn)H.learn(UMAP[id])})}
+relearn();
+function curStreak(){if(S.last==null)return 0;const gap=todayNum()-1-S.last;return gap<=0||gap<=S.tick?S.streak:0}
+function LN(id){const [s,n]=id.slice(2).split('-').map(Number);const sc=SC[s];
+  if(id[0]==='l'){const x=sc.L[n];return {id,sp:x.sp,t:x.t,py:x.py,ko:x.ko,s,i:n,base:n,me:x.me}}
+  const x=sc.V[n];return {id,sp:'a',t:x.t,py:x.py,ko:x.ko,s,i:n,base:x.base,v:true,me:x.me}}
+function prevB(l){const b=l.base,L=SC[l.s].L;return (b%2===1&&L[b-1].sp==='b'&&(l.v||L[b].sp==='a'))?b-1:-1}
+function prevA(l){if(l.v)return -1;const L=SC[l.s].L;return (l.i%2===1&&L[l.i-1].sp==='a'&&L[l.i].sp==='b')?l.i-1:-1}
+const notesFor=l=>(SC[l.s].notes||[]).filter(n=>n[0]===l.base).map(n=>n[1]);
+
+/* ---- 소리 ---- */
+let voice=null;const hasTTS='speechSynthesis' in window;
+function loadV(){try{const vs=speechSynthesis.getVoices();voice=vs.find(v=>LANG.voicePref.test(v.lang))||vs.find(v=>LANG.voiceRe.test(v.lang))||null}catch(e){}}
+if(hasTTS){loadV();try{speechSynthesis.onvoiceschanged=loadV}catch(e){}}
+function utter(t,slow){const u=new SpeechSynthesisUtterance(H.speech(t));u.lang=LANG.speech;if(voice)u.voice=voice;u.rate=((slow||S.slow)?0.62:0.92)*LANG.rate;return u}
+function speak(t,slow){if(!hasTTS||!t)return;try{speechSynthesis.cancel();speechSynthesis.speak(utter(t,slow))}catch(e){}}
+function speakAll(list){if(!hasTTS)return;try{speechSynthesis.cancel();list.forEach(t=>speechSynthesis.speak(utter(t)))}catch(e){}}
+
+function bub(l,o={}){const me=l.sp==='a',who=me?'나':SC[l.s].who;
+  return `<div class="bub ${me?'me':'you'} ${o.cls||''}" ${o.nodetail?'':`data-id="${l.id}"`}><span class="who">${esc(who)}${l.me?' <span class="mytag">내 이야기</span>':''}${S.fav[l.id]?' <span class="fs">★</span>':''}</span><div class="bt"><div class="${o.blur?'blur':''}">${H.R(l,o.hl)}</div><button class="play s" data-say="${esc(l.t)}" aria-label="듣기">${PLAY}</button></div>${o.noko?'':`<p class="${o.blur?'blur':''}">${esc(l.ko)}</p>`}</div>`}
+function glossHTML(l){const g=H.gloss?H.gloss(l):null;if(!g)return '';
+  return `<div class="gl">${g.map(c=>`<span class="gc"><span class="gt">${H.R({t:c.t,py:c.py,s:l.s})}</span><span class="gg">${esc(c.g||'·')}</span></span>`).join('')}</div>`}
+
+/* ---- 하루 구성 ---- */
+const DTYPE=['new','new','new','new','final','mix','weekend'];
+const DNAME={new:'새 대화',final:'실전',mix:'섞기',weekend:'가벼운 주말',grad:'졸업'};
+function dayInfo(D){if(D>=TOTAL)return {type:'grad',w:WEEKS-1,p:7};const w=Math.floor((D-1)/7),p=(D-1)%7;return {type:DTYPE[p],w,p}}
+const isQ=id=>!(UMAP[id]&&UMAP[id].noq);
+function dueItems(excl){const t=todayNum();return Object.entries(S.items).filter(([id,v])=>v.due<=t&&!(excl&&excl.has(id))&&isQ(id)).sort((a,b)=>a[1].due-b[1].due).map(e=>e[0])}
+function dueScenes(){const t=todayNum();return Object.entries(S.sc).filter(([s,v])=>v.due<=t).sort((a,b)=>a[1].due-b[1].due).map(e=>+e[0])}
+const doneScenes=()=>Object.keys(S.sc).map(Number);
+function plan(D){
+  const I=dayInfo(D),units=UDAY[D]||[];
+  let fixed=units.reduce((a,id)=>a+(UMAP[id].noq?1:2),0);
+  if(I.type==='new')fixed+=3+(I.p*2+2);if(I.type==='final')fixed+=1+SC[I.w].V.length+8;
+  const roll={new:5,final:4,mix:8,weekend:10,grad:10}[I.type],reps={new:0,final:0,mix:1,weekend:0,grad:2}[I.type];
+  let replay=dueScenes().filter(x=>x!==I.w);if(replay.length<reps)replay=replay.concat(shuffle(doneScenes().filter(x=>x!==I.w&&!replay.includes(x))));
+  replay=replay.slice(0,reps);fixed+=replay.length*8;
+  const pool=Object.keys(S.items).filter(id=>(id[0]==='l'||id[0]==='v')&&LN(id).sp==='a').length,rollN=Math.min(roll,pool);fixed+=rollN;
+  const rev=Math.max(S.day>1?4:0,Math.min(14,CAP-fixed));
+  return {...I,units,replay,roll:rollN,rev:Math.min(rev,Object.keys(S.items).filter(isQ).length)};
+}
+function rank(){let r=LANG.ranks[0][1];LANG.ranks.forEach(([d,n])=>{if(S.day-1>=d)r=n});return r}
+const solid=()=>Object.values(S.items).filter(v=>v.b>=3).length;
+function snowSVG(n,size){const r=Math.min(48,18+Math.sqrt(n)*2.6),s=size||110;
+  return `<svg viewBox="0 0 110 110" width="${s}" height="${s}" aria-hidden="true"><ellipse cx="55" cy="${56+r}" rx="${r*0.9}" ry="4" fill="var(--line)"/><circle cx="55" cy="55" r="${r}" fill="var(--snow)" stroke="var(--line)" stroke-width="1.5"/><circle cx="${55-r*0.35}" cy="${55-r*0.35}" r="${r*0.28}" fill="var(--paper)" opacity=".7"/>${[...Array(Math.min(12,Math.floor(n/8)))].map((_,i)=>{const a=i*2.4,d=r*0.55;return `<circle cx="${55+Math.cos(a)*d}" cy="${55+Math.sin(a)*d}" r="1.6" fill="var(--accent)" opacity=".45"/>`}).join('')}</svg>`}
+
+/* ---- 화면 ---- */
+let tab='home';
+function viewHome(){
+  const today=todayNum(),grad=S.day>TOTAL,D=Math.min(S.day,TOTAL),doneToday=S.last===today,P=plan(D),sc=SC[P.w];
+  const learnedN=sc.L.filter((l,i)=>has(`l:${P.w}-${i}`)).length,allN=Object.keys(S.items).length,sol=solid();
+  const route=SC.map((x,i)=>`<div class="st ${S.sc[i]?'done':''} ${i===P.w&&!grad?'now':''} ${LANG.partOf(i)}" title="${esc(x.t)}">${i+1}</div>`).join('');
+  const prog=H.progress(),unitTxt=P.units.length?P.units.map(id=>H.chip(UMAP[id])).join(' '):'없음';
+  let main;
+  if(grad)main=`<div class="ticket"><h2>365일 완주. ${esc(LANG.ranks[LANG.ranks.length-1][1])}!</h2><p class="ctx">복습과 눈덩이 굴리기로 감을 유지해요.</p><button class="btn" data-act="review">복습하기</button></div>`;
+  else if(doneToday)main=`<div class="ticket"><h2>오늘 분량 완료</h2><p class="ctx">내일은 DAY ${D} · ${DNAME[P.type]}${P.type==='weekend'?' · 기념품 받는 날':''}</p>
+    <button class="btn ghost" data-act="review">가볍게 복습 더 하기</button><button class="linkbtn" data-act="ahead">기다리지 않고 DAY ${D} 바로 하기</button></div>`;
+  else{const what=P.type==='new'?`${P.p*2+1}–${P.p*2+2}번째 줄 듣고 익히기 (${learnedN}/8)`:P.type==='final'?'바꿔 말하기 + 실전 롤플레이':P.type==='grad'?'졸업 롤플레이 2장면':P.type==='mix'?'지난 장면 1개 통째로':'쉬어 가는 날 · 큰 눈덩이';
+    main=`<div class="ticket"><div class="eyebrow">${P.w+1}주차 · ${esc(LANG.partName(P.w))} · ${DNAME[P.type]}</div><h2>${esc(sc.t)}</h2><p class="ctx">${esc(sc.ctx)}</p>
+      <ul class="plan"><li><span>복습</span><span>${P.rev}개</span></li><li><span>${esc(LANG.unitName)}</span><span class="kchips">${unitTxt}</span></li>
+      <li><span>대화</span><span>${what}</span></li><li><span>눈덩이</span><span>${P.roll}개 굴리기</span></li></ul>
+      <button class="btn" data-act="start">DAY ${D} 시작 · 10~15분</button></div>`}
+  const souv=S.souv.length?S.souv.map(i=>`<span class="souv">${esc(souvName(i))}</span>`).join(''):'<span class="ctx" style="margin:0">7일째(주말)를 마치면 하나씩 생겨요.</span>';
+  const me=S.me?SC.flatMap((x,s)=>x.L.map((l,i)=>({l,s,i}))).filter(o=>o.l.me&&o.l.sp==='a'&&(o.s===0||has(`l:${o.s}-${o.i}`))).map(o=>LN(`l:${o.s}-${o.i}`)):[];
+  return `<header class="top"><div><div class="eyebrow">${esc(LANG.name)} 365 · ${esc(rank())}</div><div class="dayno">DAY ${D}<small>/365</small></div>
+    <div class="station">${grad?'완주':(P.w+1)+'주차 '+(P.type==='grad'?'':(P.p+1)+'일째')}</div></div>
+    <div class="stamp" aria-label="연속 ${curStreak()}일"><div><b>${curStreak()}</b><span>일 연속</span></div></div></header>
+    ${main}
+    <section class="snow"><div>${snowSVG(sol)}</div><div><h3>내 눈덩이</h3><p><b>${sol}</b>개 단단해짐 <span class="muted">· ${allN}개 굴리는 중</span></p><p class="muted">세 번 이상 제때 떠올린 표현이 눈덩이에 단단히 붙어요.</p></div></section>
+    ${me.length?`<section class="sec"><h3>나의 이야기 · ${me.length}문장 <button class="linkbtn" data-act="onb" style="float:right;padding:0">내 정보 수정</button></h3><p style="margin:0 0 8px">장면을 지날 때마다 내 이야기가 쌓여요. 1년 뒤엔 이것만으로 몇 분간 나를 소개할 수 있어요.</p><div class="chat">${me.slice(0,4).map(l=>bub(l)).join('')}</div>${me.length>4?`<details><summary>${me.length-4}문장 더 보기</summary><div class="chat" style="margin-top:10px">${me.slice(4).map(l=>bub(l)).join('')}</div></details>`:''}${hasTTS?'<button class="linkbtn" data-act="mesay">전부 이어 듣기</button>':''}</section>`:''}
+    <section class="sec"><h3>${esc(prog.label)}</h3><div class="bar"><i style="width:${prog.pc}%"></i></div><p>${prog.text}</p></section>
+    <section class="sec"><h3>소소한 보상</h3><div class="perks"><div><b>${S.tick}</b><span>휴가권</span></div><div><b>${Object.keys(S.sc).length}</b><span>도장</span></div><div><b>${S.souv.length}</b><span>기념품</span></div><div><b>${S.best||0}</b><span>최장 연속</span></div></div>
+      <p>7일 연속마다 휴가권 1장(최대 2장). 하루 빠져도 연속 기록을 지켜 줘요.</p><div class="souvs">${souv}</div></section>
+    <section class="sec"><h3>52주 노선</h3><div class="route">${route}</div><div class="legend">${LANG.legend}</div></section>
+    <details><summary>공부법 · 하루 흐름</summary><div class="setting" style="font-size:14px">${LANG.howto}
+      <div><b>듣기 먼저</b> 새 대화는 글자를 가린 채 먼저 듣고, 뜻을 짐작한 다음 공개해요.</div>
+      <div><b>떠올려 말하기</b> 복습은 고르기보다 한국어를 보고 직접 말해 보는 게 중심이에요. 정답을 확인하고 '다시·애매·알았음'을 매기면 그에 맞춰 다음 복습 날짜가 정해져요.</div>
+      <div><b>눈덩이 굴리기</b> 매일 지난 장면 표현을 섞어서 떠올려요. 연속으로 맞히면 눈덩이가 커져요.</div>
+      <div><b>대사를 누르면</b> 낱말 뜻, 해설, 느린 발음, 즐겨찾기가 나와요.</div>
+      <div><b>하루 분량</b> 하루 약 ${CAP}개 안쪽으로 고정돼요. 밀린 복습은 다음 날로 넘어가요.</div></div></details>
+    <details><summary>설정 · 백업</summary><div class="setting">
+      <div class="toggle"><span>느린 발음</span><button class="sw" id="slow" aria-pressed="${S.slow}" aria-label="느린 발음"></button></div>
+      <button class="btn ghost" data-act="onb">내 정보 수정</button>
+      ${S.day<=84?`<div class="toggle"><span>여행회화 먼저 하기 (13주차 전까지 변경 가능)</span><button class="sw" id="ordB" aria-pressed="${S.order==='B'}" aria-label="여행회화 먼저"></button></div>`:''}
+      <div>진도는 이 앱(브라우저)에만 저장돼요. 가끔 백업 코드를 복사해 메모앱에 두세요.</div>
+      <button class="btn ghost" data-act="export">백업 코드 복사</button><textarea id="bk" placeholder="백업 코드를 여기에 붙여넣기"></textarea>
+      <button class="btn ghost" data-act="import">붙여넣은 코드로 복원</button><button class="btn ghost" data-act="reset1" id="r1">처음부터 다시</button>
+      <div id="r2" hidden><p style="margin:0 0 8px">모든 진도가 지워져요. 정말 지울까요?</p><div class="row2"><button class="btn" data-act="reset2" style="background:var(--stamp)">지우기</button><button class="btn ghost" data-act="reset0">취소</button></div></div>
+      <div class="msg" id="msg"></div></div></details>`}
+const souvName=i=>{const L=LANG.souv;return (i>=L.length?'금박 ':'')+L[i%L.length]};
+function viewPhr(){
+  const total=SC.reduce((a,x,s)=>a+x.L.filter((l,i)=>has(`l:${s}-${i}`)).length,0);
+  let h=`<header><div class="eyebrow">대화집 · 대사를 누르면 해설</div><h2 style="margin:4px 0 0;font-size:22px">쌓인 대사 ${total}/${SC.length*8}</h2></header>`;
+  SC.forEach((x,s)=>{const ls=x.L.map((l,i)=>LN(`l:${s}-${i}`)).filter(l=>has(l.id)),vs=x.V.map((v,i)=>LN(`v:${s}-${i}`)).filter(l=>has(l.id));if(!ls.length)return;
+    h+=`<section class="scene"><h3>${s+1}. ${esc(x.t)}<span>${S.sc[s]?'도장 완료':''}</span></h3><p class="ctx">${esc(x.ctx)}</p><div class="chat">${ls.map(l=>bub(l)).join('')}</div>`;
+    if(hasTTS)h+=`<button class="linkbtn" data-all="${s}">이 대화 이어 듣기</button>`;
+    if(vs.length)h+=`<div class="vlist"><span class="lbl">바꿔 말하기</span>${vs.map(l=>bub(l)).join('')}</div>`;h+='</section>'});
+  return h+'<p class="locked">다음 장면은 진도에 맞춰 열려요.</p>'}
+function viewFav(){
+  const ids=Object.keys(S.fav).filter(id=>S.fav[id]),ls=ids.filter(id=>(id[0]==='l'||id[0]==='v')&&has(id)).map(LN),us=ids.filter(id=>UMAP[id]);
+  return `<header><div class="eyebrow">즐겨찾기</div><h2 style="margin:4px 0 0;font-size:22px">★ ${ls.length+us.length}개</h2></header>
+    <p class="locked">대사나 카드를 누른 뒤 ★를 누르면 여기 모여요. 아래 복습은 하루 분량과 별개인 보너스예요.</p>
+    ${ls.length+us.length?`<button class="btn" data-act="favrev">즐겨찾기 떠올리기 (${Math.min(12,ls.length+us.length)}개)</button>`:''}
+    ${ls.length?`<div class="chat">${ls.map(l=>bub(l)).join('')}</div>`:''}
+    ${us.length?`<div class="wlist">${us.map(id=>`<button class="wl" data-unit="${id}"><b>${H.chip(UMAP[id])}</b><span>${esc(H.unitLabel(UMAP[id]))}</span></button>`).join('')}</div>`:''}`}
+function render(){$('#app').innerHTML=tab==='home'?viewHome():tab==='unit'?H.unitsView():tab==='fav'?viewFav():viewPhr();
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab))}
+
+/* ---- 해설 시트 ---- */
+function openSheet(id){
+  const isU=!!UMAP[id];let body;
+  if(isU)body=H.unitIntro(UMAP[id]);
+  else{const l=LN(id),ns=notesFor(l);
+    body=`<span class="tag">${esc(SC[l.s].t)} · ${l.sp==='a'?'나':esc(SC[l.s].who)}</span><div class="qbig">${H.R(l)}</div><p class="mean">${esc(l.ko)}</p>
+      ${H.readLine?`<p class="read">${H.readLine(l)}</p>`:''}${glossHTML(l)}${ns.length?`<div class="note2">${ns.map(n=>`<p>${esc(n)}</p>`).join('')}</div>`:''}
+      <div class="row2"><button class="btn ghost" data-say="${esc(l.t)}">보통 속도</button><button class="btn ghost" data-slow="${esc(l.t)}">느리게</button></div>`;speak(l.t)}
+  $('#shb').innerHTML=body+`<button class="btn star ${S.fav[id]?'on':''}" data-favt="${id}">${STAR(S.fav[id])} ${S.fav[id]?'즐겨찾기 해제':'즐겨찾기'}</button>`;
+  $('#sheet').hidden=false}
+function closeSheet(){$('#sheet').hidden=true}
+
+/* ---- 내 정보 ---- */
+function openOnb(){
+  const m=S.me||{name:'',age:'',job:0,city:0,hobby:0},nf=LANG.nameField;
+  const opt=(arr,v)=>arr.map((x,i)=>`<option value="${i}" ${+v===i?'selected':''}>${x[0]}</option>`).join('');
+  $('#onbb').innerHTML=`<h2 style="margin:0">내 정보로 시작하기</h2><p class="ctx">1주차 자기소개 대화가 내 정보로 만들어져요. 나중에 언제든 바꿀 수 있어요.</p>
+    <label>이름 (한글)<input id="f_name" value="${esc(m.name||'')}" placeholder="예: 김민수" autocomplete="off"></label>
+    <label>${esc(nf.label)}<input id="f_nl" value="${esc(m[nf.key]||'')}" placeholder="${esc(nf.ph)}" autocomplete="off"><small>${esc(nf.hint)}</small></label>
+    <label>나이<input id="f_age" type="number" min="1" max="99" inputmode="numeric" value="${esc(m.age||'')}" placeholder="예: 34"></label>
+    <label>직업<select id="f_job">${opt(ME_JOBS,m.job)}</select></label>
+    <label>사는 곳<select id="f_city">${opt(ME_CITIES,m.city)}</select></label>
+    <label>취미<select id="f_hobby">${opt(ME_HOBBIES,m.hobby)}</select></label>
+    ${S.day<=84?`<fieldset><legend>진행 순서</legend><label class="rd"><input type="radio" name="ord" value="A" ${S.order!=='B'?'checked':''}> 기초회화 → 관광객 안내 → 여행회화 (추천)</label><label class="rd"><input type="radio" name="ord" value="B" ${S.order==='B'?'checked':''}> 기초회화 → 여행회화 → 관광객 안내 (여행 계획 있음)</label></fieldset>`:''}
+    ${ALLSLOTS.length?`<details ${S.onb?'open':''}><summary>더 많은 내 이야기 (선택 · 해당 주가 되면 다시 물어봐요)</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">${ALLSLOTS.map(fieldHTML).join('')}</div></details>`:''}
+    <p class="msg" id="onbmsg"></p><button class="btn" data-act="onbsave">저장하고 시작</button>${S.onb?'<button class="linkbtn" data-act="onbclose">닫기</button>':'<button class="linkbtn" data-act="onbskip">건너뛰기 (예시 인물로 시작)</button>'}`;
+  $('#onb').hidden=false;
+  const fn=$('#f_name'),fl=$('#f_nl');let touched=!!(m[nf.key]&&m.name);
+  fl.oninput=()=>{touched=true};fn.oninput=()=>{if(!touched)fl.value=meDefaults(fn.value)[nf.key]||''};
+}
+function saveOnb(){
+  const name=$('#f_name').value.trim(),age=parseInt($('#f_age').value,10),nl=$('#f_nl').value.trim();
+  if(!name){$('#onbmsg').style.color='var(--stamp)';$('#onbmsg').textContent='이름을 입력해 주세요.';return}
+  const def=meDefaults(name);const me={name,age:age>0&&age<100?age:null,job:+$('#f_job').value,city:+$('#f_city').value,hobby:+$('#f_hobby').value,...def};me[LANG.nameField.key]=nl||def[LANG.nameField.key];
+  const ord=document.querySelector('input[name=ord]:checked'),newOrd=ord?ord.value:S.order,reload=newOrd!==S.order;
+  const old=S.me||{};S.me={...old,...me};readFields(ALLSLOTS);S.onb=true;S.order=newOrd;save();
+  if(reload){location.reload();return}applyMe();$('#onb').hidden=true;render()}
+
+/* ---- 세션 ---- */
+let sess=null;const PH_NAMES=['복습',null,'새 대화','롤플레이','눈덩이','리플레이','내 이야기'];
+function rollPool(excl){const all=Object.keys(S.items).filter(id=>(id[0]==='l'||id[0]==='v')&&!excl.has(id)&&LN(id).sp==='a');
+  const weak=all.filter(id=>S.items[id].b<3),old=all.filter(id=>S.items[id].b>=3);
+  return shuffle(weak).slice(0,Math.ceil(all.length)).concat(shuffle(old))}
+function buildSession(D,mode){
+  const steps=[],newIds=new Set();
+  if(mode==='fav'){const ids=shuffle(Object.keys(S.fav).filter(id=>S.fav[id]&&has(id)&&isQ(id))).slice(0,12);ids.forEach(id=>steps.push({ph:0,t:'q',id,kind:UMAP[id]?null:'recall',bonus:true}));return {steps,i:0,D,mode,right:0,total:0}}
+  const P=plan(D);
+  if(mode==='day'){P.units.forEach(u=>newIds.add(u));if(P.type==='new'){newIds.add(`l:${P.w}-${P.p*2}`);newIds.add(`l:${P.w}-${P.p*2+1}`)}if(P.type==='final')SC[P.w].V.forEach((v,i)=>newIds.add(`v:${P.w}-${i}`))}
+  const revN=mode==='review'?14:P.rev;
+  let due=dueItems(newIds).slice(0,revN);
+  if(due.length<Math.min(4,revN)){const pool=shuffle(Object.keys(S.items).filter(id=>!newIds.has(id)&&!due.includes(id)&&isQ(id)));due=due.concat(pool.slice(0,Math.min(4,revN)-due.length))}
+  shuffle(due).forEach(id=>steps.push({ph:0,t:'q',id}));
+  if(mode==='day'){
+    P.units.forEach(id=>{steps.push({ph:1,t:'introU',id});if(isQ(id))steps.push({ph:1,t:'q',id,fresh:true})});
+    if(P.type==='new')steps.push({ph:2,t:'introEx',s:P.w,e:P.p},{ph:2,t:'q',id:`l:${P.w}-${P.p*2}`,fresh:true},{ph:2,t:'q',id:`l:${P.w}-${P.p*2+1}`,fresh:true},{ph:3,t:'play',s:P.w,n:P.p*2+2,mode:'today'});
+    else if(P.type==='final'){steps.push({ph:2,t:'introV',s:P.w});SC[P.w].V.forEach((v,i)=>steps.push({ph:2,t:'q',id:`v:${P.w}-${i}`,fresh:true,kind:'pick'}));steps.push({ph:3,t:'play',s:P.w,n:8,mode:'final'})}
+    P.replay.forEach(s=>steps.push({ph:5,t:'play',s,n:8,mode:'replay'}));
+  }
+  const excl=new Set([...newIds,...due]),rp=rollPool(excl),rn=mode==='review'?Math.min(8,rp.length):P.roll;
+  if(rn>0)steps.push({ph:4,t:'roll',ids:rp.slice(0,rn),k:0,combo:0,best:0});
+  if(mode==='day'&&P.type==='new'&&P.p===0){const ms=missingSlots(P.w);if(ms.length)steps.unshift({ph:6,t:'ask',keys:ms,w:P.w})}
+  if(!steps.length)steps.push({ph:0,t:'empty'});
+  return {steps,i:0,D,P,mode,right:0,total:0};
+}
+function start(mode){sess=buildSession(Math.min(S.day,TOTAL),mode);$('#sess').hidden=false;document.body.style.overflow='hidden';step()}
+function close(){$('#sess').hidden=true;document.body.style.overflow='';try{speechSynthesis.cancel()}catch(e){}save();render()}
+function next(){sess.i++;if(sess.i>=sess.steps.length)return finish();step()}
+const foot=h=>{$('#sf').innerHTML=h};
+function contBtn(label,fn){foot(`<button class="btn" id="go">${label||'계속'}</button>`);$('#go').onclick=fn||next;$('#go').focus({preventScroll:true})}
+function phaseBar(cur){const used=[...new Set(sess.steps.map(s=>s.ph))];$('#ph').innerHTML=used.map(p=>`<span class="${p===cur?'on':''}">${p===1?LANG.unitName:PH_NAMES[p]}</span>`).join('')+`<span class="cnt">${sess.i+1}/${sess.steps.length}</span>`}
+function step(){
+  const st=sess.steps[sess.i],sb=$('#sb');
+  $('#sp').style.width=(sess.i/sess.steps.length*100)+'%';phaseBar(st.ph);sb.scrollTop=0;
+  if(st.t==='introU'){const u=UMAP[st.id];addItem(st.id);save();sb.innerHTML=H.unitIntro(u)+`<button class="linkbtn star ${S.fav[st.id]?'on':''}" data-favt="${st.id}">${STAR(S.fav[st.id])} 즐겨찾기</button>`;speak(H.unitSay(u));contBtn('외웠어요')}
+  else if(st.t==='introEx')introEx(st);
+  else if(st.t==='introV'){const sc=SC[st.s];const rows=sc.V.map((v,i)=>{const l=LN(`v:${st.s}-${i}`);addItem(l.id);const base=LN(`l:${st.s}-${v.base}`);
+      return `<div class="exbox"><small>원래 대사</small>${H.R(base)}<small>${esc(base.ko)}</small><small style="margin-top:6px">이렇게 바꿔 말할 수 있어요</small><div class="chat">${bub(l)}</div></div>`}).join('');
+    save();sb.innerHTML=`<span class="tag">바꿔 말하기 · ${esc(sc.t)}</span><p class="qprompt">이번 주 대화에서 낱말만 바꾸면 다른 상황에도 써요. 대사를 누르면 해설이 나와요.</p>${rows}`;contBtn('다 읽었어요')}
+  else if(st.t==='q'){if(!st.q)st.q=makeQ(st);drawQ(st)}
+  else if(st.t==='play')playStep(st);
+  else if(st.t==='roll')rollStep(st);
+  else if(st.t==='ask'){sb.innerHTML=`<span class="tag">내 이야기 카드</span><h2 style="margin:0">이번 주 「${esc(SC[st.w].t)}」</h2><p class="qprompt">이번 주 대화의 내 대사가 내 이야기로 바뀌어요. 고르기만 하면 되고, 나중에 설정에서 바꿀 수 있어요.</p><div class="askf">${st.keys.map(fieldHTML).join('')}</div>`;
+    foot('<button class="btn" id="asv">저장하고 시작</button><button class="linkbtn" id="askp">이번엔 건너뛰기 (예시 대사로)</button>');
+    $('#asv').onclick=()=>{readFields(st.keys);applyMe();save();next()};$('#askp').onclick=()=>{S.me._skip=S.me._skip||{};st.keys.forEach(k=>{if(!filled(k))S.me._skip[k]=true});save();next()}}
+  else{sb.innerHTML='<p class="qprompt">아직 복습할 내용이 없어요. 오늘 분량을 먼저 해 보세요.</p>';contBtn('닫기',close)}
+}
+function introEx(st){
+  const sb=$('#sb'),sc=SC[st.s],a=LN(`l:${st.s}-${st.e*2}`),b=LN(`l:${st.s}-${st.e*2+1}`);
+  const prev=[];for(let i=Math.max(0,st.e*2-2);i<st.e*2;i++)prev.push(LN(`l:${st.s}-${i}`));
+  if(!st.open){
+    sb.innerHTML=`<span class="tag">새 대화 · ${esc(sc.t)} (${st.e*2+2}/8줄)</span><p class="qprompt">${esc(sc.ctx)} 먼저 <b>듣기만</b> 해 보세요. 무슨 말일지 짐작해 봐요.</p>
+      <div class="chat">${prev.map(l=>`<div class="dim">${bub(l,{nodetail:true})}</div>`).join('')}${[a,b].map(l=>bub(l,{cls:'new',blur:true,nodetail:true})).join('')}</div>
+      ${hasTTS?'<button class="btn ghost" id="pair">다시 듣기</button>':''}`;
+    const pr=$('#pair');if(pr)pr.onclick=()=>speakAll([a.t,b.t]);speakAll([a.t,b.t]);
+    contBtn('짐작했어요 · 공개',()=>{st.open=true;addItem(a.id);addItem(b.id);save();introEx(st)});return}
+  const ns=[a,b].flatMap(l=>notesFor(l));
+  sb.innerHTML=`<span class="tag">새 대화 · ${esc(sc.t)} (${st.e*2+2}/8줄)</span>
+    <div class="chat">${prev.map(l=>`<div class="dim">${bub(l)}</div>`).join('')}${bub(a,{cls:'new'})}</div>${glossHTML(a)}
+    <div class="chat">${bub(b,{cls:'new'})}</div>${glossHTML(b)}
+    ${H.readLine?`<p class="read">${H.readLine(a)}<br>${H.readLine(b)}</p>`:''}
+    ${ns.length?`<div class="note2">${ns.map(n=>`<p>${esc(n)}</p>`).join('')}</div>`:''}
+    ${hasTTS?'<button class="btn ghost" id="pair">주고받기 이어 듣기</button>':''}<p class="qprompt">${esc(LANG.shadow)}</p>`;
+  const pr=$('#pair');if(pr)pr.onclick=()=>speakAll([a.t,b.t]);contBtn('따라 해 봤어요');
+}
+function distinct(c,n,key,ak){const seen=new Set([ak]),o=[];for(const x of c){const k=key(x);if(seen.has(k))continue;seen.add(k);o.push(x);if(o.length>=n)break}return o}
+function lineCands(l,f){const mine=shuffle(Object.keys(S.items).filter(id=>id[0]==='l'||id[0]==='v').map(LN).filter(x=>x.id!==l.id&&f(x)));
+  const all=shuffle(SC.flatMap((x,s)=>x.L.map((y,i)=>LN(`l:${s}-${i}`))).filter(x=>x.id!==l.id&&f(x)));
+  return mine.filter(x=>x.s===l.s).concat(mine.filter(x=>x.s!==l.s),all)}
+const chunksOf=l=>H.chunks?H.chunks(l):l.t.split(' ').map(t=>({t}));
+function tilesFor(l){const ch=chunksOf(l);let t,n=0;do{t=shuffle(ch.map((x,k)=>k));n++}while(n<20&&t.every((x,k)=>ch[x].t===ch[k].t));return t}
+function makeQ(st){
+  const id=st.id;if(UMAP[id])return {unit:true,...H.unitQ(UMAP[id])};
+  const l=LN(id);let kind=st.kind;const it=S.items[id]||{b:0};
+  if(!kind){if(st.fresh)kind=l.sp==='a'?'pick':'meaning';else{let ks;
+    if(l.sp==='a'){ks=it.b>=1?['recall','recall','recall']:['pick'];if(chunksOf(l).length>=3)ks.push('arrange');if(prevB(l)>=0)ks.push('respond');if(LANG.canType&&it.b>=1)ks.push('type','type')}
+    else{ks=['meaning'];if(hasTTS)ks.push('listen','listen');if(prevA(l)>=0)ks.push('react')}
+    kind=ks[Math.floor(Math.random()*ks.length)]}}
+  const q={kind,l};
+  if(kind==='pick'||kind==='respond')q.opts=shuffle([l,...distinct(lineCands(l,x=>x.sp==='a'),3,x=>x.t,l.t)]);
+  else if(kind==='arrange'){q.tiles=tilesFor(l);q.picked=[]}
+  else if(kind!=='recall'&&kind!=='type')q.opts=shuffle([l,...distinct(lineCands(l,()=>true),3,x=>x.ko,l.ko)]);
+  return q}
+const qHead=(l,st)=>`<span class="tag">${st.ph===0?(st.bonus?'즐겨찾기 · ':'복습 · '):''}${esc(SC[l.s].t)}${l.v?' · 바꿔 말하기':''}</span>`;
+function recallUI(l,head,onGrade){
+  const sb=$('#sb'),pb=prevB(l),ctx=pb>=0?`<div class="chat">${bub(LN(`l:${l.s}-${pb}`),{noko:true,nodetail:true})}</div>`:'';
+  sb.innerHTML=`${head}<p class="qprompt">${pb>=0?'상대 말에 이렇게 대답하려면? ':''}<b>소리 내서</b> 말해 본 뒤 정답을 확인하세요.</p>${ctx}<div class="qbig ko">${esc(l.ko)}</div><div id="ans" class="ans" hidden></div>`;
+  if(pb>=0)speak(LN(`l:${l.s}-${pb}`).t);
+  foot(`<button class="btn" id="rev">말해 봤어요 · 정답 보기</button>`);
+  $('#rev').onclick=()=>{const a=$('#ans');a.hidden=false;a.innerHTML=`<div class="chat">${bub(l)}</div>${H.readLine?`<p class="read">${H.readLine(l)}</p>`:''}`;speak(l.t);
+    foot(`<p class="gq">얼마나 떠올랐나요?</p><div class="g3"><button class="btn gr0" data-g="0">다시<small>내일</small></button><button class="btn gr1" data-g="1">애매<small>조금 뒤</small></button><button class="btn gr2" data-g="2">알았음<small>${IV[Math.min((S.items[l.id]||{b:0}).b+1,IV.length-1)]}일 뒤</small></button></div>`);
+    document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>onGrade(+b.dataset.g))}}
+function typeUI(st){
+  const l=st.q.l,sb=$('#sb');sb.innerHTML=`${qHead(l,st)}<p class="qprompt">영어로 써 보세요. 대소문자·문장부호는 신경 쓰지 않아도 돼요.</p><div class="qbig ko">${esc(l.ko)}</div>
+    <textarea id="tin" class="tin" rows="3" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="여기에 입력"></textarea>`;
+  foot('<button class="btn" id="chk">확인</button><button class="linkbtn" id="giveup">모르겠어요</button>');
+  const go=v=>{const r=cmpType(l.t,v);$('#tin').disabled=true;const ok=r.score>=0.85;
+    sb.insertAdjacentHTML('beforeend',`<div class="exbox"><small>정답 (빠진 낱말 표시)</small><span class="en" style="font-size:18px">${r.html}</span><small>일치 ${Math.round(r.score*100)}%</small></div>`);
+    answer(st,ok)};
+  $('#chk').onclick=()=>go($('#tin').value);$('#giveup').onclick=()=>go('')}
+function cmpType(ans,inp){const n=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9' ]/g,' ').split(/\s+/).filter(Boolean);
+  const A=n(ans),B=n(inp),T=[...Array(A.length+1)].map(()=>Array(B.length+1).fill(0));
+  for(let i=A.length-1;i>=0;i--)for(let j=B.length-1;j>=0;j--)T[i][j]=A[i]===B[j]?T[i+1][j+1]+1:Math.max(T[i+1][j],T[i][j+1]);
+  const hit=new Set();let i=0,j=0;while(i<A.length&&j<B.length){if(A[i]===B[j]){hit.add(i);i++;j++}else if(T[i+1][j]>=T[i][j+1])i++;else j++}
+  const words=ans.split(' ');let k=0;const html=words.map(w=>{const nw=n(w);if(!nw.length)return esc(w);const ok=nw.every(()=>hit.has(k++));return ok?esc(w):`<mark class="miss">${esc(w)}</mark>`}).join(' ');
+  const score=A.length?T[0][0]/Math.max(A.length,B.length*0.9):0;return {score:Math.min(1,score),html}}
+function drawQ(st){
+  const q=st.q,sb=$('#sb');
+  if(q.kind==='recall'){recallUI(q.l,qHead(q.l,st),g=>{sess.total++;if(g>0)sess.right++;if(!st.re)grade3(q.l.id,g,st.bonus);if(g===0&&!st.re)requeue(st);save();next()});return}
+  if(q.kind==='type'){typeUI(st);return}
+  let h='';
+  if(q.unit)h=`<span class="tag">${st.ph===0?(st.bonus?'즐겨찾기 · ':'복습 · '):''}${esc(q.tag)}</span>`+q.html;
+  else{const l=q.l,sc=SC[l.s],ko=o=>`<button class="opt" data-v="${o.id}">${esc(o.ko)}</button>`,tx=o=>`<button class="opt" data-v="${o.id}">${H.R(o)}</button>`;
+    if(q.kind==='meaning')h=`${qHead(l,st)}<p class="qprompt">${l.sp==='a'?'내가 하는 말':esc(sc.who)+'의 말'}, 무슨 뜻일까요?</p><div class="qbig">${H.R(l)}</div><div class="opts">${q.opts.map(ko).join('')}</div>`;
+    else if(q.kind==='listen'){h=`${qHead(l,st)}<p class="qprompt">${esc(sc.who)}의 말을 듣고 뜻을 고르세요</p><div class="listen"><button class="play" data-say="${esc(l.t)}" aria-label="다시 듣기">${PLAY}</button></div>
+      <div style="text-align:center"><button class="linkbtn" id="peek">소리가 안 나면 글자로 보기</button><div id="pk" hidden class="qbig">${H.R(l)}</div></div><div class="opts">${q.opts.map(ko).join('')}</div>`;speak(l.t)}
+    else if(q.kind==='react'){const a=LN(`l:${l.s}-${prevA(l)}`);h=`${qHead(l,st)}<p class="qprompt">내 말에 ${esc(sc.who)}가 대답했어요. 대답의 뜻은?</p><div class="chat">${bub(a,{nodetail:true})}${bub(l,{noko:true,nodetail:true})}</div><div class="opts">${q.opts.map(ko).join('')}</div>`;speak(l.t)}
+    else if(q.kind==='respond'){const b=LN(`l:${l.s}-${prevB(l)}`);h=`${qHead(l,st)}<p class="qprompt">${esc(sc.who)}의 말에 알맞은 대답은?</p><div class="chat">${bub(b,{noko:true,nodetail:true})}</div><div class="opts">${q.opts.map(tx).join('')}</div>`;speak(b.t)}
+    else if(q.kind==='pick')h=`${qHead(l,st)}<p class="qprompt">이 말을 하고 싶어요</p><div class="qbig ko">${esc(l.ko)}</div><div class="opts">${q.opts.map(tx).join('')}</div>`;
+    else h=`${qHead(l,st)}<p class="qprompt">순서대로 눌러 내 말을 만드세요</p><div class="qbig ko">${esc(l.ko)}</div>`+arrangeHTML(q)}
+  sb.innerHTML=h;const pk=$('#peek');if(pk)pk.onclick=()=>{$('#pk').hidden=false;pk.hidden=true};
+  if(q.kind==='arrange'){bindArrange(q,()=>drawQ(st),ok=>answer(st,ok));return}
+  foot('');const ans=q.unit?String(q.ans):q.l.id;
+  sb.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const ok=b.dataset.v===ans;sb.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.v===ans)x.classList.add('right')});if(!ok)b.classList.add('wrong');answer(st,ok)})}
+function arrangeHTML(q){const ch=chunksOf(q.l);return `<div class="slot">${q.picked.map((k,n)=>`<button class="tile" data-un="${n}">${H.R({...ch[k],s:q.l.s})}</button>`).join('')}</div><div class="tiles">${q.tiles.map(k=>`<button class="tile ${q.picked.includes(k)?'used':''}" data-tk="${k}">${H.R({...ch[k],s:q.l.s})}</button>`).join('')}</div>`}
+function bindArrange(q,redraw,done){const sb=$('#sb'),ch=chunksOf(q.l);
+  sb.querySelectorAll('[data-tk]').forEach(b=>b.onclick=()=>{q.picked.push(+b.dataset.tk);redraw()});sb.querySelectorAll('[data-un]').forEach(b=>b.onclick=()=>{q.picked.splice(+b.dataset.un,1);redraw()});
+  foot(`<button class="btn" id="chk" ${q.picked.length===ch.length?'':'disabled'}>확인</button>`);
+  $('#chk').onclick=()=>{sb.querySelectorAll('.tile').forEach(b=>b.disabled=true);done(q.picked.map(k=>ch[k].t).join(' ')===ch.map(c=>c.t).join(' '))}}
+function grade3(id,g,bonus){const it=S.items[id];if(!it)return;const t=todayNum();
+  if(g===0){it.b=0;it.due=t+1}else if(g===1){it.due=t+Math.max(1,Math.ceil(IV[it.b]/2))}else if(!bonus||it.due<=t){it.b=Math.min(it.b+1,IV.length-1);it.due=t+IV[it.b]}}
+const grade=(id,ok,fresh,bonus)=>{if(!fresh)grade3(id,ok?2:0,bonus)};
+function requeue(st){let at=sess.steps.findIndex((x,i)=>i>sess.i&&x.ph>st.ph);if(at<0)at=sess.steps.length;sess.steps.splice(at,0,{ph:st.ph,t:'q',id:st.id,re:true,kind:st.q&&st.q.kind==='recall'?'pick':null,bonus:st.bonus})}
+function answer(st,ok){
+  const q=st.q;sess.total++;if(ok)sess.right++;if(!st.re)grade(st.id,ok,st.fresh,st.bonus);if(!ok&&!st.re)requeue(st);save();
+  let d;if(q.unit){d=q.detail;speak(q.say)}else{d=`<div>${H.R(q.l)}</div><p>${esc(q.l.ko)}</p>`;if(q.kind!=='listen'&&q.kind!=='react')speak(q.l.t)}
+  foot(`<div class="fb ${ok?'ok':'no'}"><strong>${ok?'정답!':'괜찮아요, 이 단계 끝에서 한 번 더 나와요'}</strong>${d}</div><button class="btn" id="go">계속</button>`);$('#go').onclick=next;$('#go').focus({preventScroll:true})}
+function rollStep(st){
+  const sb=$('#sb');
+  if(st.k>=st.ids.length){sb.innerHTML=`<div class="rolldone">${snowSVG(st.best*6+solid(),150)}<h2>눈덩이 굴리기 끝</h2><p class="ctx">최고 연속 <b>${st.best}</b>개 · 지난 장면 ${new Set(st.ids.map(id=>LN(id).s)).size}곳에서 굴렸어요.</p></div>`;contBtn('계속');return}
+  const l=LN(st.ids[st.k]);
+  const head=`<div class="rollhd"><span class="tag">눈덩이 굴리기 ${st.k+1}/${st.ids.length} · ${esc(SC[l.s].t)}</span><span class="combo ${st.combo>=3?'hot':''}">연속 ${st.combo}</span></div><div class="rollball">${snowSVG(st.combo*6+solid(),Math.min(120,60+st.combo*10))}</div>`;
+  recallUI(l,head,g=>{sess.total++;if(g>0)sess.right++;grade3(l.id,g);save();if(g===2){st.combo++;st.best=Math.max(st.best,st.combo)}else if(g===0)st.combo=0;st.k++;rollStep(st)})}
+function playStep(st){
+  const sb=$('#sb'),sc=SC[st.s];
+  if(st.k==null){st.k=0;st.errs=0;st.log=[];st.lv=st.mode==='replay'?((S.sc[st.s]||{b:0}).b):0}
+  if(st.k>=st.n){if(st.mode==='replay'){const r=S.sc[st.s]||(S.sc[st.s]={b:0,due:0}),t=todayNum();if(st.errs===0){r.b=Math.min(r.b+1,SIV.length-1);r.due=t+SIV[r.b]}else{r.b=Math.max(0,r.b-1);r.due=t+2}save()}
+    sb.innerHTML=`<span class="tag">${st.mode==='final'?'실전 완료':st.mode==='replay'?'리플레이 완료':'오늘의 롤플레이 완료'} · ${esc(sc.t)}</span><p class="qprompt">${st.errs?`실수 ${st.errs}번. 틀린 대사는 내일 다시 나와요.`:'한 번도 안 틀렸어요.'} 대사를 누르면 해설을 볼 수 있어요.</p>
+      <div class="chat">${st.log.map(l=>bub(l)).join('')}</div>${hasTTS?'<button class="btn ghost" id="all">처음부터 이어 듣기</button>':''}`;
+    const a=$('#all');if(a)a.onclick=()=>speakAll(st.log.map(l=>l.t));contBtn('계속');return}
+  const l=LN(`l:${st.s}-${st.k}`),hide=st.mode==='replay'&&st.lv>=2;
+  const head=`<span class="tag">${st.mode==='final'?'실전 롤플레이':st.mode==='replay'?'리플레이':'롤플레이'} · ${esc(sc.t)} (${st.k+1}/${st.n})</span><p class="qprompt">${st.k===0?esc(sc.ctx)+' ':''}${hide?'힌트 없이 상대 말만 듣고 대답해요.':'상대 말은 듣고, 내 차례엔 할 말을 골라요.'}</p>`;
+  const log=`<div class="chat">${st.log.map(x=>bub(x,{noko:x.sp==='b'&&hide})).join('')}`;
+  if(l.sp==='b'){sb.innerHTML=head+log+bub(l,{cls:'new',noko:hide})+'</div>'+(hide?'<button class="linkbtn" id="kom">뜻 보기</button>':'');
+    const km=$('#kom');if(km)km.onclick=()=>{km.outerHTML=`<p class="read">${esc(l.ko)}</p>`};speak(l.t);st.log.push(l);sb.scrollTop=sb.scrollHeight;contBtn('다음',()=>{st.k++;playStep(st)});return}
+  const ask=`<div class="bub me ask"><span class="who">나 · 내 차례</span><div class="intent">${hide?'?':esc(l.ko)}</div></div></div>`;
+  const useArr=st.mode==='final'&&chunksOf(l).length>=3;
+  if(!st.q||st.q.l.id!==l.id)st.q=useArr?{kind:'arrange',l,picked:[],tiles:tilesFor(l)}:{kind:'pick',l,opts:shuffle([l,...distinct(lineCands(l,x=>x.sp==='a'),2,x=>x.t,l.t)])};
+  const q=st.q,done=ok=>{sess.total++;if(ok)sess.right++;else{st.errs++;grade3(l.id,0);save()}speak(l.t);st.log.push(l);st.q=null;
+    foot(`<div class="fb ${ok?'ok':'no'}"><strong>${ok?'자연스러워요!':'이렇게 말해요'}</strong><div>${H.R(l)}</div><p>${esc(l.ko)}</p></div><button class="btn" id="go">다음</button>`);$('#go').onclick=()=>{st.k++;playStep(st)};$('#go').focus({preventScroll:true})};
+  if(q.kind==='arrange'){const redraw=()=>{sb.innerHTML=head+log+ask+arrangeHTML(q);sb.scrollTop=sb.scrollHeight;bindArrange(q,redraw,done)};redraw()}
+  else{sb.innerHTML=head+log+ask+`<div class="opts">${q.opts.map(o=>`<button class="opt" data-v="${o.id}">${H.R(o)}</button>`).join('')}</div>`;sb.scrollTop=sb.scrollHeight;foot('');
+    sb.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const ok=b.dataset.v===l.id;sb.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.v===l.id)x.classList.add('right')});if(!ok)b.classList.add('wrong');done(ok)})}}
+function finish(){
+  const t=todayNum(),P=sess.P;let dayDone=false,gift=null,newTick=false;
+  if(sess.mode==='day'&&sess.D===S.day){S.day++;dayDone=true;
+    if(P.type==='final'&&!S.sc[P.w])S.sc[P.w]={b:0,due:t+SIV[0]};if(P.type==='weekend'){gift=S.souv.length;S.souv.push(gift)}
+    if(S.last!==t){const gap=S.last==null?99:t-1-S.last;if(gap<=0)S.streak++;else if(gap<=S.tick){S.tick-=gap;S.streak++}else S.streak=1;S.last=t;S.best=Math.max(S.best||0,S.streak);if(S.streak%7===0&&S.tick<2){S.tick++;newTick=true}}}
+  save();$('#sp').style.width='100%';$('#ph').innerHTML='';
+  const sceneDone=dayDone&&P.type==='final',isGrad=dayDone&&P.type==='grad';
+  $('#sb').innerHTML=`<div class="sbody done" style="padding:0"><div class="stamp pop"><div><b>${isGrad?'365':sceneDone?LANG.stampChar:dayDone?'DAY '+sess.D:sess.mode==='fav'?'★':'복습'}</b><span>${isGrad?'완주':sceneDone?esc(SC[P.w].t):dayDone?'통과':'완료'}</span></div></div>
+    <h2 style="margin:8px 0 0">${isGrad?'365일 완주!':sceneDone?`${P.w+1}주차 「${esc(SC[P.w].t)}」 도장 획득`:gift!=null?'이번 주 기념품 도착':dayDone?'눈덩이가 한 바퀴 더 굴렀어요':'복습 끝'}</h2>
+    ${gift!=null?`<div class="gift">${esc(souvName(gift))}</div>`:''}${newTick?'<p class="ctx" style="margin:0">7일 연속! 휴가권 1장을 받았어요.</p>':''}
+    <div class="stats"><div><b>${sess.total?Math.round(sess.right/sess.total*100):100}%</b><span>정답률</span></div><div><b>${curStreak()}</b><span>연속 일수</span></div><div><b>${solid()}</b><span>단단한 표현</span></div></div></div>`;
+  contBtn('홈으로',close)}
+
+document.addEventListener('click',e=>{
+  const sl=e.target.closest('[data-slow]');if(sl){speak(sl.dataset.slow,true);return}
+  const say=e.target.closest('[data-say]');if(say){speak(say.dataset.say);return}
+  const fv=e.target.closest('[data-favt]');if(fv){const id=fv.dataset.favt;S.fav[id]=!S.fav[id];if(!S.fav[id])delete S.fav[id];save();const on=!!S.fav[id];fv.classList.toggle('on',on);fv.innerHTML=`${STAR(on)} ${fv.classList.contains('btn')?(on?'즐겨찾기 해제':'즐겨찾기'):'즐겨찾기'}`;if(tab==='fav'&&$('#sess').hidden)render();return}
+  const bd=e.target.closest('.bub[data-id]');if(bd&&!e.target.closest('button')){openSheet(bd.dataset.id);return}
+  const un=e.target.closest('[data-unit]');if(un){openSheet(un.dataset.unit);return}
+  if(e.target.closest('[data-close]')||e.target.id==='sheet'){closeSheet();return}
+  const all=e.target.closest('[data-all]');if(all){const s=+all.dataset.all;speakAll(SC[s].L.filter((l,i)=>has(`l:${s}-${i}`)).map(l=>l.t));return}
+  const tb=e.target.closest('[data-tab]');if(tb){tab=tb.dataset.tab;render();window.scrollTo(0,0);return}
+  const us=e.target.closest('[data-uset]');if(us&&H.uset){H.uset(us.dataset.uset);render();return}
+  if(e.target.id==='slow'){S.slow=!S.slow;save();e.target.setAttribute('aria-pressed',S.slow);return}
+  if(e.target.id==='ordB'){S.order=S.order==='B'?'A':'B';save();location.reload();return}
+  const a=e.target.closest('[data-act]');if(!a)return;const act=a.dataset.act,msg=$('#msg');
+  if(act==='start'||act==='ahead')start('day');else if(act==='review')start('review');else if(act==='favrev')start('fav');
+  else if(act==='onb')openOnb();else if(act==='onbsave')saveOnb();else if(act==='onbclose')$('#onb').hidden=true;
+  else if(act==='onbskip'){S.onb=true;save();$('#onb').hidden=true;render()}
+  else if(act==='mesay')speakAll(SC.flatMap((x,s)=>x.L.filter((l,i)=>l.me&&l.sp==='a'&&(s===0||has(`l:${s}-${i}`)))).map(l=>l.t));
+  else if(act==='export'){const code=btoa(unescape(encodeURIComponent(JSON.stringify(S))));const ta=$('#bk');ta.value=code;const fall=()=>{ta.select();msg.textContent='코드를 선택해 두었어요. 길게 눌러 복사하세요.'};
+    try{navigator.clipboard.writeText(code).then(()=>{msg.textContent='백업 코드를 복사했어요.'},fall)}catch(err){fall()}}
+  else if(act==='import'){try{const o=JSON.parse(decodeURIComponent(escape(atob($('#bk').value.trim()))));if(!o||o.v!==2||o.lang!==LANG.code)throw 0;S=o;S.fav=S.fav||{};save();location.reload()}
+    catch(err){msg.style.color='var(--stamp)';msg.textContent=`코드를 읽지 못했어요. 이 ${LANG.name} 앱에서 복사한 코드 전체를 붙여넣어 주세요.`}}
+  else if(act==='reset1'){$('#r1').hidden=true;$('#r2').hidden=false}else if(act==='reset0'){$('#r1').hidden=false;$('#r2').hidden=true}
+  else if(act==='reset2'){const o=S.order;S=fresh();save();location.reload()}
+});
+$('#sx').onclick=close;
+render();
+if(!S.onb)openOnb();
+
+</script>
+</body>
+</html>
